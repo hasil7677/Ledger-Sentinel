@@ -1,0 +1,4630 @@
+[
+  {
+    "id": "GRN-8001",
+    "po_id": "PO-2001",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-12-22",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 106
+      }
+    ]
+  },
+  {
+    "id": "GRN-8002",
+    "po_id": "PO-2002",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-11-01",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 122
+      }
+    ]
+  },
+  {
+    "id": "GRN-8003",
+    "po_id": "PO-2003",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-07-29",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 38
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 94
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 22
+      }
+    ]
+  },
+  {
+    "id": "GRN-8004",
+    "po_id": "PO-2004",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 161
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 172
+      }
+    ]
+  },
+  {
+    "id": "GRN-8005",
+    "po_id": "PO-2005",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-12-20",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 72
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 34
+      }
+    ]
+  },
+  {
+    "id": "GRN-8006",
+    "po_id": "PO-2006",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-08-12",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 188
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 92
+      }
+    ]
+  },
+  {
+    "id": "GRN-8007",
+    "po_id": "PO-2007",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-11-11",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 167
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 113
+      }
+    ]
+  },
+  {
+    "id": "GRN-8008",
+    "po_id": "PO-2008",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-08",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 46
+      }
+    ]
+  },
+  {
+    "id": "GRN-8009",
+    "po_id": "PO-2009",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 181
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 43
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 144
+      }
+    ]
+  },
+  {
+    "id": "GRN-8010",
+    "po_id": "PO-2010",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-29",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 37
+      }
+    ]
+  },
+  {
+    "id": "GRN-8011",
+    "po_id": "PO-2011",
+    "vendor": "Acme Corp",
+    "received_date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 175
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 31
+      }
+    ]
+  },
+  {
+    "id": "GRN-8012",
+    "po_id": "PO-2012",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2027-02-12",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 50
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 110
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 11
+      }
+    ]
+  },
+  {
+    "id": "GRN-8013",
+    "po_id": "PO-2013",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2027-01-19",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 184
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 32
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 102
+      }
+    ]
+  },
+  {
+    "id": "GRN-8014",
+    "po_id": "PO-2014",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-08-28",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 63
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 62
+      }
+    ]
+  },
+  {
+    "id": "GRN-8015",
+    "po_id": "PO-2015",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 94
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 169
+      }
+    ]
+  },
+  {
+    "id": "GRN-8016",
+    "po_id": "PO-2016",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-12-27",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 71
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 50
+      }
+    ]
+  },
+  {
+    "id": "GRN-8017",
+    "po_id": "PO-2017",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-07-12",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 116
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 160
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 135
+      }
+    ]
+  },
+  {
+    "id": "GRN-8018",
+    "po_id": "PO-2018",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-12-01",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 5
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 138
+      }
+    ]
+  },
+  {
+    "id": "GRN-8019",
+    "po_id": "PO-2019",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 164
+      }
+    ]
+  },
+  {
+    "id": "GRN-8020",
+    "po_id": "PO-2020",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-09-19",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 108
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 183
+      }
+    ]
+  },
+  {
+    "id": "GRN-8021",
+    "po_id": "PO-2021",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-08-06",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 162
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 150
+      }
+    ]
+  },
+  {
+    "id": "GRN-8022",
+    "po_id": "PO-2022",
+    "vendor": "Acme Corp",
+    "received_date": "2026-11-24",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 115
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 153
+      }
+    ]
+  },
+  {
+    "id": "GRN-8023",
+    "po_id": "PO-2023",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-10-31",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 126
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 193
+      }
+    ]
+  },
+  {
+    "id": "GRN-8024",
+    "po_id": "PO-2024",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 197
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 65
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 177
+      }
+    ]
+  },
+  {
+    "id": "GRN-8025",
+    "po_id": "PO-2025",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-01-26",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 16
+      }
+    ]
+  },
+  {
+    "id": "GRN-8026",
+    "po_id": "PO-2026",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-12-09",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 188
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 183
+      }
+    ]
+  },
+  {
+    "id": "GRN-8027",
+    "po_id": "PO-2027",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 197
+      }
+    ]
+  },
+  {
+    "id": "GRN-8028",
+    "po_id": "PO-2028",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-31",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 147
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 68
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 36
+      }
+    ]
+  },
+  {
+    "id": "GRN-8029",
+    "po_id": "PO-2029",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-29",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 198
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 118
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 161
+      }
+    ]
+  },
+  {
+    "id": "GRN-8030",
+    "po_id": "PO-2030",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 120
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 71
+      }
+    ]
+  },
+  {
+    "id": "GRN-8031",
+    "po_id": "PO-2031",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2027-01-20",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 117
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 24
+      }
+    ]
+  },
+  {
+    "id": "GRN-8032",
+    "po_id": "PO-2032",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-09-02",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 25
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 40
+      }
+    ]
+  },
+  {
+    "id": "GRN-8033",
+    "po_id": "PO-2033",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 109
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 89
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 143
+      }
+    ]
+  },
+  {
+    "id": "GRN-8034",
+    "po_id": "PO-2034",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-07-21",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 200
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 152
+      }
+    ]
+  },
+  {
+    "id": "GRN-8035",
+    "po_id": "PO-2035",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-09",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 142
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 196
+      }
+    ]
+  },
+  {
+    "id": "GRN-8036",
+    "po_id": "PO-2036",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-01-25",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 61
+      }
+    ]
+  },
+  {
+    "id": "GRN-8037",
+    "po_id": "PO-2037",
+    "vendor": "Acme Corp",
+    "received_date": "2026-11-07",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 190
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 47
+      }
+    ]
+  },
+  {
+    "id": "GRN-8038",
+    "po_id": "PO-2038",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-12-13",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 156
+      }
+    ]
+  },
+  {
+    "id": "GRN-8039",
+    "po_id": "PO-2039",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-07-24",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 51
+      }
+    ]
+  },
+  {
+    "id": "GRN-8040",
+    "po_id": "PO-2040",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 88
+      }
+    ]
+  },
+  {
+    "id": "GRN-8041",
+    "po_id": "PO-2041",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-09-16",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 9
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 196
+      }
+    ]
+  },
+  {
+    "id": "GRN-8042",
+    "po_id": "PO-2042",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-10-04",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 68
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 56
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 10
+      }
+    ]
+  },
+  {
+    "id": "GRN-8043",
+    "po_id": "PO-2043",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-04",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 124
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 184
+      }
+    ]
+  },
+  {
+    "id": "GRN-8044",
+    "po_id": "PO-2044",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-08-16",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 32
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 153
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 11
+      }
+    ]
+  },
+  {
+    "id": "GRN-8045",
+    "po_id": "PO-2045",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-12-28",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 156
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 181
+      }
+    ]
+  },
+  {
+    "id": "GRN-8046",
+    "po_id": "PO-2046",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-08-03",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 93
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 141
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 114
+      }
+    ]
+  },
+  {
+    "id": "GRN-8047",
+    "po_id": "PO-2047",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-07-22",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 130
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 32
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 115
+      }
+    ]
+  },
+  {
+    "id": "GRN-8048",
+    "po_id": "PO-2048",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-01-04",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 171
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 74
+      }
+    ]
+  },
+  {
+    "id": "GRN-8049",
+    "po_id": "PO-2049",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-17",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 87
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 67
+      }
+    ]
+  },
+  {
+    "id": "GRN-8050",
+    "po_id": "PO-2050",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-02-17",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 150
+      }
+    ]
+  },
+  {
+    "id": "GRN-8051",
+    "po_id": "PO-2051",
+    "vendor": "Acme Corp",
+    "received_date": "2026-09-29",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 129
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 59
+      }
+    ]
+  },
+  {
+    "id": "GRN-8052",
+    "po_id": "PO-2052",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-09-29",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 137
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 53
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 26
+      }
+    ]
+  },
+  {
+    "id": "GRN-8053",
+    "po_id": "PO-2053",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-10",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 170
+      }
+    ]
+  },
+  {
+    "id": "GRN-8054",
+    "po_id": "PO-2054",
+    "vendor": "Acme Corp",
+    "received_date": "2026-10-28",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 61
+      }
+    ]
+  },
+  {
+    "id": "GRN-8055",
+    "po_id": "PO-2055",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-12-03",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 93
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 113
+      }
+    ]
+  },
+  {
+    "id": "GRN-8056",
+    "po_id": "PO-2056",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-09-30",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 69
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 64
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 35
+      }
+    ]
+  },
+  {
+    "id": "GRN-8057",
+    "po_id": "PO-2057",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-09-23",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 60
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 194
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 128
+      }
+    ]
+  },
+  {
+    "id": "GRN-8058",
+    "po_id": "PO-2058",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2027-01-14",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 80
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 63
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 97
+      }
+    ]
+  },
+  {
+    "id": "GRN-8059",
+    "po_id": "PO-2059",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-07-06",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 16
+      }
+    ]
+  },
+  {
+    "id": "GRN-8060",
+    "po_id": "PO-2060",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-18",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 151
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 77
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 125
+      }
+    ]
+  },
+  {
+    "id": "GRN-8061",
+    "po_id": "PO-2061",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-28",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 127
+      }
+    ]
+  },
+  {
+    "id": "GRN-8062",
+    "po_id": "PO-2062",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 166
+      }
+    ]
+  },
+  {
+    "id": "GRN-8063",
+    "po_id": "PO-2063",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-01-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 35
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 147
+      }
+    ]
+  },
+  {
+    "id": "GRN-8064",
+    "po_id": "PO-2064",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-12-05",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 102
+      }
+    ]
+  },
+  {
+    "id": "GRN-8065",
+    "po_id": "PO-2065",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 161
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 194
+      }
+    ]
+  },
+  {
+    "id": "GRN-8066",
+    "po_id": "PO-2066",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-12-14",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 66
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 49
+      }
+    ]
+  },
+  {
+    "id": "GRN-8067",
+    "po_id": "PO-2067",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 13
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 64
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 78
+      }
+    ]
+  },
+  {
+    "id": "GRN-8068",
+    "po_id": "PO-2068",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-03",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 70
+      }
+    ]
+  },
+  {
+    "id": "GRN-8069",
+    "po_id": "PO-2069",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 41
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 23
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 20
+      }
+    ]
+  },
+  {
+    "id": "GRN-8070",
+    "po_id": "PO-2070",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-12-04",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 124
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 181
+      }
+    ]
+  },
+  {
+    "id": "GRN-8071",
+    "po_id": "PO-2071",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-11-20",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 115
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 193
+      }
+    ]
+  },
+  {
+    "id": "GRN-8072",
+    "po_id": "PO-2072",
+    "vendor": "Acme Corp",
+    "received_date": "2026-09-09",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 177
+      }
+    ]
+  },
+  {
+    "id": "GRN-8073",
+    "po_id": "PO-2073",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-07-10",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 137
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 171
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 118
+      }
+    ]
+  },
+  {
+    "id": "GRN-8074",
+    "po_id": "PO-2074",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-12-01",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 94
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 109
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 90
+      }
+    ]
+  },
+  {
+    "id": "GRN-8075",
+    "po_id": "PO-2075",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-02-10",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 78
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 174
+      }
+    ]
+  },
+  {
+    "id": "GRN-8076",
+    "po_id": "PO-2076",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-07-14",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 69
+      }
+    ]
+  },
+  {
+    "id": "GRN-8077",
+    "po_id": "PO-2077",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2027-01-20",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 110
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 53
+      }
+    ]
+  },
+  {
+    "id": "GRN-8078",
+    "po_id": "PO-2078",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-12-11",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 73
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 145
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 38
+      }
+    ]
+  },
+  {
+    "id": "GRN-8079",
+    "po_id": "PO-2079",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-02-17",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 166
+      }
+    ]
+  },
+  {
+    "id": "GRN-8080",
+    "po_id": "PO-2080",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-12-31",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 146
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 109
+      }
+    ]
+  },
+  {
+    "id": "GRN-8081",
+    "po_id": "PO-2081",
+    "vendor": "Bluewave Traders",
+    "received_date": "2027-02-05",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 132
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 188
+      }
+    ]
+  },
+  {
+    "id": "GRN-8082",
+    "po_id": "PO-2082",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2027-01-03",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 67
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 121
+      }
+    ]
+  },
+  {
+    "id": "GRN-8083",
+    "po_id": "PO-2083",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 75
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 111
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 92
+      }
+    ]
+  },
+  {
+    "id": "GRN-8084",
+    "po_id": "PO-2084",
+    "vendor": "Acme Corp",
+    "received_date": "2027-02-02",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 43
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 119
+      }
+    ]
+  },
+  {
+    "id": "GRN-8085",
+    "po_id": "PO-2085",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-09-30",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 87
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 53
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 183
+      }
+    ]
+  },
+  {
+    "id": "GRN-8086",
+    "po_id": "PO-2086",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 195
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 126
+      }
+    ]
+  },
+  {
+    "id": "GRN-8087",
+    "po_id": "PO-2087",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-12-21",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 133
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 156
+      }
+    ]
+  },
+  {
+    "id": "GRN-8088",
+    "po_id": "PO-2088",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-02-11",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 121
+      }
+    ]
+  },
+  {
+    "id": "GRN-8089",
+    "po_id": "PO-2089",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 72
+      }
+    ]
+  },
+  {
+    "id": "GRN-8090",
+    "po_id": "PO-2090",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-12-30",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 86
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 165
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 188
+      }
+    ]
+  },
+  {
+    "id": "GRN-8091",
+    "po_id": "PO-2091",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-07-17",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 166
+      }
+    ]
+  },
+  {
+    "id": "GRN-8092",
+    "po_id": "PO-2092",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-09-04",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 118
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 47
+      }
+    ]
+  },
+  {
+    "id": "GRN-8093",
+    "po_id": "PO-2093",
+    "vendor": "Acme Corp",
+    "received_date": "2026-07-13",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 96
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 100
+      }
+    ]
+  },
+  {
+    "id": "GRN-8094",
+    "po_id": "PO-2094",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-09-03",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 48
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 49
+      }
+    ]
+  },
+  {
+    "id": "GRN-8095",
+    "po_id": "PO-2095",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2027-02-12",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 64
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 123
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 168
+      }
+    ]
+  },
+  {
+    "id": "GRN-8096",
+    "po_id": "PO-2096",
+    "vendor": "Acme Corp",
+    "received_date": "2026-09-09",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 45
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 23
+      }
+    ]
+  },
+  {
+    "id": "GRN-8097",
+    "po_id": "PO-2097",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-12-03",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 82
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 55
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 103
+      }
+    ]
+  },
+  {
+    "id": "GRN-8098",
+    "po_id": "PO-2098",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-09-03",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 10
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 173
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 106
+      }
+    ]
+  },
+  {
+    "id": "GRN-8099",
+    "po_id": "PO-2099",
+    "vendor": "Acme Corp",
+    "received_date": "2026-11-29",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 160
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 95
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 61
+      }
+    ]
+  },
+  {
+    "id": "GRN-8100",
+    "po_id": "PO-2100",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-12-12",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 84
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 117
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 13
+      }
+    ]
+  },
+  {
+    "id": "GRN-8101",
+    "po_id": "PO-2101",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-01-11",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 88
+      }
+    ]
+  },
+  {
+    "id": "GRN-8102",
+    "po_id": "PO-2102",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-08-20",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 98
+      }
+    ]
+  },
+  {
+    "id": "GRN-8103",
+    "po_id": "PO-2103",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-10",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 196
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 91
+      }
+    ]
+  },
+  {
+    "id": "GRN-8104",
+    "po_id": "PO-2104",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-07-24",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 147
+      }
+    ]
+  },
+  {
+    "id": "GRN-8105",
+    "po_id": "PO-2105",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2027-01-21",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 142
+      }
+    ]
+  },
+  {
+    "id": "GRN-8106",
+    "po_id": "PO-2106",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 177
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 64
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 125
+      }
+    ]
+  },
+  {
+    "id": "GRN-8107",
+    "po_id": "PO-2107",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-11-26",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 184
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 82
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 171
+      }
+    ]
+  },
+  {
+    "id": "GRN-8108",
+    "po_id": "PO-2108",
+    "vendor": "Acme Corp",
+    "received_date": "2026-08-07",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 131
+      }
+    ]
+  },
+  {
+    "id": "GRN-8109",
+    "po_id": "PO-2109",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-09-03",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 121
+      }
+    ]
+  },
+  {
+    "id": "GRN-8110",
+    "po_id": "PO-2110",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 130
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 162
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 109
+      }
+    ]
+  },
+  {
+    "id": "GRN-8111",
+    "po_id": "PO-2111",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-12-27",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 118
+      }
+    ]
+  },
+  {
+    "id": "GRN-8112",
+    "po_id": "PO-2112",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-31",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 75
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 53
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 36
+      }
+    ]
+  },
+  {
+    "id": "GRN-8113",
+    "po_id": "PO-2113",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-12-23",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 90
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 67
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 37
+      }
+    ]
+  },
+  {
+    "id": "GRN-8114",
+    "po_id": "PO-2114",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-07-21",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 60
+      }
+    ]
+  },
+  {
+    "id": "GRN-8115",
+    "po_id": "PO-2115",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-01-18",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 38
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 143
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 69
+      }
+    ]
+  },
+  {
+    "id": "GRN-8116",
+    "po_id": "PO-2116",
+    "vendor": "Acme Corp",
+    "received_date": "2026-12-20",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 96
+      }
+    ]
+  },
+  {
+    "id": "GRN-8117",
+    "po_id": "PO-2117",
+    "vendor": "Acme Corp",
+    "received_date": "2026-09-24",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 18
+      }
+    ]
+  },
+  {
+    "id": "GRN-8118",
+    "po_id": "PO-2118",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-11-14",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 97
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 136
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 156
+      }
+    ]
+  },
+  {
+    "id": "GRN-8119",
+    "po_id": "PO-2119",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-11-08",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 122
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 169
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 12
+      }
+    ]
+  },
+  {
+    "id": "GRN-8120",
+    "po_id": "PO-2120",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-10-24",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 25
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 87
+      }
+    ]
+  },
+  {
+    "id": "GRN-8121",
+    "po_id": "PO-2121",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-07-22",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 187
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 88
+      }
+    ]
+  },
+  {
+    "id": "GRN-8122",
+    "po_id": "PO-2122",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-11-15",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 30
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 184
+      }
+    ]
+  },
+  {
+    "id": "GRN-8123",
+    "po_id": "PO-2123",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-01-06",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 110
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 91
+      }
+    ]
+  },
+  {
+    "id": "GRN-8124",
+    "po_id": "PO-2124",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 175
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 70
+      }
+    ]
+  },
+  {
+    "id": "GRN-8125",
+    "po_id": "PO-2125",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 26
+      }
+    ]
+  },
+  {
+    "id": "GRN-8126",
+    "po_id": "PO-2126",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-31",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 20
+      }
+    ]
+  },
+  {
+    "id": "GRN-8127",
+    "po_id": "PO-2127",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-11-28",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 175
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 197
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 113
+      }
+    ]
+  },
+  {
+    "id": "GRN-8128",
+    "po_id": "PO-2128",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 152
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 134
+      }
+    ]
+  },
+  {
+    "id": "GRN-8129",
+    "po_id": "PO-2129",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-12-22",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 94
+      }
+    ]
+  },
+  {
+    "id": "GRN-8130",
+    "po_id": "PO-2130",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-08-03",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 160
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 173
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 182
+      }
+    ]
+  },
+  {
+    "id": "GRN-8131",
+    "po_id": "PO-2131",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-08-22",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 6
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 51
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 41
+      }
+    ]
+  },
+  {
+    "id": "GRN-8132",
+    "po_id": "PO-2132",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-07-22",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 101
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 112
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 121
+      }
+    ]
+  },
+  {
+    "id": "GRN-8133",
+    "po_id": "PO-2133",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 44
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 45
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 198
+      }
+    ]
+  },
+  {
+    "id": "GRN-8134",
+    "po_id": "PO-2134",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 129
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 160
+      }
+    ]
+  },
+  {
+    "id": "GRN-8135",
+    "po_id": "PO-2135",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 33
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 77
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 178
+      }
+    ]
+  },
+  {
+    "id": "GRN-8136",
+    "po_id": "PO-2136",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-04",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 106
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 158
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 19
+      }
+    ]
+  },
+  {
+    "id": "GRN-8137",
+    "po_id": "PO-2137",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-29",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 35
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 6
+      }
+    ]
+  },
+  {
+    "id": "GRN-8138",
+    "po_id": "PO-2138",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-21",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 133
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 148
+      }
+    ]
+  },
+  {
+    "id": "GRN-8139",
+    "po_id": "PO-2139",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-07-25",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 122
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 24
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 85
+      }
+    ]
+  },
+  {
+    "id": "GRN-8140",
+    "po_id": "PO-2140",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-11-27",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 108
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 10
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 88
+      }
+    ]
+  },
+  {
+    "id": "GRN-8141",
+    "po_id": "PO-2141",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 116
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 155
+      }
+    ]
+  },
+  {
+    "id": "GRN-8142",
+    "po_id": "PO-2142",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-07-23",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 90
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 48
+      }
+    ]
+  },
+  {
+    "id": "GRN-8143",
+    "po_id": "PO-2143",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-20",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 94
+      }
+    ]
+  },
+  {
+    "id": "GRN-8144",
+    "po_id": "PO-2144",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-09-02",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 55
+      }
+    ]
+  },
+  {
+    "id": "GRN-8145",
+    "po_id": "PO-2145",
+    "vendor": "Bluewave Traders",
+    "received_date": "2027-01-17",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 123
+      }
+    ]
+  },
+  {
+    "id": "GRN-8146",
+    "po_id": "PO-2146",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-28",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 43
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 117
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 22
+      }
+    ]
+  },
+  {
+    "id": "GRN-8147",
+    "po_id": "PO-2147",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-12-11",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 95
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 134
+      }
+    ]
+  },
+  {
+    "id": "GRN-8148",
+    "po_id": "PO-2148",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-10-31",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 99
+      }
+    ]
+  },
+  {
+    "id": "GRN-8149",
+    "po_id": "PO-2149",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-12-20",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 123
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 153
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 146
+      }
+    ]
+  },
+  {
+    "id": "GRN-8150",
+    "po_id": "PO-2150",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-29",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 133
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 43
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 20
+      }
+    ]
+  },
+  {
+    "id": "GRN-8151",
+    "po_id": "PO-2151",
+    "vendor": "Solstice Electricals",
+    "received_date": "2027-01-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 15
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 68
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 186
+      }
+    ]
+  },
+  {
+    "id": "GRN-8152",
+    "po_id": "PO-2152",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-16",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 77
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 104
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 109
+      }
+    ]
+  },
+  {
+    "id": "GRN-8153",
+    "po_id": "PO-2153",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-20",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 29
+      }
+    ]
+  },
+  {
+    "id": "GRN-8154",
+    "po_id": "PO-2154",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-09-14",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 25
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 154
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 174
+      }
+    ]
+  },
+  {
+    "id": "GRN-8155",
+    "po_id": "PO-2155",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-09-20",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 186
+      }
+    ]
+  },
+  {
+    "id": "GRN-8156",
+    "po_id": "PO-2156",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-11-27",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 170
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 176
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 113
+      }
+    ]
+  },
+  {
+    "id": "GRN-8157",
+    "po_id": "PO-2157",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-21",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 129
+      }
+    ]
+  },
+  {
+    "id": "GRN-8158",
+    "po_id": "PO-2158",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-11",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 30
+      }
+    ]
+  },
+  {
+    "id": "GRN-8159",
+    "po_id": "PO-2159",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2027-02-02",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 163
+      }
+    ]
+  },
+  {
+    "id": "GRN-8160",
+    "po_id": "PO-2160",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 182
+      }
+    ]
+  },
+  {
+    "id": "GRN-8161",
+    "po_id": "PO-2161",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-08",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 98
+      }
+    ]
+  },
+  {
+    "id": "GRN-8162",
+    "po_id": "PO-2162",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-26",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 141
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 66
+      }
+    ]
+  },
+  {
+    "id": "GRN-8163",
+    "po_id": "PO-2163",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-02-04",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 123
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 77
+      }
+    ]
+  },
+  {
+    "id": "GRN-8164",
+    "po_id": "PO-2164",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-11-16",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 159
+      }
+    ]
+  },
+  {
+    "id": "GRN-8165",
+    "po_id": "PO-2165",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-07-16",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 187
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 137
+      }
+    ]
+  },
+  {
+    "id": "GRN-8166",
+    "po_id": "PO-2166",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-07-24",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 42
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 116
+      }
+    ]
+  },
+  {
+    "id": "GRN-8167",
+    "po_id": "PO-2167",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-02-01",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 106
+      }
+    ]
+  },
+  {
+    "id": "GRN-8168",
+    "po_id": "PO-2168",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-23",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 86
+      }
+    ]
+  },
+  {
+    "id": "GRN-8169",
+    "po_id": "PO-2169",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-01-24",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 74
+      }
+    ]
+  },
+  {
+    "id": "GRN-8170",
+    "po_id": "PO-2170",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-27",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 9
+      }
+    ]
+  },
+  {
+    "id": "GRN-8171",
+    "po_id": "PO-2171",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-02-03",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 33
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 78
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 65
+      }
+    ]
+  },
+  {
+    "id": "GRN-8172",
+    "po_id": "PO-2172",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-07-18",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 21
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 33
+      }
+    ]
+  },
+  {
+    "id": "GRN-8173",
+    "po_id": "PO-2173",
+    "vendor": "Acme Corp",
+    "received_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 79
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 114
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 5
+      }
+    ]
+  },
+  {
+    "id": "GRN-8174",
+    "po_id": "PO-2174",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-09-02",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 139
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 97
+      }
+    ]
+  },
+  {
+    "id": "GRN-8175",
+    "po_id": "PO-2175",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-22",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 125
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 16
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 167
+      }
+    ]
+  },
+  {
+    "id": "GRN-8176",
+    "po_id": "PO-2176",
+    "vendor": "Acme Corp",
+    "received_date": "2026-09-10",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 66
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 192
+      }
+    ]
+  },
+  {
+    "id": "GRN-8177",
+    "po_id": "PO-2177",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-01-21",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 95
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 144
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 91
+      }
+    ]
+  },
+  {
+    "id": "GRN-8178",
+    "po_id": "PO-2178",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-31",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 21
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 188
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 122
+      }
+    ]
+  },
+  {
+    "id": "GRN-8179",
+    "po_id": "PO-2179",
+    "vendor": "Acme Corp",
+    "received_date": "2026-08-25",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 85
+      }
+    ]
+  },
+  {
+    "id": "GRN-8180",
+    "po_id": "PO-2180",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 197
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 170
+      }
+    ]
+  },
+  {
+    "id": "GRN-8181",
+    "po_id": "PO-2181",
+    "vendor": "Acme Corp",
+    "received_date": "2026-10-07",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 99
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 116
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 107
+      }
+    ]
+  },
+  {
+    "id": "GRN-8182",
+    "po_id": "PO-2182",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 182
+      }
+    ]
+  },
+  {
+    "id": "GRN-8183",
+    "po_id": "PO-2183",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2027-01-27",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 25
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 115
+      }
+    ]
+  },
+  {
+    "id": "GRN-8184",
+    "po_id": "PO-2184",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 88
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 174
+      }
+    ]
+  },
+  {
+    "id": "GRN-8185",
+    "po_id": "PO-2185",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-30",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 94
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 119
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 15
+      }
+    ]
+  },
+  {
+    "id": "GRN-8186",
+    "po_id": "PO-2186",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-10-27",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 98
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 136
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 196
+      }
+    ]
+  },
+  {
+    "id": "GRN-8187",
+    "po_id": "PO-2187",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-07-12",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 22
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 65
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 170
+      }
+    ]
+  },
+  {
+    "id": "GRN-8188",
+    "po_id": "PO-2188",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 44
+      }
+    ]
+  },
+  {
+    "id": "GRN-8189",
+    "po_id": "PO-2189",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-10-08",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 140
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 98
+      }
+    ]
+  },
+  {
+    "id": "GRN-8190",
+    "po_id": "PO-2190",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-12-21",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 11
+      }
+    ]
+  },
+  {
+    "id": "GRN-8191",
+    "po_id": "PO-2191",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 71
+      }
+    ]
+  },
+  {
+    "id": "GRN-8192",
+    "po_id": "PO-2192",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-08-26",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 34
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 39
+      }
+    ]
+  },
+  {
+    "id": "GRN-8193",
+    "po_id": "PO-2193",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-03",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 175
+      }
+    ]
+  },
+  {
+    "id": "GRN-8194",
+    "po_id": "PO-2194",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-11-25",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 187
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 186
+      }
+    ]
+  },
+  {
+    "id": "GRN-8195",
+    "po_id": "PO-2195",
+    "vendor": "Solstice Electricals",
+    "received_date": "2027-01-22",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 40
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 65
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 131
+      }
+    ]
+  },
+  {
+    "id": "GRN-8196",
+    "po_id": "PO-2196",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 38
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 161
+      }
+    ]
+  },
+  {
+    "id": "GRN-8197",
+    "po_id": "PO-2197",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-09-21",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 109
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 152
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 23
+      }
+    ]
+  },
+  {
+    "id": "GRN-8198",
+    "po_id": "PO-2198",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-12-18",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 93
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 37
+      }
+    ]
+  },
+  {
+    "id": "GRN-8199",
+    "po_id": "PO-2199",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-19",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 36
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 137
+      }
+    ]
+  },
+  {
+    "id": "GRN-8200",
+    "po_id": "PO-2200",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-14",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 137
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 77
+      }
+    ]
+  },
+  {
+    "id": "GRN-8201",
+    "po_id": "PO-2201",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-08-22",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 162
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 141
+      }
+    ]
+  },
+  {
+    "id": "GRN-8202",
+    "po_id": "PO-2202",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-12-18",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 168
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 164
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 189
+      }
+    ]
+  },
+  {
+    "id": "GRN-8203",
+    "po_id": "PO-2203",
+    "vendor": "Acme Corp",
+    "received_date": "2026-07-17",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 167
+      }
+    ]
+  },
+  {
+    "id": "GRN-8204",
+    "po_id": "PO-2204",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-01-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 132
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 165
+      }
+    ]
+  },
+  {
+    "id": "GRN-8205",
+    "po_id": "PO-2205",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-12-14",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 79
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 121
+      }
+    ]
+  },
+  {
+    "id": "GRN-8206",
+    "po_id": "PO-2206",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-10-24",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 92
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 160
+      }
+    ]
+  },
+  {
+    "id": "GRN-8207",
+    "po_id": "PO-2207",
+    "vendor": "Solstice Electricals",
+    "received_date": "2027-02-12",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 199
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 99
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 136
+      }
+    ]
+  },
+  {
+    "id": "GRN-8208",
+    "po_id": "PO-2208",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-09-23",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 120
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 68
+      }
+    ]
+  },
+  {
+    "id": "GRN-8209",
+    "po_id": "PO-2209",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-07-17",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 68
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 45
+      }
+    ]
+  },
+  {
+    "id": "GRN-8210",
+    "po_id": "PO-2210",
+    "vendor": "Solstice Electricals",
+    "received_date": "2027-01-07",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 132
+      }
+    ]
+  },
+  {
+    "id": "GRN-8211",
+    "po_id": "PO-2211",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-11-10",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 105
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 134
+      }
+    ]
+  },
+  {
+    "id": "GRN-8212",
+    "po_id": "PO-2212",
+    "vendor": "Acme Corp",
+    "received_date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 131
+      }
+    ]
+  },
+  {
+    "id": "GRN-8213",
+    "po_id": "PO-2213",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 115
+      }
+    ]
+  },
+  {
+    "id": "GRN-8214",
+    "po_id": "PO-2214",
+    "vendor": "Solstice Electricals",
+    "received_date": "2027-01-09",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 107
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 18
+      }
+    ]
+  },
+  {
+    "id": "GRN-8215",
+    "po_id": "PO-2215",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-11-24",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 134
+      }
+    ]
+  },
+  {
+    "id": "GRN-8216",
+    "po_id": "PO-2216",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-09-14",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 29
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 105
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 100
+      }
+    ]
+  },
+  {
+    "id": "GRN-8217",
+    "po_id": "PO-2217",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-07",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 135
+      }
+    ]
+  },
+  {
+    "id": "GRN-8218",
+    "po_id": "PO-2218",
+    "vendor": "Acme Corp",
+    "received_date": "2026-07-15",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 187
+      }
+    ]
+  },
+  {
+    "id": "GRN-8219",
+    "po_id": "PO-2219",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-11-13",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 136
+      }
+    ]
+  },
+  {
+    "id": "GRN-8220",
+    "po_id": "PO-2220",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-12-11",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 162
+      }
+    ]
+  },
+  {
+    "id": "GRN-8221",
+    "po_id": "PO-2221",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-12-04",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 186
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 149
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 81
+      }
+    ]
+  },
+  {
+    "id": "GRN-8222",
+    "po_id": "PO-2222",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 190
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 181
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 166
+      }
+    ]
+  },
+  {
+    "id": "GRN-8223",
+    "po_id": "PO-2223",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-11-05",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 154
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 127
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 48
+      }
+    ]
+  },
+  {
+    "id": "GRN-8224",
+    "po_id": "PO-2224",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 53
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 9
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 117
+      }
+    ]
+  },
+  {
+    "id": "GRN-8225",
+    "po_id": "PO-2225",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-08-15",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 193
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 191
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 20
+      }
+    ]
+  },
+  {
+    "id": "GRN-8226",
+    "po_id": "PO-2226",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-11-16",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 85
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 49
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 122
+      }
+    ]
+  },
+  {
+    "id": "GRN-8227",
+    "po_id": "PO-2227",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 68
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 76
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 147
+      }
+    ]
+  },
+  {
+    "id": "GRN-8228",
+    "po_id": "PO-2228",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2026-09-22",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 124
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 94
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 148
+      }
+    ]
+  },
+  {
+    "id": "GRN-8229",
+    "po_id": "PO-2229",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-08-03",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 93
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 42
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 79
+      }
+    ]
+  },
+  {
+    "id": "GRN-8230",
+    "po_id": "PO-2230",
+    "vendor": "Bluewave Traders",
+    "received_date": "2027-01-02",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 196
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 127
+      }
+    ]
+  },
+  {
+    "id": "GRN-8231",
+    "po_id": "PO-2231",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2027-02-03",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 40
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 32
+      }
+    ]
+  },
+  {
+    "id": "GRN-8232",
+    "po_id": "PO-2232",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-09-07",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 62
+      }
+    ]
+  },
+  {
+    "id": "GRN-8233",
+    "po_id": "PO-2233",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-07-17",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 25
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 179
+      }
+    ]
+  },
+  {
+    "id": "GRN-8234",
+    "po_id": "PO-2234",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-08-14",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 198
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 78
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 87
+      }
+    ]
+  },
+  {
+    "id": "GRN-8235",
+    "po_id": "PO-2235",
+    "vendor": "Bluewave Traders",
+    "received_date": "2027-01-15",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 49
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 111
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 50
+      }
+    ]
+  },
+  {
+    "id": "GRN-8236",
+    "po_id": "PO-2236",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-20",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 14
+      }
+    ]
+  },
+  {
+    "id": "GRN-8237",
+    "po_id": "PO-2237",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-09-15",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 39
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 134
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 124
+      }
+    ]
+  },
+  {
+    "id": "GRN-8238",
+    "po_id": "PO-2238",
+    "vendor": "Bluewave Traders",
+    "received_date": "2027-01-31",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 170
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 70
+      }
+    ]
+  },
+  {
+    "id": "GRN-8239",
+    "po_id": "PO-2239",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-07-11",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 49
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 161
+      }
+    ]
+  },
+  {
+    "id": "GRN-8240",
+    "po_id": "PO-2240",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2027-01-31",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 176
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 29
+      },
+      {
+        "sku": "SKU-1007",
+        "qty_received": 52
+      }
+    ]
+  },
+  {
+    "id": "GRN-8241",
+    "po_id": "PO-2241",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-09-24",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 103
+      }
+    ]
+  },
+  {
+    "id": "GRN-8242",
+    "po_id": "PO-2242",
+    "vendor": "Nimbus Logistics",
+    "received_date": "2027-01-13",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 71
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 172
+      }
+    ]
+  },
+  {
+    "id": "GRN-8243",
+    "po_id": "PO-2243",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-07-22",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 108
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 180
+      }
+    ]
+  },
+  {
+    "id": "GRN-8244",
+    "po_id": "PO-2244",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-12-27",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 61
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 39
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 127
+      }
+    ]
+  },
+  {
+    "id": "GRN-8245",
+    "po_id": "PO-2245",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-01-14",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 125
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 198
+      }
+    ]
+  },
+  {
+    "id": "GRN-8246",
+    "po_id": "PO-2246",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-01-14",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 140
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 185
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 97
+      }
+    ]
+  },
+  {
+    "id": "GRN-8247",
+    "po_id": "PO-2247",
+    "vendor": "Acme Corp",
+    "received_date": "2026-08-03",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 47
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 88
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 138
+      }
+    ]
+  },
+  {
+    "id": "GRN-8248",
+    "po_id": "PO-2248",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-12-27",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 135
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 119
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 19
+      }
+    ]
+  },
+  {
+    "id": "GRN-8249",
+    "po_id": "PO-2249",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-11-16",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 148
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 123
+      }
+    ]
+  },
+  {
+    "id": "GRN-8250",
+    "po_id": "PO-2250",
+    "vendor": "Acme Corp",
+    "received_date": "2027-01-08",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 195
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 60
+      }
+    ]
+  },
+  {
+    "id": "GRN-8251",
+    "po_id": "PO-2251",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-07-17",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 20
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 22
+      }
+    ]
+  },
+  {
+    "id": "GRN-8252",
+    "po_id": "PO-2252",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-08-18",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 119
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 101
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 101
+      }
+    ]
+  },
+  {
+    "id": "GRN-8253",
+    "po_id": "PO-2253",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-08-09",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 142
+      }
+    ]
+  },
+  {
+    "id": "GRN-8254",
+    "po_id": "PO-2254",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-08-07",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 81
+      }
+    ]
+  },
+  {
+    "id": "GRN-8255",
+    "po_id": "PO-2255",
+    "vendor": "Zenith Chemicals",
+    "received_date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 122
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 93
+      }
+    ]
+  },
+  {
+    "id": "GRN-8256",
+    "po_id": "PO-2256",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-08-20",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 162
+      }
+    ]
+  },
+  {
+    "id": "GRN-8257",
+    "po_id": "PO-2257",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-08-27",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 13
+      }
+    ]
+  },
+  {
+    "id": "GRN-8258",
+    "po_id": "PO-2258",
+    "vendor": "Acme Corp",
+    "received_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 107
+      }
+    ]
+  },
+  {
+    "id": "GRN-8259",
+    "po_id": "PO-2259",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-11-20",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 133
+      }
+    ]
+  },
+  {
+    "id": "GRN-8260",
+    "po_id": "PO-2260",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-01-28",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 65
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 82
+      }
+    ]
+  },
+  {
+    "id": "GRN-8261",
+    "po_id": "PO-2261",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-09-02",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 147
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 156
+      }
+    ]
+  },
+  {
+    "id": "GRN-8262",
+    "po_id": "PO-2262",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-12-14",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 165
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 176
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 102
+      }
+    ]
+  },
+  {
+    "id": "GRN-8263",
+    "po_id": "PO-2263",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "qty_received": 198
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 142
+      }
+    ]
+  },
+  {
+    "id": "GRN-8264",
+    "po_id": "PO-2264",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-02-08",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 14
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 148
+      }
+    ]
+  },
+  {
+    "id": "GRN-8265",
+    "po_id": "PO-2265",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-11-20",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 57
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 89
+      }
+    ]
+  },
+  {
+    "id": "GRN-8266",
+    "po_id": "PO-2266",
+    "vendor": "Solstice Electricals",
+    "received_date": "2026-10-27",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 190
+      }
+    ]
+  },
+  {
+    "id": "GRN-8267",
+    "po_id": "PO-2267",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-09-14",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 53
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 199
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 155
+      }
+    ]
+  },
+  {
+    "id": "GRN-8268",
+    "po_id": "PO-2268",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-08-27",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 82
+      }
+    ]
+  },
+  {
+    "id": "GRN-8269",
+    "po_id": "PO-2269",
+    "vendor": "Bluewave Traders",
+    "received_date": "2026-08-22",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "qty_received": 106
+      },
+      {
+        "sku": "SKU-1004",
+        "qty_received": 66
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 146
+      }
+    ]
+  },
+  {
+    "id": "GRN-8270",
+    "po_id": "PO-2270",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 97
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 136
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 132
+      }
+    ]
+  },
+  {
+    "id": "GRN-8271",
+    "po_id": "PO-2271",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2027-01-24",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 85
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 110
+      }
+    ]
+  },
+  {
+    "id": "GRN-8272",
+    "po_id": "PO-2272",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-02-14",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "qty_received": 146
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 154
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 153
+      }
+    ]
+  },
+  {
+    "id": "GRN-8273",
+    "po_id": "PO-2273",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-09-19",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 63
+      }
+    ]
+  },
+  {
+    "id": "GRN-8274",
+    "po_id": "PO-2274",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2027-02-04",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 70
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 200
+      }
+    ]
+  },
+  {
+    "id": "GRN-8275",
+    "po_id": "PO-2275",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-10-29",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 189
+      },
+      {
+        "sku": "SKU-1003",
+        "qty_received": 144
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 130
+      }
+    ]
+  },
+  {
+    "id": "GRN-8276",
+    "po_id": "PO-2276",
+    "vendor": "Acme Corp",
+    "received_date": "2026-12-15",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "qty_received": 200
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 6
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 110
+      }
+    ]
+  },
+  {
+    "id": "GRN-8277",
+    "po_id": "PO-2277",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2026-07-23",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 134
+      }
+    ]
+  },
+  {
+    "id": "GRN-8278",
+    "po_id": "PO-2278",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-07-22",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "qty_received": 9
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 6
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 141
+      }
+    ]
+  },
+  {
+    "id": "GRN-8279",
+    "po_id": "PO-2279",
+    "vendor": "Acme Corp",
+    "received_date": "2026-07-11",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 9
+      },
+      {
+        "sku": "SKU-1009",
+        "qty_received": 133
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 183
+      }
+    ]
+  },
+  {
+    "id": "GRN-8280",
+    "po_id": "PO-2280",
+    "vendor": "Orion Industrial Supplies",
+    "received_date": "2027-01-26",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "qty_received": 139
+      }
+    ]
+  },
+  {
+    "id": "GRN-8281",
+    "po_id": "PO-2281",
+    "vendor": "Marigold Stationery",
+    "received_date": "2026-08-24",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 106
+      },
+      {
+        "sku": "SKU-1006",
+        "qty_received": 25
+      },
+      {
+        "sku": "SKU-1010",
+        "qty_received": 100
+      }
+    ]
+  },
+  {
+    "id": "GRN-8282",
+    "po_id": "PO-2282",
+    "vendor": "Kestrel Packaging",
+    "received_date": "2026-11-24",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "qty_received": 172
+      },
+      {
+        "sku": "SKU-1005",
+        "qty_received": 171
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 199
+      }
+    ]
+  },
+  {
+    "id": "GRN-8283",
+    "po_id": "PO-2283",
+    "vendor": "Vantage Office Supplies",
+    "received_date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "qty_received": 19
+      },
+      {
+        "sku": "SKU-1008",
+        "qty_received": 168
+      }
+    ]
+  },
+  {
+    "id": "GRN-8284",
+    "po_id": "PO-2284",
+    "vendor": "Harbor Steel Works",
+    "received_date": "2026-07-25",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "qty_received": 140
+      },
+      {
+        "sku": "SKU-1002",
+        "qty_received": 15
+      }
+    ]
+  },
+  {
+    "id": "GRN-8285",
+    "po_id": "PO-2285",
+    "vendor": "Marigold Stationery",
+    "received_date": "2027-02-12",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "qty_received": 24
+      },
+      {
+        "sku": "SKU-1001",
+        "qty_received": 180
+      }
+    ]
+  }
+]

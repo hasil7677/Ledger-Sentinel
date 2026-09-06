@@ -1,0 +1,268 @@
+# STARTER.md — Ledger Sentinel
+
+**Hackathon:** Syndicate by Maximor · Track 2 (Autonomous Office of the CFO)
+**Hard deadline:** 3:30 AM Mon Sep 7 IST · **Personal target:** submit 10:00 AM Sun
+**Build window:** ~11 hours
+
+---
+
+## 1. What we are building
+
+An autonomous **accounts payable three-way match** agent.
+
+A company receives a vendor invoice. Before it can be paid, an AP clerk manually
+reconciles three documents:
+
+1. **Purchase Order (PO)** — what we agreed to buy
+2. **Goods Receipt Note (GRN)** — what actually arrived
+3. **Invoice** — what the vendor is billing us
+
+If all three agree within tolerance, the invoice is coded and posted to the ledger.
+If they don't, it goes into an **exception queue** for human review.
+
+**The agent automates the clean path and — more importantly — handles the exception
+path properly.** It never guesses on an ambiguous invoice. It escalates with a
+structured packet a human can act on in one click.
+
+### The core thesis
+
+Every other team will build the happy path. The judging rubric for Track 2 is
+entirely about domain realism and the quality of human judgement in the loop.
+**The exception path is the product.** Build it first-class.
+
+---
+
+## 2. What the judges actually score
+
+Direct from the organisers. Pin this above the architecture:
+
+- Is the problem a genuine pain-point for people in the Office of the CFO?
+- Is the human judgement side of the automation truly intuitive?
+- How deep and well-thought-through is the automation in context of the specific
+  workflow?
+- How well grounded is this to be genuinely used by accountants in the real world?
+
+**Note what is NOT on that list:** framework choice, model choice, architectural
+elegance, or a big metrics table. Those are Track 1 currency. Do not over-invest
+in them. When in doubt, spend the hour on domain realism, not on engineering polish.
+
+---
+
+## 3. Domain grounding (use this vocabulary everywhere)
+
+Real AP teams operate on these concepts. The demo must sound like it was built by
+someone who has watched this job being done.
+
+| Term | Meaning |
+|---|---|
+| **Three-way match** | PO ↔ GRN ↔ Invoice reconciliation before payment |
+| **Tolerance** | Small variances auto-pass. Typical: ≤2% or ≤₹500 on price, ≤1 unit on quantity. Configurable per vendor. |
+| **Price variance** | Invoice unit price ≠ PO unit price |
+| **Quantity variance** | Invoice qty ≠ GRN received qty (short-ship, over-ship) |
+| **Duplicate invoice** | Same invoice re-submitted under a modified number. **The most expensive failure mode in AP** — it means paying twice. |
+| **Non-PO invoice** | Invoice with no matching PO. Needs approver routing. |
+| **Vendor normalisation** | "Acme Corp" vs "Acme Corporation Pvt Ltd" vs "ACME CORP." — same vendor, different strings |
+| **GL coding** | Assigning the expense to the right general-ledger account |
+| **Tax mismatch** | Wrong GST rate applied, or tax on a non-taxable line |
+| **Exception queue** | Where non-matching invoices land for human review |
+| **Aging** | How long an exception has been sitting unresolved |
+
+**Domain nuance worth surfacing in the demo:** a false-clear (auto-paying an invoice
+that shouldn't have been paid) costs far more than a false-escalate (sending a clean
+invoice to a human). The agent must be **conservative** — tuned to escalate when
+uncertain. Say this out loud in the video; it signals real understanding.
+
+---
+
+## 4. Scope
+
+### In scope
+- Synthetic dataset of POs, GRNs, invoices with seeded anomalies
+- Deterministic matching engine with configurable tolerances
+- LLM agent layer for the fuzzy work: vendor normalisation, duplicate detection,
+  line-item alignment, GL code suggestion, exception explanation
+- Structured escalation packet
+- Human review UI — side-by-side three-document view, one-click approve/reject
+- Ledger posting (append to a simple ledger store)
+- Small metrics summary
+
+### Explicitly OUT of scope
+Organisers said not to build these unless core to the idea:
+- Auth, login, 2FA, user accounts
+- Real ERP / accounting-system integration
+- Payment execution
+- Multi-tenancy
+- OCR from real PDFs — **generate structured synthetic data instead**
+- Anything with the word "enterprise" attached to it
+
+**If a feature is not visible in the 3-minute demo video, do not build it.**
+
+---
+
+## 5. Architecture
+
+```
+data/                 synthetic POs, GRNs, invoices (JSON)
+  generator.py        creates 60 invoices, 20% seeded anomalies
+
+core/
+  matcher.py          deterministic three-way match + tolerance rules
+  anomalies.py        anomaly taxonomy + detection
+  ledger.py           append-only ledger store (JSON/SQLite)
+
+agent/
+  orchestrator.py     main loop: ingest → match → resolve → post or escalate
+  tools.py            tool definitions for the LLM
+  escalation.py       builds the escalation packet
+
+ui/                   review queue (single page, keep it simple)
+
+eval/
+  run_eval.py         batch run → metrics summary
+```
+
+**Design rule:** deterministic logic does the matching. The LLM does judgement —
+vendor name resolution, duplicate reasoning, explaining an exception in plain
+English, proposing a resolution. Do not ask the model to do arithmetic. This split
+is itself a point in the demo: it's how you'd actually build this for a finance
+team that needs auditability.
+
+### Stack
+- Python
+- **Inference: TensorMux** — OpenAI-compatible endpoint
+  - Base URL `https://api.tensormux.com/v1`
+  - Model `glm-4-7-flash`
+  - Key in env as `TENSORMUX_API_KEY`
+  - Budget: 50M tokens. Agent loops resend full context each step — **cache
+    aggressively, keep prompts tight, don't re-send the whole invoice corpus.**
+- UI: whatever ships fastest. Streamlit or a single HTML page. Do not build a
+  React app.
+- **AO (Agent Orchestrator) is a mandatory hackathon requirement** — use it from
+  the start of the build through submission. Session count is reviewed in the demo.
+
+---
+
+## 6. Anomaly taxonomy (seed these in the dataset)
+
+80% clean. 20% split across:
+
+| Anomaly | What it looks like | Correct agent behaviour |
+|---|---|---|
+| Quantity variance | Invoice 100 units, GRN 97 | Escalate — short-ship, confirm with receiving |
+| Price variance (in tolerance) | 1.2% over PO price | **Auto-clear** — within tolerance |
+| Price variance (out of tolerance) | 15% over PO price | Escalate with variance amount |
+| Duplicate | Same vendor/amount/date, invoice no. `INV-4471` vs `INV-4471-A` | Escalate as suspected duplicate, link the original |
+| Missing PO | No matching PO exists | Escalate for approver routing |
+| Vendor name drift | "Acme Corp" vs "Acme Corporation Pvt Ltd" | **Resolve automatically**, note the normalisation |
+| Tax mismatch | 18% GST applied where 12% is correct | Escalate with the correct rate |
+| Line-item mismatch | Invoice has an extra line not on PO | Escalate, isolate the offending line |
+
+Note the two rows that should **auto-clear**. The agent proving it doesn't panic on
+benign variance is as important as it catching real ones.
+
+---
+
+## 7. The escalation packet (the centrepiece)
+
+Every escalation emits this. Design it to be read by an AP clerk in under 10 seconds.
+
+```json
+{
+  "invoice_id": "INV-4471-A",
+  "vendor": "Acme Corporation Pvt Ltd",
+  "vendor_normalised_from": "Acme Corp",
+  "amount": 248500.00,
+  "exception_type": "suspected_duplicate",
+  "severity": "high",
+  "confidence": 0.87,
+  "summary": "Vendor, amount and date match invoice INV-4471 posted on 12 Aug. Invoice number differs by suffix only.",
+  "evidence": {
+    "po":      { "id": "PO-2231", "qty": 100, "unit_price": 2485.00 },
+    "grn":     { "id": "GRN-8890", "qty": 100, "received": "2026-08-10" },
+    "invoice": { "qty": 100, "unit_price": 2485.00 },
+    "related": [ { "id": "INV-4471", "status": "posted", "date": "2026-08-12" } ]
+  },
+  "proposed_resolution": "Reject as duplicate. Original already posted.",
+  "requires": "ap_clerk_approval"
+}
+```
+
+Fields that matter and why:
+- `confidence` — lets a team route high-confidence items differently later
+- `evidence` — the clerk must never leave the screen to verify
+- `proposed_resolution` — the agent commits to a recommendation; the human confirms
+- `summary` — plain English, no JSON-speak
+
+---
+
+## 8. Human review UI
+
+Judged directly ("is the human judgement side truly intuitive?"). Requirements:
+
+- Queue view: exception type, vendor, amount, aging, severity
+- Detail view: **PO / GRN / Invoice side by side, mismatched field highlighted in red**
+- Agent's plain-English summary + proposed resolution, prominent
+- Two buttons: **Approve** and **Reject**. One click. No modals, no forms.
+- On approve → posts to ledger and the row disappears from the queue
+
+Make it look like a tool someone uses 40 times a day, not a demo. Dense, fast,
+keyboard-friendly if there's time.
+
+---
+
+## 9. Metrics (small, one slide)
+
+Report but do not over-invest:
+
+- **Auto-clear rate** — % processed with no human touch
+- **False-clear rate** — % auto-cleared that should have escalated. **Target: 0.**
+  This is the number a CFO cares about.
+- **Escalation precision** — of escalations, how many were genuine
+- **Cost per invoice** (tokens → ₹) and **p50 latency**
+
+One table. One line in the video. Move on.
+
+---
+
+## 10. Build order
+
+Ship in this order. Each stage must run end to end before starting the next.
+
+1. **Dataset generator** — 60 invoices with the anomaly taxonomy seeded and labelled
+2. **Deterministic matcher** — clean 80% clearing to ledger
+3. **Anomaly detection + escalation packet** — the 20%
+4. **Agent layer** — vendor normalisation, duplicate reasoning, summaries
+5. **Review UI** — queue + side-by-side + approve/reject
+6. **Eval run** — the four numbers
+7. **Demo video**
+
+Milestones: dataset+matcher by 1 AM · exceptions by 4 AM · **UI by 7 AM** ·
+script 8 AM · shoot 9 AM · submit 10 AM.
+
+**Stop building at 9 AM regardless of state.** A working narrow demo beats a
+broken ambitious one.
+
+---
+
+## 11. Demo video — 3 minutes, script it before shooting
+
+| Time | Content |
+|---|---|
+| 0:00–0:20 | The pain, in accountant language. AP clerks manually matching PO/GRN/invoice; duplicates get paid twice. |
+| 0:20–0:50 | Clean invoice ingested, matched, auto-posted. No human touch. |
+| 0:50–2:20 | **The exception.** Duplicate detected → escalation packet → review screen → clerk approves rejection → ledger updated. This is the film. |
+| 2:20–2:40 | Metrics table. Emphasise 0 false-clears and the conservative-by-design choice. |
+| 2:40–3:00 | AO usage during the build. |
+
+Do not narrate architecture. Narrate the workflow.
+
+---
+
+## 12. Constraints for whoever is building this
+
+- **No new dependency after 1:00 AM.** Sponsors will keep suggesting tools in
+  Discord. One mandatory integration (AO), one inference provider (TensorMux).
+  Neatlogs only if it drops in under 20 minutes.
+- Prefer boring, working code. No abstraction layers you won't use tonight.
+- Every hour, ask: **does this appear in the 3-minute video?** If no, drop it.
+- Commit often. Use AO throughout — it's a scored requirement.

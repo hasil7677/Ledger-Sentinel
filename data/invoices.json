@@ -1,0 +1,7056 @@
+[
+  {
+    "id": "INV-4059",
+    "po_id": "PO-2059",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-07-11",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 16,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 680.96
+  },
+  {
+    "id": "INV-4008",
+    "po_id": "PO-2008",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-07-12",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 46,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 1957.76
+  },
+  {
+    "id": "INV-4073",
+    "po_id": "PO-2073",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-07-12",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 137,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 171,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 118,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 180102.8
+  },
+  {
+    "id": "INV-4035",
+    "po_id": "PO-2035",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-07-14",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 142,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 196,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 109726.4
+  },
+  {
+    "id": "INV-4076",
+    "po_id": "PO-2076",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-07-15",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 69,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 25240.2
+  },
+  {
+    "id": "INV-4093",
+    "po_id": "PO-2093",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-07-15",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 96,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 100,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 34899.2
+  },
+  {
+    "id": "INV-4187",
+    "po_id": "PO-2187",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-07-15",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 22,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 65,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 170,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 56228.4
+  },
+  {
+    "id": "INV-4239",
+    "po_id": "PO-2239",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-07-15",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 49,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 161,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 238022.4
+  },
+  {
+    "id": "INV-4279",
+    "po_id": "PO-2279",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-07-15",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 9,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 133,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 183,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 753812.64
+  },
+  {
+    "id": "INV-4017",
+    "po_id": "PO-2017",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-07-16",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 116,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 160,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 135,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 734733.6
+  },
+  {
+    "id": "INV-4233",
+    "po_id": "PO-2233",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-07-18",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 30,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 179,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 198959.8
+  },
+  {
+    "id": "INV-4251",
+    "po_id": "PO-2251",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-07-18",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 20,
+        "unit_price": 42.87,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 22,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 110043.73
+  },
+  {
+    "id": "INV-4165",
+    "po_id": "PO-2165",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-07-19",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 187,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 137,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 933642.55
+  },
+  {
+    "id": "INV-4218",
+    "po_id": "PO-2218",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-07-19",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 187,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 13613.6
+  },
+  {
+    "id": "INV-4091",
+    "po_id": "PO-2091",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-07-20",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 166,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 219385.6
+  },
+  {
+    "id": "INV-4203",
+    "po_id": "PO-2203",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-07-20",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 169,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 53944.8
+  },
+  {
+    "id": "INV-4209",
+    "po_id": "PO-2209",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-07-22",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 68,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 45,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 37805.6
+  },
+  {
+    "id": "INV-4172",
+    "po_id": "PO-2172",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-07-23",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 21,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 33,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 45475.8
+  },
+  {
+    "id": "INV-4114",
+    "po_id": "PO-2114",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-07-24",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 60,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 30912.0
+  },
+  {
+    "id": "INV-4132",
+    "po_id": "PO-2132",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-07-24",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 101,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 112,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 121,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 197769.6
+  },
+  {
+    "id": "INV-4153",
+    "po_id": "PO-2153",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-07-24",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 29,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 10608.2
+  },
+  {
+    "id": "INV-4034",
+    "po_id": "PO-2034",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-07-25",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 200,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 152,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 60838.4
+  },
+  {
+    "id": "INV-4104",
+    "po_id": "PO-2104",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-07-25",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 147,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 9055.2
+  },
+  {
+    "id": "INV-4243",
+    "po_id": "PO-2243",
+    "vendor": "BlueWave Traders Pvt. Ltd.",
+    "invoice_date": "2026-07-25",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 108,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 180,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 17700.48
+  },
+  {
+    "id": "INV-4047",
+    "po_id": "PO-2047",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-07-26",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 130,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 32,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 115,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 64852.4
+  },
+  {
+    "id": "INV-4166",
+    "po_id": "PO-2166",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-07-26",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 42,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 116,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 619004.4
+  },
+  {
+    "id": "INV-4168",
+    "po_id": "PO-2168",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-07-26",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 86,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 27451.2
+  },
+  {
+    "id": "INV-4277",
+    "po_id": "PO-2277",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-07-26",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 134,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 177094.4
+  },
+  {
+    "id": "INV-4278",
+    "po_id": "PO-2278",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-07-26",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 9,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 6,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 141,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 709734.0
+  },
+  {
+    "id": "INV-4017-A",
+    "po_id": "PO-2017",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-07-26",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 116,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 160,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 135,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 734733.6
+  },
+  {
+    "id": "INV-4039",
+    "po_id": "PO-2039",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-07-27",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 51,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 53560.2
+  },
+  {
+    "id": "INV-4121",
+    "po_id": "PO-2121",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-07-27",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 187,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 88,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 532470.4
+  },
+  {
+    "id": "INV-4284",
+    "po_id": "PO-2284",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-07-27",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 140,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 15,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 51964.25
+  },
+  {
+    "id": "INV-4142",
+    "po_id": "PO-2142",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-07-28",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 90,
+        "unit_price": 314.09,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 48,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 96793.16
+  },
+  {
+    "id": "INV-4139",
+    "po_id": "PO-2139",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-07-29",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 122,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 24,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 85,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 84212.8
+  },
+  {
+    "id": "INV-4003",
+    "po_id": "PO-2003",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-08-01",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 38,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 94,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 22,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 517021.12
+  },
+  {
+    "id": "INV-4112",
+    "po_id": "PO-2112",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-08-01",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 75,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 53,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 36,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 46570.2
+  },
+  {
+    "id": "INV-4172-A",
+    "po_id": "PO-2172",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-08-02",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 21,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 33,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 45475.8
+  },
+  {
+    "id": "INV-4130",
+    "po_id": "PO-2130",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-08-04",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 160,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 173,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 182,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 280207.2
+  },
+  {
+    "id": "INV-4247",
+    "po_id": "PO-2247",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-08-04",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 47,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 88,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 138,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 359279.2
+  },
+  {
+    "id": "INV-4126",
+    "po_id": "PO-2126",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-08-05",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 20,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 99120.0
+  },
+  {
+    "id": "INV-4046",
+    "po_id": "PO-2046",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-08-06",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 93,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 141,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 114,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 91373.55
+  },
+  {
+    "id": "INV-4229",
+    "po_id": "PO-2229",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-08-06",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 93,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 42,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 79,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 504196.0
+  },
+  {
+    "id": "INV-4108",
+    "po_id": "PO-2108",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-08-08",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 131,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 5575.36
+  },
+  {
+    "id": "INV-4021",
+    "po_id": "PO-2021",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-08-10",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 162,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 150,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 20899.2
+  },
+  {
+    "id": "INV-4254",
+    "po_id": "PO-2254",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-08-12",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 81,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 25855.2
+  },
+  {
+    "id": "INV-4253",
+    "po_id": "PO-2253",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-08-14",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 142,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 10337.6
+  },
+  {
+    "id": "INV-4006",
+    "po_id": "PO-2006",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-08-15",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 188,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 92,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 218444.8
+  },
+  {
+    "id": "INV-4234",
+    "po_id": "PO-2234",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-08-15",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 198,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 78,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 87,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 363104.4
+  },
+  {
+    "id": "INV-4158",
+    "po_id": "PO-2158",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-08-16",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 30,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 1276.8
+  },
+  {
+    "id": "INV-4200",
+    "po_id": "PO-2200",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-08-17",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 137,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 77,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 209225.8
+  },
+  {
+    "id": "INV-4225",
+    "po_id": "PO-2225",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-08-17",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 193,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 191,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 20,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 287838.4
+  },
+  {
+    "id": "INV-4044",
+    "po_id": "PO-2044",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-08-21",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 32,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 153,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 11,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 13211.36
+  },
+  {
+    "id": "INV-4199",
+    "po_id": "PO-2199",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-08-22",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 36,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 137,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 222146.4
+  },
+  {
+    "id": "INV-4256",
+    "po_id": "PO-2256",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-08-22",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 162,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 9979.2
+  },
+  {
+    "id": "INV-4252",
+    "po_id": "PO-2252",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-08-23",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 119,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 101,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 101,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 96311.4
+  },
+  {
+    "id": "INV-4138",
+    "po_id": "PO-2138",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-08-24",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 133,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 148,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 854744.8
+  },
+  {
+    "id": "INV-4102",
+    "po_id": "PO-2102",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-08-25",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 98,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 485688.0
+  },
+  {
+    "id": "INV-4269",
+    "po_id": "PO-2269",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-08-25",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 106,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 66,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 146,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 922122.8
+  },
+  {
+    "id": "INV-4131",
+    "po_id": "PO-2131",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-08-26",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 6,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 51,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 41,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 222107.16
+  },
+  {
+    "id": "INV-4201",
+    "po_id": "PO-2201",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-08-27",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 162,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 141,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 17794.56
+  },
+  {
+    "id": "INV-4281",
+    "po_id": "PO-2281",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-08-28",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 106,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 25,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 100,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 65176.36
+  },
+  {
+    "id": "INV-4268",
+    "po_id": "PO-2268",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-08-29",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 82,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 29995.6
+  },
+  {
+    "id": "INV-4286",
+    "po_id": null,
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-08-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 116,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 5817.4
+  },
+  {
+    "id": "INV-4014",
+    "po_id": "PO-2014",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-08-30",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 63,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 62,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 25684.12
+  },
+  {
+    "id": "INV-4179",
+    "po_id": "PO-2179",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-08-30",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 85,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 27132.0
+  },
+  {
+    "id": "INV-4192",
+    "po_id": "PO-2192",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-08-30",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 36,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 39,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 89349.6
+  },
+  {
+    "id": "INV-4257",
+    "po_id": "PO-2257",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-09-01",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 13,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 6697.6
+  },
+  {
+    "id": "INV-4028",
+    "po_id": "PO-2028",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-02",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 147,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 68,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 36,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 811436.8
+  },
+  {
+    "id": "INV-4137",
+    "po_id": "PO-2137",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-02",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 35,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 6,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 3684.4
+  },
+  {
+    "id": "INV-4032",
+    "po_id": "PO-2032",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-09-04",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 25,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 40,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 207385.0
+  },
+  {
+    "id": "INV-4098",
+    "po_id": "PO-2098",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-09-04",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 10,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 173,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 106,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 536356.88
+  },
+  {
+    "id": "INV-4261",
+    "po_id": "PO-2261",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-09-04",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 147,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 156,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 56051.52
+  },
+  {
+    "id": "INV-4043",
+    "po_id": "PO-2043",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-07",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 124,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 184,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 249393.0
+  },
+  {
+    "id": "INV-4092",
+    "po_id": "PO-2092",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-09-07",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 118,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 47,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 30132.1
+  },
+  {
+    "id": "INV-4144",
+    "po_id": "PO-2144",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-09-07",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 55,
+        "unit_price": 38.27,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 2357.43
+  },
+  {
+    "id": "INV-4174",
+    "po_id": "PO-2174",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-09-07",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 139,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 97,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 14983.75
+  },
+  {
+    "id": "INV-4094",
+    "po_id": "PO-2094",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-09-08",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 48,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 49,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 28296.8
+  },
+  {
+    "id": "INV-4109",
+    "po_id": "PO-2109",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-09-08",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 121,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 7453.6
+  },
+  {
+    "id": "INV-4232",
+    "po_id": "PO-2232",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-09-09",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 62,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 307272.0
+  },
+  {
+    "id": "INV-4176",
+    "po_id": "PO-2176",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-09-11",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 66,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 192,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 73543.5
+  },
+  {
+    "id": "INV-4096",
+    "po_id": "PO-2096",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-09-12",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 45,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 23,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 115903.2
+  },
+  {
+    "id": "INV-4072",
+    "po_id": "PO-2072",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-09-14",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 177,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 233923.2
+  },
+  {
+    "id": "INV-4103",
+    "po_id": "PO-2103",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-14",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 196,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 91,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 209712.16
+  },
+  {
+    "id": "INV-4096-A",
+    "po_id": "PO-2096",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-09-16",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 45,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 23,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 115903.2
+  },
+  {
+    "id": "INV-4024",
+    "po_id": "PO-2024",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 197,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 65,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 177,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 134147.95
+  },
+  {
+    "id": "INV-4041",
+    "po_id": "PO-2041",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 9,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 196,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 206290.55
+  },
+  {
+    "id": "INV-4128",
+    "po_id": "PO-2128",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 152,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 134,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 62321.7
+  },
+  {
+    "id": "INV-4154",
+    "po_id": "PO-2154",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 25,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 154,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 174,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 87740.4
+  },
+  {
+    "id": "INV-4237",
+    "po_id": "PO-2237",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-09-17",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 39,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 134,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 124,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 392545.6
+  },
+  {
+    "id": "INV-4004",
+    "po_id": "PO-2004",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-18",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 161,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 172,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 805236.32
+  },
+  {
+    "id": "INV-4213",
+    "po_id": "PO-2213",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-09-18",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 115,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 5767.25
+  },
+  {
+    "id": "INV-4065",
+    "po_id": "PO-2065",
+    "vendor": "Marigold Stationery Mart",
+    "invoice_date": "2026-09-19",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 161,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 194,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 68776.96
+  },
+  {
+    "id": "INV-4216",
+    "po_id": "PO-2216",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-09-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 29,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 105,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 100,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 27486.55
+  },
+  {
+    "id": "INV-4267",
+    "po_id": "PO-2267",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-09-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 53,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 199,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 155,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 98599.65
+  },
+  {
+    "id": "INV-4135",
+    "po_id": "PO-2135",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-09-20",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 33,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 77,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 178,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 40786.35
+  },
+  {
+    "id": "INV-4060",
+    "po_id": "PO-2060",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-22",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 151,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 77,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 125,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 202341.75
+  },
+  {
+    "id": "INV-4155",
+    "po_id": "PO-2155",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-09-23",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 186,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 95827.2
+  },
+  {
+    "id": "INV-4157",
+    "po_id": "PO-2157",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-23",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 129,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 47188.2
+  },
+  {
+    "id": "INV-4020",
+    "po_id": "PO-2020",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-09-24",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 108,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 183,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 73594.2
+  },
+  {
+    "id": "INV-4197",
+    "po_id": "PO-2197",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-09-24",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 109,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 152,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 23,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 869200.6
+  },
+  {
+    "id": "INV-4208",
+    "po_id": "PO-2208",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-09-24",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 120,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 68,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 8912.08
+  },
+  {
+    "id": "INV-4273",
+    "po_id": "PO-2273",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-24",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 63,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 23045.4
+  },
+  {
+    "id": "INV-4228",
+    "po_id": "PO-2228",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-09-25",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 127,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 94,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 148,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 320700.4
+  },
+  {
+    "id": "INV-4057",
+    "po_id": "PO-2057",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-09-28",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 60,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 194,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 128,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 480648.0
+  },
+  {
+    "id": "INV-4117",
+    "po_id": "PO-2117",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-09-28",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 18,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 766.08
+  },
+  {
+    "id": "INV-4241",
+    "po_id": "PO-2241",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-09-28",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 103,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 4383.68
+  },
+  {
+    "id": "INV-4061",
+    "po_id": "PO-2061",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-09-29",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 127,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 5405.12
+  },
+  {
+    "id": "INV-4051",
+    "po_id": "PO-2051",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-10-02",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 129,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 59,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 51483.4
+  },
+  {
+    "id": "INV-4056",
+    "po_id": "PO-2056",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-02",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 69,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 64,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 35,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 248647.64
+  },
+  {
+    "id": "INV-4052",
+    "po_id": "PO-2052",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-10-03",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 137,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 53,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 26,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 276797.92
+  },
+  {
+    "id": "INV-4085",
+    "po_id": "PO-2085",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 87,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 53,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 183,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 626623.4
+  },
+  {
+    "id": "INV-4288",
+    "po_id": null,
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 96,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 146,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 293772.8
+  },
+  {
+    "id": "INV-4042",
+    "po_id": "PO-2042",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 68,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 56,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 10,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 70845.4
+  },
+  {
+    "id": "INV-4289",
+    "po_id": null,
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 174,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 89644.8
+  },
+  {
+    "id": "INV-4290",
+    "po_id": null,
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 26,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 73,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 44,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 99789.96
+  },
+  {
+    "id": "INV-4019",
+    "po_id": "PO-2019",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-10-07",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 164,
+        "unit_price": 314.46,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 60854.3
+  },
+  {
+    "id": "INV-4212",
+    "po_id": "PO-2212",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 131,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 5575.36
+  },
+  {
+    "id": "INV-4106",
+    "po_id": "PO-2106",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 177,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 64,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 125,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 40583.15
+  },
+  {
+    "id": "INV-4133",
+    "po_id": "PO-2133",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 44,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 45,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 198,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 81553.55
+  },
+  {
+    "id": "INV-4222",
+    "po_id": "PO-2222",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 190,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 181,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 166,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 27743.06
+  },
+  {
+    "id": "INV-4011",
+    "po_id": "PO-2011",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 175,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 31,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 247251.2
+  },
+  {
+    "id": "INV-4141",
+    "po_id": "PO-2141",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 116,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 155,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 210665.4
+  },
+  {
+    "id": "INV-4181",
+    "po_id": "PO-2181",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 99,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 116,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 107,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 46517.21
+  },
+  {
+    "id": "INV-4189",
+    "po_id": "PO-2189",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 140,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 98,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 14155.4
+  },
+  {
+    "id": "INV-4217",
+    "po_id": "PO-2217",
+    "vendor": "Orion Industrial Supplies Ltd",
+    "invoice_date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 135,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 69552.0
+  },
+  {
+    "id": "INV-4270",
+    "po_id": "PO-2270",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 97,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 136,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 132,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 695462.76
+  },
+  {
+    "id": "INV-4160",
+    "po_id": "PO-2160",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 182,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 13249.6
+  },
+  {
+    "id": "INV-4040",
+    "po_id": "PO-2040",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 88,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 92417.6
+  },
+  {
+    "id": "INV-4224",
+    "po_id": "PO-2224",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 53,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 9,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 117,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 78785.15
+  },
+  {
+    "id": "INV-4182",
+    "po_id": "PO-2182",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 182,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 191136.4
+  },
+  {
+    "id": "INV-4033",
+    "po_id": "PO-2033",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 109,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 89,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 143,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 157326.55
+  },
+  {
+    "id": "INV-4083",
+    "po_id": "PO-2083",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 75,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 111,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 92,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 384394.6
+  },
+  {
+    "id": "INV-4180",
+    "po_id": "PO-2180",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 197,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 170,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 62648.32
+  },
+  {
+    "id": "INV-4283",
+    "po_id": "PO-2283",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 19,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 168,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 270597.6
+  },
+  {
+    "id": "INV-4027",
+    "po_id": "PO-2027",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 197,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 62882.4
+  },
+  {
+    "id": "INV-4040-A",
+    "po_id": "PO-2040",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 88,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 92417.6
+  },
+  {
+    "id": "INV-4086",
+    "po_id": "PO-2086",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 195,
+        "unit_price": 287.85,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 126,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 108957.24
+  },
+  {
+    "id": "INV-4188",
+    "po_id": "PO-2188",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 44,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 22668.8
+  },
+  {
+    "id": "INV-4062",
+    "po_id": "PO-2062",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 166,
+        "unit_price": 512.9,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 95358.37
+  },
+  {
+    "id": "INV-4191",
+    "po_id": "PO-2191",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 71,
+        "unit_price": 38.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 3183.64
+  },
+  {
+    "id": "INV-4263",
+    "po_id": "PO-2263",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 198,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 142,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 22534.4
+  },
+  {
+    "id": "INV-4015",
+    "po_id": "PO-2015",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 94,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 169,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 11906.74
+  },
+  {
+    "id": "INV-4110",
+    "po_id": "PO-2110",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 130,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 162,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 109,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 24909.55
+  },
+  {
+    "id": "INV-4124",
+    "po_id": "PO-2124",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 175,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 70,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 36386.0
+  },
+  {
+    "id": "INV-4089",
+    "po_id": "PO-2089",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-10-22",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 72,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 75614.4
+  },
+  {
+    "id": "INV-4067",
+    "po_id": "PO-2067",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 13,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 64,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 78,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 77230.08
+  },
+  {
+    "id": "INV-4069",
+    "po_id": "PO-2069",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 41,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 23,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 20,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 56711.2
+  },
+  {
+    "id": "INV-4255",
+    "po_id": "PO-2255",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 122,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 93,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 209148.8
+  },
+  {
+    "id": "INV-4030",
+    "po_id": "PO-2030",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-10-24",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 120,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 71,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 83300.2
+  },
+  {
+    "id": "INV-4120",
+    "po_id": "PO-2120",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-10-26",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 25,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 87,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 30618.05
+  },
+  {
+    "id": "INV-4206",
+    "po_id": "PO-2206",
+    "vendor": "Vantage Office Supplies Ltd",
+    "invoice_date": "2026-10-27",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 92,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 160,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 308074.4
+  },
+  {
+    "id": "INV-4266",
+    "po_id": "PO-2266",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-10-28",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 190,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 941640.0
+  },
+  {
+    "id": "INV-4170",
+    "po_id": "PO-2170",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-10-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 9,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 451.35
+  },
+  {
+    "id": "INV-4186",
+    "po_id": "PO-2186",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-10-29",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 98,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 136,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 196,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 50175.6
+  },
+  {
+    "id": "INV-4054",
+    "po_id": "PO-2054",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-10-30",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 61,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 47,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 19788.76
+  },
+  {
+    "id": "INV-4150",
+    "po_id": "PO-2150",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-10-30",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 133,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 43,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 20,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 212506.2
+  },
+  {
+    "id": "INV-4162",
+    "po_id": "PO-2162",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-10-30",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 141,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 66,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 235303.8
+  },
+  {
+    "id": "INV-4023",
+    "po_id": "PO-2023",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-11-01",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 126,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 193,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1123029.6
+  },
+  {
+    "id": "INV-4146",
+    "po_id": "PO-2146",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-11-01",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 43,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 117,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 22,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 173984.2
+  },
+  {
+    "id": "INV-4148",
+    "po_id": "PO-2148",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-11-01",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 99,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 31600.8
+  },
+  {
+    "id": "INV-4162-A",
+    "po_id": "PO-2162",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-11-01",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 141,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 66,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 235303.8
+  },
+  {
+    "id": "INV-4185",
+    "po_id": "PO-2185",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-11-02",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 94,
+        "unit_price": 55.72,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 119,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 15,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 30282.4
+  },
+  {
+    "id": "INV-4275",
+    "po_id": "PO-2275",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-11-03",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 189,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 144,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 130,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 723899.4
+  },
+  {
+    "id": "INV-4002",
+    "po_id": "PO-2002",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-11-06",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 122,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 38942.4
+  },
+  {
+    "id": "INV-4136",
+    "po_id": "PO-2136",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-11-06",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 106,
+        "unit_price": 42.94,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 158,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 19,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 80641.84
+  },
+  {
+    "id": "INV-4037",
+    "po_id": "PO-2037",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-11-09",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 190,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 47,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 72397.2
+  },
+  {
+    "id": "INV-4223",
+    "po_id": "PO-2223",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-11-10",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 154,
+        "unit_price": 541.42,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 127,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 48,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 276548.92
+  },
+  {
+    "id": "INV-4007",
+    "po_id": "PO-2007",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-11-12",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 167,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 113,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 58973.35
+  },
+  {
+    "id": "INV-4119",
+    "po_id": "PO-2119",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-11-12",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 122,
+        "unit_price": 289.56,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 169,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 12,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 877640.2
+  },
+  {
+    "id": "INV-4211",
+    "po_id": "PO-2211",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-11-12",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 105,
+        "unit_price": 287.22,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 134,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 40497.17
+  },
+  {
+    "id": "INV-4053",
+    "po_id": "PO-2053",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-11-14",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 170,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 178534.0
+  },
+  {
+    "id": "INV-4219",
+    "po_id": "PO-2219",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-11-16",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 136,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 70067.2
+  },
+  {
+    "id": "INV-4118",
+    "po_id": "PO-2118",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-11-18",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 97,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 136,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 156,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 920827.75
+  },
+  {
+    "id": "INV-4164",
+    "po_id": "PO-2164",
+    "vendor": "Vantage Office Supplies Ltd",
+    "invoice_date": "2026-11-19",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 159,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 210134.4
+  },
+  {
+    "id": "INV-4226",
+    "po_id": "PO-2226",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-11-19",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 85,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 49,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 122,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 90068.0
+  },
+  {
+    "id": "INV-4249",
+    "po_id": "PO-2249",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-11-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 148,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 123,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 115511.2
+  },
+  {
+    "id": "INV-4122",
+    "po_id": "PO-2122",
+    "vendor": "Nimbus Logistics Pvt Ltd",
+    "invoice_date": "2026-11-20",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 30,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 184,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 160014.4
+  },
+  {
+    "id": "INV-4152",
+    "po_id": "PO-2152",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 77,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 104,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 109,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 583852.8
+  },
+  {
+    "id": "INV-4265",
+    "po_id": "PO-2265",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-11-21",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 57,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 89,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 79119.04
+  },
+  {
+    "id": "INV-4143",
+    "po_id": "PO-2143",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-11-22",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 94,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 34385.2
+  },
+  {
+    "id": "INV-4196",
+    "po_id": "PO-2196",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-11-22",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 38,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 161,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 837823.6
+  },
+  {
+    "id": "INV-4259",
+    "po_id": "PO-2259",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-11-22",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 133,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 9682.4
+  },
+  {
+    "id": "INV-4227",
+    "po_id": "PO-2227",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-11-23",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 68,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 76,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 147,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 276984.48
+  },
+  {
+    "id": "INV-4009",
+    "po_id": "PO-2009",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-11-24",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 181,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 43,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 144,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 773595.65
+  },
+  {
+    "id": "INV-4173",
+    "po_id": "PO-2173",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-11-24",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 79,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 114,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 5,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 542550.4
+  },
+  {
+    "id": "INV-4184",
+    "po_id": "PO-2184",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-11-24",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 88,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 174,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 94058.0
+  },
+  {
+    "id": "INV-4071",
+    "po_id": "PO-2071",
+    "vendor": "Harbor Steel Works Pvt Ltd",
+    "invoice_date": "2026-11-25",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 115,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 193,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 67372.85
+  },
+  {
+    "id": "INV-4175",
+    "po_id": "PO-2175",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-11-25",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 125,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 16,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 167,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 634894.4
+  },
+  {
+    "id": "INV-4282",
+    "po_id": "PO-2282",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-11-25",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 172,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 171,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 199,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 244572.81
+  },
+  {
+    "id": "INV-4022",
+    "po_id": "PO-2022",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-11-27",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 115,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 153,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 207099.2
+  },
+  {
+    "id": "INV-4107",
+    "po_id": "PO-2107",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-11-27",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 184,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 82,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 171,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 426870.9
+  },
+  {
+    "id": "INV-4194",
+    "po_id": "PO-2194",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-11-27",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 187,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 186,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 21499.52
+  },
+  {
+    "id": "INV-4127",
+    "po_id": "PO-2127",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-11-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 175,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 197,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 113,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 62246.85
+  },
+  {
+    "id": "INV-4215",
+    "po_id": "PO-2215",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-11-29",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 134,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 8254.4
+  },
+  {
+    "id": "INV-4156",
+    "po_id": "PO-2156",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-11-30",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 170,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 176,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 113,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 28,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 89603.35
+  },
+  {
+    "id": "INV-4099",
+    "po_id": "PO-2099",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-12-01",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 160,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 95,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 61,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 252692.8
+  },
+  {
+    "id": "INV-4009-A",
+    "po_id": "PO-2009",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-12-01",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 181,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 43,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 144,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 773595.65
+  },
+  {
+    "id": "INV-4010",
+    "po_id": "PO-2010",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-12-02",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 37,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 2279.2
+  },
+  {
+    "id": "INV-4074",
+    "po_id": "PO-2074",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-12-02",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 94,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 109,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 90,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 150553.15
+  },
+  {
+    "id": "INV-4140",
+    "po_id": "PO-2140",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-12-02",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 108,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 10,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 88,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 49,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 29415.8
+  },
+  {
+    "id": "INV-4018",
+    "po_id": "PO-2018",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-12-03",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 5,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 138,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 10096.8
+  },
+  {
+    "id": "INV-4097",
+    "po_id": "PO-2097",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-12-04",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 82,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 55,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 103,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 115562.6
+  },
+  {
+    "id": "INV-4221",
+    "po_id": "PO-2221",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-12-05",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 186,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 149,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 81,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1083647.0
+  },
+  {
+    "id": "INV-4055",
+    "po_id": "PO-2055",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-12-08",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 93,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 113,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 519125.6
+  },
+  {
+    "id": "INV-4070",
+    "po_id": "PO-2070",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-12-08",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 124,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 181,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 37,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 152836.55
+  },
+  {
+    "id": "INV-4064",
+    "po_id": "PO-2064",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2026-12-09",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 102,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 505512.0
+  },
+  {
+    "id": "INV-4287",
+    "po_id": null,
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-12-10",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 88,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 12,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 46076.8
+  },
+  {
+    "id": "INV-4221-A",
+    "po_id": "PO-2221",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-12-12",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 186,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 149,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 81,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1083647.0
+  },
+  {
+    "id": "INV-4026",
+    "po_id": "PO-2026",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-12-13",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 188,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 183,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 253433.6
+  },
+  {
+    "id": "INV-4038",
+    "po_id": "PO-2038",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-12-14",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 156,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 9609.6
+  },
+  {
+    "id": "INV-4147",
+    "po_id": "PO-2147",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-12-14",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 95,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 134,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 91716.8
+  },
+  {
+    "id": "INV-4220",
+    "po_id": "PO-2220",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-12-14",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 162,
+        "unit_price": 55.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 10513.8
+  },
+  {
+    "id": "INV-4066",
+    "po_id": "PO-2066",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-12-15",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 66,
+        "unit_price": 42.8,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 49,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 6900.46
+  },
+  {
+    "id": "INV-4078",
+    "po_id": "PO-2078",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-12-15",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 73,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 145,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 38,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 173169.4
+  },
+  {
+    "id": "INV-4100",
+    "po_id": "PO-2100",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-12-15",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 84,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 117,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 13,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 16132.35
+  },
+  {
+    "id": "INV-4205",
+    "po_id": "PO-2205",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-12-15",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 81,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 121,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 114503.2
+  },
+  {
+    "id": "INV-4262",
+    "po_id": "PO-2262",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-12-17",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 169,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 176,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 102,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 270974.6
+  },
+  {
+    "id": "INV-4276",
+    "po_id": "PO-2276",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-12-17",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 200,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 6,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 110,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 120812.9
+  },
+  {
+    "id": "INV-4149",
+    "po_id": "PO-2149",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-12-21",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 123,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 153,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 146,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 830631.2
+  },
+  {
+    "id": "INV-4202",
+    "po_id": "PO-2202",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-12-21",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 173,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 164,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 189,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1037752.8
+  },
+  {
+    "id": "INV-4078-A",
+    "po_id": "PO-2078",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-12-21",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 73,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 145,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 38,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 173169.4
+  },
+  {
+    "id": "INV-4087",
+    "po_id": "PO-2087",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2026-12-22",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 133,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 156,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 53810.4
+  },
+  {
+    "id": "INV-4190",
+    "po_id": "PO-2190",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2026-12-23",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 11,
+        "unit_price": 42.99,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 558.01
+  },
+  {
+    "id": "INV-4198",
+    "po_id": "PO-2198",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-12-23",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 93,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 37,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 281040.6
+  },
+  {
+    "id": "INV-4001",
+    "po_id": "PO-2001",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 106,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 4511.36
+  },
+  {
+    "id": "INV-4005",
+    "po_id": "PO-2005",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 72,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 34,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 6086.0
+  },
+  {
+    "id": "INV-4113",
+    "po_id": "PO-2113",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 90,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 67,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 37,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 251126.4
+  },
+  {
+    "id": "INV-4116",
+    "po_id": "PO-2116",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 96,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 30643.2
+  },
+  {
+    "id": "INV-4129",
+    "po_id": "PO-2129",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2026-12-25",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 94,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 4714.1
+  },
+  {
+    "id": "INV-4258",
+    "po_id": "PO-2258",
+    "vendor": "Acme Corp",
+    "invoice_date": "2026-12-27",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 107,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 34154.4
+  },
+  {
+    "id": "INV-4125",
+    "po_id": "PO-2125",
+    "vendor": "Harbor Steel Works Pvt Ltd",
+    "invoice_date": "2026-12-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 26,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1303.9
+  },
+  {
+    "id": "INV-4134",
+    "po_id": "PO-2134",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-12-29",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 129,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 160,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 145331.8
+  },
+  {
+    "id": "INV-4248",
+    "po_id": "PO-2248",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2026-12-29",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 135,
+        "unit_price": 460.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 119,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 19,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 199204.65
+  },
+  {
+    "id": "INV-4016",
+    "po_id": "PO-2016",
+    "vendor": "Zenith Chemicals Industries",
+    "invoice_date": "2026-12-30",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 71,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 50,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 25170.7
+  },
+  {
+    "id": "INV-4045",
+    "po_id": "PO-2045",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2026-12-30",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 156,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 181,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 215246.75
+  },
+  {
+    "id": "INV-4111",
+    "po_id": "PO-2111",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2026-12-30",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 118,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 123923.6
+  },
+  {
+    "id": "INV-4244",
+    "po_id": "PO-2244",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2026-12-31",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 61,
+        "unit_price": 38.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 39,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 127,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 184844.64
+  },
+  {
+    "id": "INV-4080",
+    "po_id": "PO-2080",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-01-02",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 146,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 109,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 758368.8
+  },
+  {
+    "id": "INV-4090",
+    "po_id": "PO-2090",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-01-04",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 86,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 165,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 188,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 76250.7
+  },
+  {
+    "id": "INV-4193",
+    "po_id": "PO-2193",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-01-04",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 175,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 64015.0
+  },
+  {
+    "id": "INV-4230",
+    "po_id": "PO-2230",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2027-01-04",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 196,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 127,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 211244.32
+  },
+  {
+    "id": "INV-4082",
+    "po_id": "PO-2082",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2027-01-05",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 67,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 121,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 132702.6
+  },
+  {
+    "id": "INV-4068",
+    "po_id": "PO-2068",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-01-08",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 72,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 95155.2
+  },
+  {
+    "id": "INV-4111-A",
+    "po_id": "PO-2111",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2027-01-08",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 118,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 123923.6
+  },
+  {
+    "id": "INV-4048",
+    "po_id": "PO-2048",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-01-09",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 171,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 74,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 379192.8
+  },
+  {
+    "id": "INV-4250",
+    "po_id": "PO-2250",
+    "vendor": "Acme Corp",
+    "invoice_date": "2027-01-09",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 195,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 60,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 27451.2
+  },
+  {
+    "id": "INV-4123",
+    "po_id": "PO-2123",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-01-10",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 110,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 91,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 235787.6
+  },
+  {
+    "id": "INV-4161",
+    "po_id": "PO-2161",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-01-10",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 98,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 6036.8
+  },
+  {
+    "id": "INV-4210",
+    "po_id": "PO-2210",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2027-01-11",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 132,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 9609.6
+  },
+  {
+    "id": "INV-4214",
+    "po_id": "PO-2214",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2027-01-14",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 107,
+        "unit_price": 346.89,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 18,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 49543.93
+  },
+  {
+    "id": "INV-4101",
+    "po_id": "PO-2101",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-01-15",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 88,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 3745.28
+  },
+  {
+    "id": "INV-4242",
+    "po_id": "PO-2242",
+    "vendor": "Nimbus Logistics",
+    "invoice_date": "2027-01-15",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 71,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 172,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 57924.16
+  },
+  {
+    "id": "INV-4245",
+    "po_id": "PO-2245",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-01-16",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 125,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 198,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 988988.0
+  },
+  {
+    "id": "INV-4058",
+    "po_id": "PO-2058",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2027-01-17",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 80,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 63,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 97,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 134759.45
+  },
+  {
+    "id": "INV-4115",
+    "po_id": "PO-2115",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-01-19",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 38,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 143,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 69,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 23238.88
+  },
+  {
+    "id": "INV-4235",
+    "po_id": "PO-2235",
+    "vendor": "BlueWave Traders Pvt. Ltd.",
+    "invoice_date": "2027-01-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 49,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 111,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 50,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 187902.4
+  },
+  {
+    "id": "INV-4246",
+    "po_id": "PO-2246",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-01-19",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 140,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 185,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 97,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 183275.15
+  },
+  {
+    "id": "INV-4049",
+    "po_id": "PO-2049",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-01-20",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 87,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 67,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 8210.72
+  },
+  {
+    "id": "INV-4145",
+    "po_id": "PO-2145",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2027-01-22",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 123,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 129174.6
+  },
+  {
+    "id": "INV-4204",
+    "po_id": "PO-2204",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-01-22",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 132,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 165,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 120674.4
+  },
+  {
+    "id": "INV-4013",
+    "po_id": "PO-2013",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-01-23",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 184,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 32,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 102,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 251961.92
+  },
+  {
+    "id": "INV-4031",
+    "po_id": "PO-2031",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2027-01-23",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 117,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 24,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 155648.64
+  },
+  {
+    "id": "INV-4077",
+    "po_id": "PO-2077",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-01-23",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 110,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 18,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 53,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 179980.6
+  },
+  {
+    "id": "INV-4177",
+    "po_id": "PO-2177",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-01-23",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 95,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 144,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 91,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 74281.4
+  },
+  {
+    "id": "INV-4236",
+    "po_id": "PO-2236",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-01-23",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 14,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 26,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1899.74
+  },
+  {
+    "id": "INV-4105",
+    "po_id": "PO-2105",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-01-25",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 142,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 6043.52
+  },
+  {
+    "id": "INV-4195",
+    "po_id": "PO-2195",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2027-01-25",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 40,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 65,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 131,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 123614.95
+  },
+  {
+    "id": "INV-4169",
+    "po_id": "PO-2169",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-01-26",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 78,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 24897.6
+  },
+  {
+    "id": "INV-4280",
+    "po_id": "PO-2280",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-01-28",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 139,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 6970.85
+  },
+  {
+    "id": "INV-4036",
+    "po_id": "PO-2036",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-01-29",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 61,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 64062.2
+  },
+  {
+    "id": "INV-4183",
+    "po_id": "PO-2183",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2027-01-29",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 25,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 115,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 8337.75
+  },
+  {
+    "id": "INV-4271",
+    "po_id": "PO-2271",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-01-29",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 85,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 110,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 152574.0
+  },
+  {
+    "id": "INV-4025",
+    "po_id": "PO-2025",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-01-30",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 16,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 5107.2
+  },
+  {
+    "id": "INV-4151",
+    "po_id": "PO-2151",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2027-02-02",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 15,
+        "unit_price": 42.5,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 68,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 186,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 351262.8
+  },
+  {
+    "id": "INV-4238",
+    "po_id": "PO-2238",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2027-02-02",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 170,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 70,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 85890.0
+  },
+  {
+    "id": "INV-4260",
+    "po_id": "PO-2260",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-02-02",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 65,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 82,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 63483.6
+  },
+  {
+    "id": "INV-4029",
+    "po_id": "PO-2029",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-03",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 198,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 118,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 161,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 1100975.4
+  },
+  {
+    "id": "INV-4063",
+    "po_id": "PO-2063",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-02-03",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 35,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 147,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 196030.45
+  },
+  {
+    "id": "INV-4178",
+    "po_id": "PO-2178",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-03",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 21,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 188,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 122,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 640372.6
+  },
+  {
+    "id": "INV-4167",
+    "po_id": "PO-2167",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-04",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 18,
+        "unit_price": 320.34,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 106,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 12987.65
+  },
+  {
+    "id": "INV-4171",
+    "po_id": "PO-2171",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-02-04",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 33,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 78,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 65,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 407573.6
+  },
+  {
+    "id": "INV-4240",
+    "po_id": "PO-2240",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-02-04",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 176,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 29,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 52,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 69038.35
+  },
+  {
+    "id": "INV-4084",
+    "po_id": "PO-2084",
+    "vendor": "Acme Corp",
+    "invoice_date": "2027-02-06",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 43,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 119,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 126803.88
+  },
+  {
+    "id": "INV-4159",
+    "po_id": "PO-2159",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2027-02-07",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 163,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 59625.4
+  },
+  {
+    "id": "INV-4231",
+    "po_id": "PO-2231",
+    "vendor": "Zenith Chemicals",
+    "invoice_date": "2027-02-08",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 40,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 32,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 199601.92
+  },
+  {
+    "id": "INV-4274",
+    "po_id": "PO-2274",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-02-08",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 70,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 200,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 420080.0
+  },
+  {
+    "id": "INV-4163",
+    "po_id": "PO-2163",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-02-09",
+    "lines": [
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 123,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 77,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 144235.0
+  },
+  {
+    "id": "INV-4081",
+    "po_id": "PO-2081",
+    "vendor": "Bluewave Traders",
+    "invoice_date": "2027-02-10",
+    "lines": [
+      {
+        "sku": "SKU-1002",
+        "description": "Steel Angle Bracket 50mm",
+        "qty": 132,
+        "unit_price": 42.5,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 188,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 20306.2
+  },
+  {
+    "id": "INV-4264",
+    "po_id": "PO-2264",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-02-12",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 19,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 148,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 156812.8
+  },
+  {
+    "id": "INV-4088",
+    "po_id": "PO-2088",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-13",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 121,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 599676.0
+  },
+  {
+    "id": "INV-4207",
+    "po_id": "PO-2207",
+    "vendor": "Solstice Electricals",
+    "invoice_date": "2027-02-13",
+    "lines": [
+      {
+        "sku": "SKU-1006",
+        "description": "Safety Helmet",
+        "qty": 199,
+        "unit_price": 310.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 99,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 136,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 88793.4
+  },
+  {
+    "id": "INV-4012",
+    "po_id": "PO-2012",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-02-15",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 50,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 110,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1010",
+        "description": "Cleaning Solvent 5L",
+        "qty": 11,
+        "unit_price": 460.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 154683.2
+  },
+  {
+    "id": "INV-4075",
+    "po_id": "PO-2075",
+    "vendor": "Orion Industrial Supplies",
+    "invoice_date": "2027-02-15",
+    "lines": [
+      {
+        "sku": "SKU-1007",
+        "description": "Packing Tape Roll",
+        "qty": 78,
+        "unit_price": 55.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 174,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 187539.6
+  },
+  {
+    "id": "INV-4095",
+    "po_id": "PO-2095",
+    "vendor": "Vantage Office Supplies",
+    "invoice_date": "2027-02-16",
+    "lines": [
+      {
+        "sku": "SKU-1004",
+        "description": "LED Panel Light 40W",
+        "qty": 64,
+        "unit_price": 1120.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 123,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      },
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 168,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 225987.4
+  },
+  {
+    "id": "INV-4285",
+    "po_id": "PO-2285",
+    "vendor": "Marigold Stationery",
+    "invoice_date": "2027-02-17",
+    "lines": [
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 24,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 180,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 58477.44
+  },
+  {
+    "id": "INV-4272",
+    "po_id": "PO-2272",
+    "vendor": "Kestrel Packaging",
+    "invoice_date": "2027-02-18",
+    "lines": [
+      {
+        "sku": "SKU-1003",
+        "description": "Industrial Gloves (pair)",
+        "qty": 146,
+        "unit_price": 65.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 154,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      },
+      {
+        "sku": "SKU-1005",
+        "description": "Corrugated Box (large)",
+        "qty": 153,
+        "unit_price": 38.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 66297.28
+  },
+  {
+    "id": "INV-4079",
+    "po_id": "PO-2079",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-19",
+    "lines": [
+      {
+        "sku": "SKU-1001",
+        "description": "A4 Copier Paper (ream)",
+        "qty": 166,
+        "unit_price": 285.0,
+        "gst_rate": 12
+      }
+    ],
+    "total_amount": 52987.2
+  },
+  {
+    "id": "INV-4050",
+    "po_id": "PO-2050",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-21",
+    "lines": [
+      {
+        "sku": "SKU-1008",
+        "description": "Hydraulic Hose 2m",
+        "qty": 150,
+        "unit_price": 890.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 157530.0
+  },
+  {
+    "id": "INV-4088-A",
+    "po_id": "PO-2088",
+    "vendor": "Harbor Steel Works",
+    "invoice_date": "2027-02-22",
+    "lines": [
+      {
+        "sku": "SKU-1009",
+        "description": "Office Chair (standard)",
+        "qty": 121,
+        "unit_price": 4200.0,
+        "gst_rate": 18
+      }
+    ],
+    "total_amount": 599676.0
+  }
+]

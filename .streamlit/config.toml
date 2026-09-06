@@ -1,0 +1,17 @@
+[theme]
+base = "dark"
+
+# Accent: categorical slot-1 blue (dark step) from the validated palette --
+# buttons, selected-row state, links, confidence indicators.
+primaryColor = "#3987e5"
+
+backgroundColor = "#0d0d0d"
+secondaryBackgroundColor = "#1a1a19"
+textColor = "#ffffff"
+borderColor = "#2c2c2a"
+
+font = "sans-serif"
+headingFont = "sans-serif"
+baseRadius = "medium"
+buttonRadius = "medium"
+showWidgetBorder = false
