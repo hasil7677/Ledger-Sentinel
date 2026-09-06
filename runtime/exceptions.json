@@ -1,0 +1,5045 @@
+[
+  {
+    "invoice_id": "INV-4233",
+    "po_id": "PO-2233",
+    "vendor": "Bluewave Traders",
+    "vendor_normalised_from": null,
+    "amount": 198959.8,
+    "invoice_date": "2026-07-18",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4233: Shortage of 5 Safety Helmets (SKU-1006). GRN shows 25 received, but invoice is for 30. Goods missing.",
+    "evidence": {
+      "po": {
+        "id": "PO-2233",
+        "lines": [
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 30,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 179,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8233",
+        "lines": [
+          {
+            "sku": "SKU-1006",
+            "qty_received": 25
+          },
+          {
+            "sku": "SKU-1008",
+            "qty_received": 179
+          }
+        ],
+        "received_date": "2026-07-17"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 30,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 179,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 198959.8,
+        "invoice_date": "2026-07-18"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1006",
+          "po_value": 30,
+          "grn_value": 25,
+          "invoice_value": 30,
+          "delta": 5,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice. Pay only for received goods (25 units).",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2233 and GRN GRN-8233 for invoice INV-4233; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1006: PO ordered 30, GRN received 25, invoice billed 30 (billed +5 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Bluewave Traders' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Bluewave Traders invoices near Rs 198,959.80 within 30 days of 2026-07-18: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 1.00). Proposed: Reject invoice. Pay only for received goods (25 units).",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4203",
+    "po_id": "PO-2203",
+    "vendor": "Acme Corp",
+    "vendor_normalised_from": null,
+    "amount": 53944.8,
+    "invoice_date": "2026-07-20",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4203 for 169 units of A4 Paper is for 2 more units than received in GRN-8203 (167 units).",
+    "evidence": {
+      "po": {
+        "id": "PO-2203",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 169,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8203",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "qty_received": 167
+          }
+        ],
+        "received_date": "2026-07-17"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 169,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 53944.8,
+        "invoice_date": "2026-07-20"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1001",
+          "po_value": 169,
+          "grn_value": 167,
+          "invoice_value": 169,
+          "delta": 2,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject Invoice",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2203 and GRN GRN-8203 for invoice INV-4203; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 1 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1001: PO ordered 169, GRN received 167, invoice billed 169 (billed +2 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Acme Corp' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Acme Corp invoices near Rs 53,944.80 within 30 days of 2026-07-20: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Reject Invoice",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4017-A",
+    "po_id": "PO-2017",
+    "vendor": "Bluewave Traders",
+    "vendor_normalised_from": null,
+    "amount": 734733.6,
+    "invoice_date": "2026-07-26",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Duplicate of invoice INV-4017. Same vendor, PO, and amount. Previous invoice was auto-cleared.",
+    "evidence": {
+      "po": {
+        "id": "PO-2017",
+        "lines": [
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 116,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 160,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 135,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8017",
+        "lines": [
+          {
+            "sku": "SKU-1007",
+            "qty_received": 116
+          },
+          {
+            "sku": "SKU-1006",
+            "qty_received": 160
+          },
+          {
+            "sku": "SKU-1009",
+            "qty_received": 135
+          }
+        ],
+        "received_date": "2026-07-12"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 116,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 160,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 135,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 734733.6,
+        "invoice_date": "2026-07-26"
+      },
+      "related": [
+        {
+          "id": "INV-4017",
+          "status": "auto_clear",
+          "date": "2026-07-16"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4017",
+              "vendor": "Bluewave Traders",
+              "po_id": "PO-2017",
+              "total_amount": 734733.6,
+              "invoice_date": "2026-07-16",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:39:19.239891Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject to prevent double payment.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2017 and GRN GRN-8017 for invoice INV-4017-A; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Bluewave Traders' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Bluewave Traders invoices near Rs 734,733.60 within 30 days of 2026-07-26: found 1 candidate(s) -- INV-4017 (posted 2026-07-16).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4017. The new invoice (INV-4017-A) matches the posted invoice (INV-4017) exactly on vendor (Bluewave Traders) and total amount (734733.6). The invoice number suffix '-A' is a strong indicator of a duplicate submission, such as a second copy sent by the vendor.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Reject to prevent double payment.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4172-A",
+    "po_id": "PO-2172",
+    "vendor": "Kestrel Packaging",
+    "vendor_normalised_from": null,
+    "amount": 45475.8,
+    "invoice_date": "2026-08-02",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4172-A is a duplicate of INV-4172. Both are for Kestrel Packaging, PO-2172, and total $45,475.80. The previous invoice was already paid.",
+    "evidence": {
+      "po": {
+        "id": "PO-2172",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 21,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 33,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8172",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "qty_received": 21
+          },
+          {
+            "sku": "SKU-1008",
+            "qty_received": 33
+          }
+        ],
+        "received_date": "2026-07-18"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 21,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 33,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 45475.8,
+        "invoice_date": "2026-08-02"
+      },
+      "related": [
+        {
+          "id": "INV-4172",
+          "status": "auto_clear",
+          "date": "2026-07-23"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4172",
+              "vendor": "Kestrel Packaging",
+              "po_id": "PO-2172",
+              "total_amount": 45475.8,
+              "invoice_date": "2026-07-23",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:40:17.943588Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject as duplicate payment",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2172 and GRN GRN-8172 for invoice INV-4172-A; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Kestrel Packaging' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Kestrel Packaging invoices near Rs 45,475.80 within 30 days of 2026-08-02: found 1 candidate(s) -- INV-4172 (posted 2026-07-23).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says not a duplicate at confidence 0.00 (threshold 0.50), related invoice none. The new invoice (INV-4172-A) has the same vendor and amount as the candidate (INV-4172), but the invoice dates are different (2026-07-23 vs 2026-08-02). This indicates two separate transactions rather than a duplicate.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Ledger near-match on vendor, amount and date stands on its own; escalating regardless of the model's assessment. Model judgement may adjust severity and confidence on a duplicate but can never suppress the escalation.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 1.00). Proposed: Reject as duplicate payment",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4286",
+    "po_id": null,
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 5817.4,
+    "invoice_date": "2026-08-29",
+    "exception_type": "missing_po",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4286 ($5,817.40) from Solstice Electricals is missing a Purchase Order. High severity.",
+    "evidence": {
+      "po": null,
+      "grn": null,
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 116,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 5817.4,
+        "invoice_date": "2026-08-29"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "missing_po",
+        "severity": "high",
+        "needs_judgement": false,
+        "detail": {
+          "invoice_id": "INV-4286"
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for approval.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Invoice INV-4286 cites no purchase order; no PO/GRN on file to match against.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "rule_escalation",
+        "detail": "Missing po is a hard exception under the matching rules (high severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "conclusion",
+        "detail": "Escalated as missing po (high severity, confidence 0.95). Proposed: Route to Manager for approval.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4192",
+    "po_id": "PO-2192",
+    "vendor": "Marigold Stationery",
+    "vendor_normalised_from": null,
+    "amount": 89349.6,
+    "invoice_date": "2026-08-30",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4192 for Marigold Stationery is for 36 Hydraulic Hoses (SKU-1008). However, GRN-8192 shows only 34 were received. The invoice is for 2 units not received.",
+    "evidence": {
+      "po": {
+        "id": "PO-2192",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 36,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 39,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8192",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 34
+          },
+          {
+            "sku": "SKU-1004",
+            "qty_received": 39
+          }
+        ],
+        "received_date": "2026-08-26"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 36,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 39,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 89349.6,
+        "invoice_date": "2026-08-30"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1008",
+          "po_value": 36,
+          "grn_value": 34,
+          "invoice_value": 36,
+          "delta": 2,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject the invoice to prevent payment for goods not received.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2192 and GRN GRN-8192 for invoice INV-4192; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1008: PO ordered 36, GRN received 34, invoice billed 36 (billed +2 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Marigold Stationery' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Marigold Stationery invoices near Rs 89,349.60 within 30 days of 2026-08-30: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Reject the invoice to prevent payment for goods not received.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4096-A",
+    "po_id": "PO-2096",
+    "vendor": "Acme Corp",
+    "vendor_normalised_from": null,
+    "amount": 115903.2,
+    "invoice_date": "2026-09-16",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Duplicate Alert: Invoice INV-4096-A matches PO-2096. A previous invoice INV-4096 exists for the same amount ($115,903.20) and vendor Acme Corp.",
+    "evidence": {
+      "po": {
+        "id": "PO-2096",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 45,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 23,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8096",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "qty_received": 45
+          },
+          {
+            "sku": "SKU-1009",
+            "qty_received": 23
+          }
+        ],
+        "received_date": "2026-09-09"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 45,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 23,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 115903.2,
+        "invoice_date": "2026-09-16"
+      },
+      "related": [
+        {
+          "id": "INV-4096",
+          "status": "auto_clear",
+          "date": "2026-09-12"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4096",
+              "vendor": "Acme Corp",
+              "po_id": "PO-2096",
+              "total_amount": 115903.2,
+              "invoice_date": "2026-09-12",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:41:48.425858Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver: Verify if INV-4096-A is a duplicate of INV-4096.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2096 and GRN GRN-8096 for invoice INV-4096-A; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Acme Corp' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Acme Corp invoices near Rs 115,903.20 within 30 days of 2026-09-16: found 1 candidate(s) -- INV-4096 (posted 2026-09-12).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4096. The new invoice matches the candidate exactly on Vendor and Total Amount (115903.2). The Invoice ID differs by a suffix ('-A'), which is a common pattern for duplicate or resubmitted invoices. The date difference (Sep 12 vs Sep 16) is minor, but the financial identifiers align perfectly.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Route to Approver: Verify if INV-4096-A is a duplicate of INV-4096.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4228",
+    "po_id": "PO-2228",
+    "vendor": "Nimbus Logistics",
+    "vendor_normalised_from": null,
+    "amount": 320700.4,
+    "invoice_date": "2026-09-25",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4228 for 127 LED Panel Lights is for 3 more units than received on GRN-8228 (124 received).",
+    "evidence": {
+      "po": {
+        "id": "PO-2228",
+        "lines": [
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 127,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 94,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 148,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8228",
+        "lines": [
+          {
+            "sku": "SKU-1004",
+            "qty_received": 124
+          },
+          {
+            "sku": "SKU-1008",
+            "qty_received": 94
+          },
+          {
+            "sku": "SKU-1006",
+            "qty_received": 148
+          }
+        ],
+        "received_date": "2026-09-22"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 127,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 94,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 148,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 320700.4,
+        "invoice_date": "2026-09-25"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1004",
+          "po_value": 127,
+          "grn_value": 124,
+          "invoice_value": 127,
+          "delta": 3,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice INV-4228. Pay only for the 124 units received.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2228 and GRN GRN-8228 for invoice INV-4228; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1004: PO ordered 127, GRN received 124, invoice billed 127 (billed +3 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Nimbus Logistics' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Nimbus Logistics invoices near Rs 320,700.40 within 30 days of 2026-09-25: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Reject invoice INV-4228. Pay only for the 124 units received.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4288",
+    "po_id": null,
+    "vendor": "Nimbus Logistics",
+    "vendor_normalised_from": null,
+    "amount": 293772.8,
+    "invoice_date": "2026-10-05",
+    "exception_type": "missing_po",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4288 for Nimbus Logistics ($293,772.80) is missing a Purchase Order. No GRN is attached.",
+    "evidence": {
+      "po": null,
+      "grn": null,
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 96,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 146,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 293772.8,
+        "invoice_date": "2026-10-05"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "missing_po",
+        "severity": "high",
+        "needs_judgement": false,
+        "detail": {
+          "invoice_id": "INV-4288"
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for approval (Missing PO).",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Invoice INV-4288 cites no purchase order; no PO/GRN on file to match against.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "rule_escalation",
+        "detail": "Missing po is a hard exception under the matching rules (high severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "conclusion",
+        "detail": "Escalated as missing po (high severity, confidence 0.95). Proposed: Route to Manager for approval (Missing PO).",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4289",
+    "po_id": null,
+    "vendor": "Vantage Office Supplies",
+    "vendor_normalised_from": null,
+    "amount": 89644.8,
+    "invoice_date": "2026-10-06",
+    "exception_type": "missing_po",
+    "severity": "high",
+    "confidence": 0.9,
+    "summary": "Invoice INV-4289 for $89,645 from Vantage Office Supplies is missing a Purchase Order. Item: Cleaning Solvent 5L.",
+    "evidence": {
+      "po": null,
+      "grn": null,
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 174,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 89644.8,
+        "invoice_date": "2026-10-06"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "missing_po",
+        "severity": "high",
+        "needs_judgement": false,
+        "detail": {
+          "invoice_id": "INV-4289"
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Invoice INV-4289 cites no purchase order; no PO/GRN on file to match against.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "rule_escalation",
+        "detail": "Missing po is a hard exception under the matching rules (high severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "conclusion",
+        "detail": "Escalated as missing po (high severity, confidence 0.90). Proposed: Reject invoice.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4290",
+    "po_id": null,
+    "vendor": "Bluewave Traders",
+    "vendor_normalised_from": null,
+    "amount": 99789.96,
+    "invoice_date": "2026-10-06",
+    "exception_type": "missing_po",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4290 ($99,789.96) from Bluewave Traders is missing a Purchase Order. This is a high-severity error.",
+    "evidence": {
+      "po": null,
+      "grn": null,
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 26,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 73,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 44,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 99789.96,
+        "invoice_date": "2026-10-06"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "missing_po",
+        "severity": "high",
+        "needs_judgement": false,
+        "detail": {
+          "invoice_id": "INV-4290"
+        }
+      }
+    ],
+    "proposed_resolution": "Route to manager for approval.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Invoice INV-4290 cites no purchase order; no PO/GRN on file to match against.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "rule_escalation",
+        "detail": "Missing po is a hard exception under the matching rules (high severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "conclusion",
+        "detail": "Escalated as missing po (high severity, confidence 0.95). Proposed: Route to manager for approval.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4040-A",
+    "po_id": "PO-2040",
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 92417.6,
+    "invoice_date": "2026-10-17",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Duplicate of cleared invoice INV-4040. Amount 92,417.60 matches PO-2040. Original was auto-cleared on 2026-09-06.",
+    "evidence": {
+      "po": {
+        "id": "PO-2040",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 88,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8040",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 88
+          }
+        ],
+        "received_date": "2026-10-10"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 88,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 92417.6,
+        "invoice_date": "2026-10-17"
+      },
+      "related": [
+        {
+          "id": "INV-4040",
+          "status": "auto_clear",
+          "date": "2026-10-14"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4040",
+              "vendor": "Solstice Electricals",
+              "po_id": "PO-2040",
+              "total_amount": 92417.6,
+              "invoice_date": "2026-10-14",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:43:21.911894Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice. Mark as duplicate of INV-4040.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2040 and GRN GRN-8040 for invoice INV-4040-A; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Solstice Electricals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Solstice Electricals invoices near Rs 92,417.60 within 30 days of 2026-10-17: found 1 candidate(s) -- INV-4040 (posted 2026-10-14).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4040. The new invoice (INV-4040-A) matches the candidate (INV-4040) on vendor (Solstice Electricals) and total amount (92417.6). The invoice number differs by a suffix ('-A'), a common pattern for duplicate or split invoice submissions. The dates are also close (Oct 14 vs Oct 17).",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Reject invoice. Mark as duplicate of INV-4040.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4062",
+    "po_id": "PO-2062",
+    "vendor": "Harbor Steel Works",
+    "vendor_normalised_from": null,
+    "amount": 95358.37,
+    "invoice_date": "2026-10-19",
+    "exception_type": "price_variance_out_tolerance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4062 for Harbor Steel Works shows a price variance. The PO unit price is $460.00, but the invoice charges $512.90. This is an 11.5% increase over the contract price.",
+    "evidence": {
+      "po": {
+        "id": "PO-2062",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 166,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8062",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "qty_received": 166
+          }
+        ],
+        "received_date": "2026-10-18"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 166,
+            "unit_price": 512.9,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 95358.37,
+        "invoice_date": "2026-10-19"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "price_variance_out_tolerance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "price_variance",
+          "sku": "SKU-1010",
+          "po_value": 460.0,
+          "grn_value": null,
+          "invoice_value": 512.9,
+          "delta": 52.9,
+          "delta_pct": 11.5,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver. The unit price of $512.90 is 11.5% higher than the PO price of $460.00. Verify if a price increase was authorized.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2062 and GRN GRN-8062 for invoice INV-4062; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 1 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Price variance on SKU-1010: PO Rs 460.00 vs invoice Rs 512.90 (delta 11.50%) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Harbor Steel Works' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Harbor Steel Works invoices near Rs 95,358.37 within 30 days of 2026-10-19: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Price variance out tolerance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as price variance out tolerance (medium severity, confidence 0.95). Proposed: Route to Approver. The unit price of $512.90 is 11.5% higher than the PO price of $460.00. Verify if a price increase was authorized.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4191",
+    "po_id": "PO-2191",
+    "vendor": "Zenith Chemicals",
+    "vendor_normalised_from": null,
+    "amount": 3183.64,
+    "invoice_date": "2026-10-19",
+    "exception_type": "tax_mismatch",
+    "severity": "medium",
+    "confidence": 0.9,
+    "summary": "Invoice INV-4191 for Zenith Chemicals has a tax rate mismatch. The PO lists 12% tax, but the invoice lists 18% tax. The total amount is $3183.64.",
+    "evidence": {
+      "po": {
+        "id": "PO-2191",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 71,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8191",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "qty_received": 71
+          }
+        ],
+        "received_date": "2026-10-15"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 71,
+            "unit_price": 38.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 3183.64,
+        "invoice_date": "2026-10-19"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "tax_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "tax_mismatch",
+          "sku": "SKU-1005",
+          "po_value": 12,
+          "grn_value": null,
+          "invoice_value": 18,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to approver to verify the correct tax rate.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2191 and GRN GRN-8191 for invoice INV-4191; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 1 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Tax mismatch on SKU-1005: PO rate 12% vs invoice rate 18% -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Zenith Chemicals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Zenith Chemicals invoices near Rs 3,183.64 within 30 days of 2026-10-19: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Tax mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as tax mismatch (medium severity, confidence 0.90). Proposed: Route to approver to verify the correct tax rate.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4054",
+    "po_id": "PO-2054",
+    "vendor": "Acme Corp",
+    "vendor_normalised_from": null,
+    "amount": 19788.76,
+    "invoice_date": "2026-10-30",
+    "exception_type": "line_item_mismatch",
+    "severity": "medium",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4054 includes 47 Safety Helmets (SKU-1006) totaling $14,570. This item is missing from PO-2054 and GRN-8054.",
+    "evidence": {
+      "po": {
+        "id": "PO-2054",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 61,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8054",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "qty_received": 61
+          }
+        ],
+        "received_date": "2026-10-28"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 61,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 47,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 19788.76,
+        "invoice_date": "2026-10-30"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "line_item_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "line_item_mismatch",
+          "sku": "SKU-1006",
+          "po_value": null,
+          "grn_value": null,
+          "invoice_value": {
+            "qty": 47,
+            "unit_price": 310.0
+          },
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2054 and GRN GRN-8054 for invoice INV-4054; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Line SKU-1006 appears on the invoice (47 @ Rs 310.00) but is not on the PO -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Acme Corp' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Acme Corp invoices near Rs 19,788.76 within 30 days of 2026-10-30: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Line item mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as line item mismatch (medium severity, confidence 1.00). Proposed: Route to Approver",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4162-A",
+    "po_id": "PO-2162",
+    "vendor": "Marigold Stationery",
+    "vendor_normalised_from": null,
+    "amount": 235303.8,
+    "invoice_date": "2026-11-01",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4162-A is a duplicate of INV-4162. Both match PO-2162 and total 235,303.80. The previous invoice was auto-cleared on 2026-09-06.",
+    "evidence": {
+      "po": {
+        "id": "PO-2162",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 141,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 66,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8162",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 141
+          },
+          {
+            "sku": "SKU-1004",
+            "qty_received": 66
+          }
+        ],
+        "received_date": "2026-10-26"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 141,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 66,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 235303.8,
+        "invoice_date": "2026-11-01"
+      },
+      "related": [
+        {
+          "id": "INV-4162",
+          "status": "auto_clear",
+          "date": "2026-10-30"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4162",
+              "vendor": "Marigold Stationery",
+              "po_id": "PO-2162",
+              "total_amount": 235303.8,
+              "invoice_date": "2026-10-30",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:44:31.385590Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2162 and GRN GRN-8162 for invoice INV-4162-A; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Marigold Stationery' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Marigold Stationery invoices near Rs 235,303.80 within 30 days of 2026-11-01: found 1 candidate(s) -- INV-4162 (posted 2026-10-30).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4162. The vendor and total amount match exactly. The invoice date is one day apart (2026-10-30 vs 2026-11-01). The invoice number differs by a suffix ('-A'). The candidate invoice is already auto-cleared, indicating it has been processed.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Reject",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4136",
+    "po_id": "PO-2136",
+    "vendor": "Zenith Chemicals",
+    "vendor_normalised_from": null,
+    "amount": 80641.84,
+    "invoice_date": "2026-11-06",
+    "exception_type": "price_variance_out_tolerance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4136 has a 13% price variance on SKU-1005 (Corrugated Box). PO price $38.00 vs Invoice price $42.94.",
+    "evidence": {
+      "po": {
+        "id": "PO-2136",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 106,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 158,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 19,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8136",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "qty_received": 106
+          },
+          {
+            "sku": "SKU-1001",
+            "qty_received": 158
+          },
+          {
+            "sku": "SKU-1004",
+            "qty_received": 19
+          }
+        ],
+        "received_date": "2026-11-04"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 106,
+            "unit_price": 42.94,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 158,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 19,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 80641.84,
+        "invoice_date": "2026-11-06"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "price_variance_out_tolerance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "price_variance",
+          "sku": "SKU-1005",
+          "po_value": 38.0,
+          "grn_value": null,
+          "invoice_value": 42.94,
+          "delta": 4.94,
+          "delta_pct": 13.0,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for approval.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2136 and GRN GRN-8136 for invoice INV-4136; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Price variance on SKU-1005: PO Rs 38.00 vs invoice Rs 42.94 (delta 13.00%) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Zenith Chemicals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Zenith Chemicals invoices near Rs 80,641.84 within 30 days of 2026-11-06: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Price variance out tolerance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as price variance out tolerance (medium severity, confidence 0.95). Proposed: Route to Manager for approval.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4223",
+    "po_id": "PO-2223",
+    "vendor": "Nimbus Logistics",
+    "vendor_normalised_from": null,
+    "amount": 276548.92,
+    "invoice_date": "2026-11-10",
+    "exception_type": "price_variance_out_tolerance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4223: Cleaning Solvent (SKU-1010) price is 541.42, but PO price is 460.00. This is a 17.7% increase.",
+    "evidence": {
+      "po": {
+        "id": "PO-2223",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 154,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 127,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 48,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8223",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "qty_received": 154
+          },
+          {
+            "sku": "SKU-1004",
+            "qty_received": 127
+          },
+          {
+            "sku": "SKU-1001",
+            "qty_received": 48
+          }
+        ],
+        "received_date": "2026-11-05"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 154,
+            "unit_price": 541.42,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 127,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 48,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 276548.92,
+        "invoice_date": "2026-11-10"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "price_variance_out_tolerance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "price_variance",
+          "sku": "SKU-1010",
+          "po_value": 460.0,
+          "grn_value": null,
+          "invoice_value": 541.42,
+          "delta": 81.42,
+          "delta_pct": 17.7,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver for price variance review.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2223 and GRN GRN-8223 for invoice INV-4223; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Price variance on SKU-1010: PO Rs 460.00 vs invoice Rs 541.42 (delta 17.70%) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Nimbus Logistics' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Nimbus Logistics invoices near Rs 276,548.92 within 30 days of 2026-11-10: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Price variance out tolerance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as price variance out tolerance (medium severity, confidence 0.95). Proposed: Route to Approver for price variance review.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4156",
+    "po_id": "PO-2156",
+    "vendor": "Vantage Office Supplies",
+    "vendor_normalised_from": null,
+    "amount": 89603.35,
+    "invoice_date": "2026-11-30",
+    "exception_type": "line_item_mismatch",
+    "severity": "medium",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4156 includes A4 Copier Paper (28 units @ $285.00) not on PO-2156 or GRN-8156.",
+    "evidence": {
+      "po": {
+        "id": "PO-2156",
+        "lines": [
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 170,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 176,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 113,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8156",
+        "lines": [
+          {
+            "sku": "SKU-1006",
+            "qty_received": 170
+          },
+          {
+            "sku": "SKU-1003",
+            "qty_received": 176
+          },
+          {
+            "sku": "SKU-1002",
+            "qty_received": 113
+          }
+        ],
+        "received_date": "2026-11-27"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 170,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 176,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 113,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 28,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 89603.35,
+        "invoice_date": "2026-11-30"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "line_item_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "line_item_mismatch",
+          "sku": "SKU-1001",
+          "po_value": null,
+          "grn_value": null,
+          "invoice_value": {
+            "qty": 28,
+            "unit_price": 285.0
+          },
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for Exception Approval",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2156 and GRN GRN-8156 for invoice INV-4156; 4 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 4 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Line SKU-1001 appears on the invoice (28 @ Rs 285.00) but is not on the PO -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Vantage Office Supplies' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Vantage Office Supplies invoices near Rs 89,603.35 within 30 days of 2026-11-30: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Line item mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as line item mismatch (medium severity, confidence 1.00). Proposed: Route to Manager for Exception Approval",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4009-A",
+    "po_id": "PO-2009",
+    "vendor": "Vantage Office Supplies",
+    "vendor_normalised_from": null,
+    "amount": 773595.65,
+    "invoice_date": "2026-12-01",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4009-A is a duplicate of INV-4009. The previous invoice for the same amount ($773,595.65) and same PO (PO-2009) was already auto-cleared on 2026-09-06. Do not pay.",
+    "evidence": {
+      "po": {
+        "id": "PO-2009",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 181,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 43,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 144,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8009",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "qty_received": 181
+          },
+          {
+            "sku": "SKU-1002",
+            "qty_received": 43
+          },
+          {
+            "sku": "SKU-1009",
+            "qty_received": 144
+          }
+        ],
+        "received_date": "2026-11-21"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 181,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 43,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 144,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 773595.65,
+        "invoice_date": "2026-12-01"
+      },
+      "related": [
+        {
+          "id": "INV-4009",
+          "status": "auto_clear",
+          "date": "2026-11-24"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4009",
+              "vendor": "Vantage Office Supplies",
+              "po_id": "PO-2009",
+              "total_amount": 773595.65,
+              "invoice_date": "2026-11-24",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:45:29.495665Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2009 and GRN GRN-8009 for invoice INV-4009-A; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Vantage Office Supplies' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Vantage Office Supplies invoices near Rs 773,595.65 within 30 days of 2026-12-01: found 1 candidate(s) -- INV-4009 (posted 2026-11-24).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4009. The new invoice (INV-4009-A) shares the exact same vendor (Vantage Office Supplies) and total amount (773595.65) as the candidate (INV-4009). The invoice numbers are nearly identical, differing only by a suffix 'A', and the dates are close (Nov 24 vs Dec 1). This pattern strongly suggests a duplicate submission.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Reject",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4140",
+    "po_id": "PO-2140",
+    "vendor": "Vantage Office Supplies",
+    "vendor_normalised_from": null,
+    "amount": 29415.8,
+    "invoice_date": "2026-12-02",
+    "exception_type": "line_item_mismatch",
+    "severity": "medium",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4140 includes a line for Safety Helmets (SKU-1006) that is not on PO-2140 or GRN-8140.",
+    "evidence": {
+      "po": {
+        "id": "PO-2140",
+        "lines": [
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 108,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 10,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 88,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8140",
+        "lines": [
+          {
+            "sku": "SKU-1007",
+            "qty_received": 108
+          },
+          {
+            "sku": "SKU-1005",
+            "qty_received": 10
+          },
+          {
+            "sku": "SKU-1002",
+            "qty_received": 88
+          }
+        ],
+        "received_date": "2026-11-27"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 108,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 10,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 88,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 49,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 29415.8,
+        "invoice_date": "2026-12-02"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "line_item_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "line_item_mismatch",
+          "sku": "SKU-1006",
+          "po_value": null,
+          "grn_value": null,
+          "invoice_value": {
+            "qty": 49,
+            "unit_price": 310.0
+          },
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for approval.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2140 and GRN GRN-8140 for invoice INV-4140; 4 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 4 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Line SKU-1006 appears on the invoice (49 @ Rs 310.00) but is not on the PO -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Vantage Office Supplies' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Vantage Office Supplies invoices near Rs 29,415.80 within 30 days of 2026-12-02: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Line item mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as line item mismatch (medium severity, confidence 1.00). Proposed: Route to Manager for approval.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4070",
+    "po_id": "PO-2070",
+    "vendor": "Marigold Stationery",
+    "vendor_normalised_from": null,
+    "amount": 152836.55,
+    "invoice_date": "2026-12-08",
+    "exception_type": "line_item_mismatch",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4070 includes 37 Safety Helmets (SKU-1006) not listed on PO-2070 or GRN-8070.",
+    "evidence": {
+      "po": {
+        "id": "PO-2070",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 124,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 181,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8070",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 124
+          },
+          {
+            "sku": "SKU-1002",
+            "qty_received": 181
+          }
+        ],
+        "received_date": "2026-12-04"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 124,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 181,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 37,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 152836.55,
+        "invoice_date": "2026-12-08"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "line_item_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "line_item_mismatch",
+          "sku": "SKU-1006",
+          "po_value": null,
+          "grn_value": null,
+          "invoice_value": {
+            "qty": 37,
+            "unit_price": 310.0
+          },
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for approval.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2070 and GRN GRN-8070 for invoice INV-4070; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Line SKU-1006 appears on the invoice (37 @ Rs 310.00) but is not on the PO -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Marigold Stationery' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Marigold Stationery invoices near Rs 152,836.55 within 30 days of 2026-12-08: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Line item mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as line item mismatch (medium severity, confidence 0.95). Proposed: Route to Manager for approval.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4287",
+    "po_id": null,
+    "vendor": "Bluewave Traders",
+    "vendor_normalised_from": null,
+    "amount": 46076.8,
+    "invoice_date": "2026-12-10",
+    "exception_type": "missing_po",
+    "severity": "high",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4287 from Bluewave Traders is missing a Purchase Order. The total amount is $46,076.80.",
+    "evidence": {
+      "po": null,
+      "grn": null,
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 88,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 12,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 46076.8,
+        "invoice_date": "2026-12-10"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "missing_po",
+        "severity": "high",
+        "needs_judgement": false,
+        "detail": {
+          "invoice_id": "INV-4287"
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for Review",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Invoice INV-4287 cites no purchase order; no PO/GRN on file to match against.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "rule_escalation",
+        "detail": "Missing po is a hard exception under the matching rules (high severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "conclusion",
+        "detail": "Escalated as missing po (high severity, confidence 1.00). Proposed: Route to Manager for Review",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4221-A",
+    "po_id": "PO-2221",
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 1083647.0,
+    "invoice_date": "2026-12-12",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4221-A for $1,083,647.00 from Solstice Electricals matches a previous invoice (INV-4221) for the same amount and date. The previous invoice was auto-cleared.",
+    "evidence": {
+      "po": {
+        "id": "PO-2221",
+        "lines": [
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 186,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 149,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 81,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8221",
+        "lines": [
+          {
+            "sku": "SKU-1009",
+            "qty_received": 186
+          },
+          {
+            "sku": "SKU-1010",
+            "qty_received": 149
+          },
+          {
+            "sku": "SKU-1008",
+            "qty_received": 81
+          }
+        ],
+        "received_date": "2026-12-04"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 186,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 149,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 81,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 1083647.0,
+        "invoice_date": "2026-12-12"
+      },
+      "related": [
+        {
+          "id": "INV-4221",
+          "status": "auto_clear",
+          "date": "2026-12-05"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4221",
+              "vendor": "Solstice Electricals",
+              "po_id": "PO-2221",
+              "total_amount": 1083647.0,
+              "invoice_date": "2026-12-05",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:46:22.972457Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice to prevent double payment.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2221 and GRN GRN-8221 for invoice INV-4221-A; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Solstice Electricals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Solstice Electricals invoices near Rs 1,083,647.00 within 30 days of 2026-12-12: found 1 candidate(s) -- INV-4221 (posted 2026-12-05).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4221. The new invoice (INV-4221-A) shares the exact same vendor (Solstice Electricals) and total amount (1083647.0) as the posted invoice (INV-4221). The invoice number follows a common duplicate pattern (suffix 'A'), suggesting a reprint or correction, which overrides the date difference.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Reject invoice to prevent double payment.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4220",
+    "po_id": "PO-2220",
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 10513.8,
+    "invoice_date": "2026-12-14",
+    "exception_type": "tax_mismatch",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4220 has a tax rate mismatch. The invoice lists 18% GST, but the PO lists 12% GST. The total amount is $10,513.80.",
+    "evidence": {
+      "po": {
+        "id": "PO-2220",
+        "lines": [
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 162,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8220",
+        "lines": [
+          {
+            "sku": "SKU-1007",
+            "qty_received": 162
+          }
+        ],
+        "received_date": "2026-12-11"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 162,
+            "unit_price": 55.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 10513.8,
+        "invoice_date": "2026-12-14"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "tax_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "tax_mismatch",
+          "sku": "SKU-1007",
+          "po_value": 12,
+          "grn_value": null,
+          "invoice_value": 18,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver for verification of the tax rate.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2220 and GRN GRN-8220 for invoice INV-4220; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 1 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Tax mismatch on SKU-1007: PO rate 12% vs invoice rate 18% -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Solstice Electricals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Solstice Electricals invoices near Rs 10,513.80 within 30 days of 2026-12-14: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Tax mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as tax mismatch (medium severity, confidence 0.95). Proposed: Route to Approver for verification of the tax rate.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4205",
+    "po_id": "PO-2205",
+    "vendor": "Nimbus Logistics",
+    "vendor_normalised_from": null,
+    "amount": 114503.2,
+    "invoice_date": "2026-12-15",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4205: 2 units of LED Panel Light (SKU-1004) are missing. Invoice claims 81, GRN shows 79.",
+    "evidence": {
+      "po": {
+        "id": "PO-2205",
+        "lines": [
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 81,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 121,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8205",
+        "lines": [
+          {
+            "sku": "SKU-1004",
+            "qty_received": 79
+          },
+          {
+            "sku": "SKU-1007",
+            "qty_received": 121
+          }
+        ],
+        "received_date": "2026-12-14"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 81,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 121,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 114503.2,
+        "invoice_date": "2026-12-15"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1004",
+          "po_value": 81,
+          "grn_value": 79,
+          "invoice_value": 81,
+          "delta": 2,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver for verification.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2205 and GRN GRN-8205 for invoice INV-4205; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1004: PO ordered 81, GRN received 79, invoice billed 81 (billed +2 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Nimbus Logistics' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Nimbus Logistics invoices near Rs 114,503.20 within 30 days of 2026-12-15: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Route to Approver for verification.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4262",
+    "po_id": "PO-2262",
+    "vendor": "Vantage Office Supplies",
+    "vendor_normalised_from": null,
+    "amount": 270974.6,
+    "invoice_date": "2026-12-17",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4262 for Vantage Office Supplies has a quantity variance. The invoice lists 169 Hydraulic Hoses, but the GRN (GRN-8262) shows only 165 received. The invoice includes 4 extra items not received.",
+    "evidence": {
+      "po": {
+        "id": "PO-2262",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 169,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 176,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 102,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8262",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 165
+          },
+          {
+            "sku": "SKU-1001",
+            "qty_received": 176
+          },
+          {
+            "sku": "SKU-1006",
+            "qty_received": 102
+          }
+        ],
+        "received_date": "2026-12-14"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 169,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 176,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 102,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 270974.6,
+        "invoice_date": "2026-12-17"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1008",
+          "po_value": 169,
+          "grn_value": 165,
+          "invoice_value": 169,
+          "delta": 4,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice. The invoice amount includes 4 items not received per the GRN.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2262 and GRN GRN-8262 for invoice INV-4262; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1008: PO ordered 169, GRN received 165, invoice billed 169 (billed +4 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Vantage Office Supplies' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Vantage Office Supplies invoices near Rs 270,974.60 within 30 days of 2026-12-17: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Reject invoice. The invoice amount includes 4 items not received per the GRN.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4202",
+    "po_id": "PO-2202",
+    "vendor": "Orion Industrial Supplies",
+    "vendor_normalised_from": null,
+    "amount": 1037752.8,
+    "invoice_date": "2026-12-21",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4202 for Cleaning Solvent (SKU-1010) is for 173 units, but GRN-8202 only shows 168 received. The invoice requests payment for 5 missing items.",
+    "evidence": {
+      "po": {
+        "id": "PO-2202",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 173,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 164,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 189,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8202",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "qty_received": 168
+          },
+          {
+            "sku": "SKU-1003",
+            "qty_received": 164
+          },
+          {
+            "sku": "SKU-1009",
+            "qty_received": 189
+          }
+        ],
+        "received_date": "2026-12-18"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 173,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 164,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 189,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 1037752.8,
+        "invoice_date": "2026-12-21"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1010",
+          "po_value": 173,
+          "grn_value": 168,
+          "invoice_value": 173,
+          "delta": 5,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice INV-4202",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2202 and GRN GRN-8202 for invoice INV-4202; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1010: PO ordered 173, GRN received 168, invoice billed 173 (billed +5 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Orion Industrial Supplies' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Orion Industrial Supplies invoices near Rs 1,037,752.80 within 30 days of 2026-12-21: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Reject invoice INV-4202",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4078-A",
+    "po_id": "PO-2078",
+    "vendor": "Harbor Steel Works",
+    "vendor_normalised_from": null,
+    "amount": 173169.4,
+    "invoice_date": "2026-12-21",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4078-A for Harbor Steel Works matches a previous invoice (INV-4078) with the same total amount ($173,169.40) and same vendor. The previous invoice was already auto-cleared.",
+    "evidence": {
+      "po": {
+        "id": "PO-2078",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 73,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 145,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 38,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8078",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 73
+          },
+          {
+            "sku": "SKU-1001",
+            "qty_received": 145
+          },
+          {
+            "sku": "SKU-1004",
+            "qty_received": 38
+          }
+        ],
+        "received_date": "2026-12-11"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 73,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 145,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 38,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 173169.4,
+        "invoice_date": "2026-12-21"
+      },
+      "related": [
+        {
+          "id": "INV-4078",
+          "status": "auto_clear",
+          "date": "2026-12-15"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4078",
+              "vendor": "Harbor Steel Works",
+              "po_id": "PO-2078",
+              "total_amount": 173169.4,
+              "invoice_date": "2026-12-15",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:47:21.110324Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice to prevent double payment.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2078 and GRN GRN-8078 for invoice INV-4078-A; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Harbor Steel Works' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Harbor Steel Works invoices near Rs 173,169.40 within 30 days of 2026-12-21: found 1 candidate(s) -- INV-4078 (posted 2026-12-15).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4078. The new invoice (INV-4078-A) matches the candidate (INV-4078) exactly on vendor (Harbor Steel Works) and total amount (173169.4). The invoice number differs only by a suffix ('-A'), which is a common pattern for duplicate submissions (e.g., a reprint or second copy). The date difference (6 days) is minor compared to the amount match.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Reject invoice to prevent double payment.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4248",
+    "po_id": "PO-2248",
+    "vendor": "Kestrel Packaging",
+    "vendor_normalised_from": null,
+    "amount": 199204.65,
+    "invoice_date": "2026-12-29",
+    "exception_type": "tax_mismatch",
+    "severity": "medium",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4248 for Kestrel Packaging has a tax rate mismatch on line item 'Cleaning Solvent 5L'. The Purchase Order (PO-2248) specifies 12% tax, but the invoice charges 18% tax. This is a medium severity issue.",
+    "evidence": {
+      "po": {
+        "id": "PO-2248",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 135,
+            "unit_price": 460.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 119,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 19,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8248",
+        "lines": [
+          {
+            "sku": "SKU-1010",
+            "qty_received": 135
+          },
+          {
+            "sku": "SKU-1008",
+            "qty_received": 119
+          },
+          {
+            "sku": "SKU-1002",
+            "qty_received": 19
+          }
+        ],
+        "received_date": "2026-12-27"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1010",
+            "description": "Cleaning Solvent 5L",
+            "qty": 135,
+            "unit_price": 460.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 119,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 19,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 199204.65,
+        "invoice_date": "2026-12-29"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "tax_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "tax_mismatch",
+          "sku": "SKU-1010",
+          "po_value": 12,
+          "grn_value": null,
+          "invoice_value": 18,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to approver for review. The invoice tax rate differs from the PO rate.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2248 and GRN GRN-8248 for invoice INV-4248; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Tax mismatch on SKU-1010: PO rate 12% vs invoice rate 18% -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Kestrel Packaging' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Kestrel Packaging invoices near Rs 199,204.65 within 30 days of 2026-12-29: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Tax mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as tax mismatch (medium severity, confidence 1.00). Proposed: Route to approver for review. The invoice tax rate differs from the PO rate.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4244",
+    "po_id": "PO-2244",
+    "vendor": "Bluewave Traders",
+    "vendor_normalised_from": null,
+    "amount": 184844.64,
+    "invoice_date": "2026-12-31",
+    "exception_type": "tax_mismatch",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Bluewave Traders invoice INV-4244 has a tax error on the 'Corrugated Box' line. The PO specifies 12% tax, but the invoice charged 18% tax. This overcharges the company by $139.08.",
+    "evidence": {
+      "po": {
+        "id": "PO-2244",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 61,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 39,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 127,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8244",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "qty_received": 61
+          },
+          {
+            "sku": "SKU-1006",
+            "qty_received": 39
+          },
+          {
+            "sku": "SKU-1004",
+            "qty_received": 127
+          }
+        ],
+        "received_date": "2026-12-27"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 61,
+            "unit_price": 38.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 39,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 127,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 184844.64,
+        "invoice_date": "2026-12-31"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "tax_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "tax_mismatch",
+          "sku": "SKU-1005",
+          "po_value": 12,
+          "grn_value": null,
+          "invoice_value": 18,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject invoice. The tax rate on SKU-1005 does not match the Purchase Order.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2244 and GRN GRN-8244 for invoice INV-4244; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Tax mismatch on SKU-1005: PO rate 12% vs invoice rate 18% -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Bluewave Traders' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Bluewave Traders invoices near Rs 184,844.64 within 30 days of 2026-12-31: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Tax mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as tax mismatch (medium severity, confidence 0.95). Proposed: Reject invoice. The tax rate on SKU-1005 does not match the Purchase Order.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4068",
+    "po_id": "PO-2068",
+    "vendor": "Harbor Steel Works",
+    "vendor_normalised_from": null,
+    "amount": 95155.2,
+    "invoice_date": "2027-01-08",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4068 (Harbor Steel Works) is for 72 units, but GRN-8068 shows only 70 received. Shortage of 2 units.",
+    "evidence": {
+      "po": {
+        "id": "PO-2068",
+        "lines": [
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 72,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8068",
+        "lines": [
+          {
+            "sku": "SKU-1004",
+            "qty_received": 70
+          }
+        ],
+        "received_date": "2027-01-03"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1004",
+            "description": "LED Panel Light 40W",
+            "qty": 72,
+            "unit_price": 1120.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 95155.2,
+        "invoice_date": "2027-01-08"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1004",
+          "po_value": 72,
+          "grn_value": 70,
+          "invoice_value": 72,
+          "delta": 2,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Buyer to investigate the missing 2 units.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2068 and GRN GRN-8068 for invoice INV-4068; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 1 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1004: PO ordered 72, GRN received 70, invoice billed 72 (billed +2 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Harbor Steel Works' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Harbor Steel Works invoices near Rs 95,155.20 within 30 days of 2027-01-08: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Route to Buyer to investigate the missing 2 units.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4111-A",
+    "po_id": "PO-2111",
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 123923.6,
+    "invoice_date": "2027-01-08",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Vendor Solstice Electricals, PO-2111, SKU-1008. Amount 123,923.60. System flagged as duplicate of INV-4111 (dated 12/30/26). Current invoice date is 01/08/27.",
+    "evidence": {
+      "po": {
+        "id": "PO-2111",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 118,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8111",
+        "lines": [
+          {
+            "sku": "SKU-1008",
+            "qty_received": 118
+          }
+        ],
+        "received_date": "2026-12-27"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 118,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 123923.6,
+        "invoice_date": "2027-01-08"
+      },
+      "related": [
+        {
+          "id": "INV-4111",
+          "status": "auto_clear",
+          "date": "2026-12-30"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4111",
+              "vendor": "Solstice Electricals",
+              "po_id": "PO-2111",
+              "total_amount": 123923.6,
+              "invoice_date": "2026-12-30",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:48:49.730187Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Route to approver for review.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2111 and GRN GRN-8111 for invoice INV-4111-A; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Solstice Electricals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Solstice Electricals invoices near Rs 123,923.60 within 30 days of 2027-01-08: found 1 candidate(s) -- INV-4111 (posted 2026-12-30).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4111. The new invoice (INV-4111-A) matches the candidate (INV-4111) exactly on vendor (Solstice Electricals) and total amount (123923.6). The invoice number differs only by a suffix ('-A'), which is a common pattern for duplicate submissions or variations of the same invoice. The date difference (9 days) is within a reasonable range for a business cycle.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Route to approver for review.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4214",
+    "po_id": "PO-2214",
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 49543.93,
+    "invoice_date": "2027-01-14",
+    "exception_type": "price_variance_out_tolerance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4214 for Solstice Electricals has a price variance on Safety Helmets (SKU-1006). The PO price was $310.00, but the invoice charged $346.89, a difference of $36.89 (11.9%). 107 units were received.",
+    "evidence": {
+      "po": {
+        "id": "PO-2214",
+        "lines": [
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 107,
+            "unit_price": 310.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 18,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8214",
+        "lines": [
+          {
+            "sku": "SKU-1006",
+            "qty_received": 107
+          },
+          {
+            "sku": "SKU-1001",
+            "qty_received": 18
+          }
+        ],
+        "received_date": "2027-01-09"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1006",
+            "description": "Safety Helmet",
+            "qty": 107,
+            "unit_price": 346.89,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 18,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 49543.93,
+        "invoice_date": "2027-01-14"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "price_variance_out_tolerance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "price_variance",
+          "sku": "SKU-1006",
+          "po_value": 310.0,
+          "grn_value": null,
+          "invoice_value": 346.89,
+          "delta": 36.89,
+          "delta_pct": 11.9,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for Approval due to price variance exceeding tolerance.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2214 and GRN GRN-8214 for invoice INV-4214; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Price variance on SKU-1006: PO Rs 310.00 vs invoice Rs 346.89 (delta 11.90%) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Solstice Electricals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Solstice Electricals invoices near Rs 49,543.93 within 30 days of 2027-01-14: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Price variance out tolerance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as price variance out tolerance (medium severity, confidence 0.95). Proposed: Route to Manager for Approval due to price variance exceeding tolerance.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4236",
+    "po_id": "PO-2236",
+    "vendor": "Harbor Steel Works",
+    "vendor_normalised_from": null,
+    "amount": 1899.74,
+    "invoice_date": "2027-01-23",
+    "exception_type": "line_item_mismatch",
+    "severity": "medium",
+    "confidence": 1.0,
+    "summary": "Invoice INV-4236 includes Steel Angle Brackets ($1,105.00) that are not on PO-2236 or GRN-8236.",
+    "evidence": {
+      "po": {
+        "id": "PO-2236",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 14,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8236",
+        "lines": [
+          {
+            "sku": "SKU-1005",
+            "qty_received": 14
+          }
+        ],
+        "received_date": "2027-01-20"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1005",
+            "description": "Corrugated Box (large)",
+            "qty": 14,
+            "unit_price": 38.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 26,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 1899.74,
+        "invoice_date": "2027-01-23"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "line_item_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "line_item_mismatch",
+          "sku": "SKU-1002",
+          "po_value": null,
+          "grn_value": null,
+          "invoice_value": {
+            "qty": 26,
+            "unit_price": 42.5
+          },
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2236 and GRN GRN-8236 for invoice INV-4236; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Line SKU-1002 appears on the invoice (26 @ Rs 42.50) but is not on the PO -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Harbor Steel Works' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Harbor Steel Works invoices near Rs 1,899.74 within 30 days of 2027-01-23: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Line item mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as line item mismatch (medium severity, confidence 1.00). Proposed: Route to Approver.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4169",
+    "po_id": "PO-2169",
+    "vendor": "Orion Industrial Supplies",
+    "vendor_normalised_from": null,
+    "amount": 24897.6,
+    "invoice_date": "2027-01-26",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4169 is for 78 units of A4 Paper. The GRN (GRN-8169) confirms only 74 units were received. 4 units are missing.",
+    "evidence": {
+      "po": {
+        "id": "PO-2169",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 78,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8169",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "qty_received": 74
+          }
+        ],
+        "received_date": "2027-01-24"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 78,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 24897.6,
+        "invoice_date": "2027-01-26"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1001",
+          "po_value": 78,
+          "grn_value": 74,
+          "invoice_value": 78,
+          "delta": 4,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for partial payment authorization.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2169 and GRN GRN-8169 for invoice INV-4169; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 1 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1001: PO ordered 78, GRN received 74, invoice billed 78 (billed +4 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Orion Industrial Supplies' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Orion Industrial Supplies invoices near Rs 24,897.60 within 30 days of 2027-01-26: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Route to Manager for partial payment authorization.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4151",
+    "po_id": "PO-2151",
+    "vendor": "Solstice Electricals",
+    "vendor_normalised_from": null,
+    "amount": 351262.8,
+    "invoice_date": "2027-02-02",
+    "exception_type": "tax_mismatch",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4151 for Solstice Electricals has a tax mismatch on SKU-1002. The Purchase Order requires 18% GST, but the invoice lists 12% GST. The other items match the PO and GRN.",
+    "evidence": {
+      "po": {
+        "id": "PO-2151",
+        "lines": [
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 15,
+            "unit_price": 42.5,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 68,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 186,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8151",
+        "lines": [
+          {
+            "sku": "SKU-1002",
+            "qty_received": 15
+          },
+          {
+            "sku": "SKU-1009",
+            "qty_received": 68
+          },
+          {
+            "sku": "SKU-1003",
+            "qty_received": 186
+          }
+        ],
+        "received_date": "2027-01-29"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1002",
+            "description": "Steel Angle Bracket 50mm",
+            "qty": 15,
+            "unit_price": 42.5,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 68,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          },
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 186,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 351262.8,
+        "invoice_date": "2027-02-02"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "tax_mismatch",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "tax_mismatch",
+          "sku": "SKU-1002",
+          "po_value": 18,
+          "grn_value": null,
+          "invoice_value": 12,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Approver for tax rate verification.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2151 and GRN GRN-8151 for invoice INV-4151; 3 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 3 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Tax mismatch on SKU-1002: PO rate 18% vs invoice rate 12% -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Solstice Electricals' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Solstice Electricals invoices near Rs 351,262.80 within 30 days of 2027-02-02: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Tax mismatch is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as tax mismatch (medium severity, confidence 0.95). Proposed: Route to Approver for tax rate verification.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4167",
+    "po_id": "PO-2167",
+    "vendor": "Harbor Steel Works",
+    "vendor_normalised_from": null,
+    "amount": 12987.65,
+    "invoice_date": "2027-02-04",
+    "exception_type": "price_variance_out_tolerance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4167 has a price variance for SKU-1001 (A4 Paper). Invoice price is $320.34, PO price is $285.00. Difference is $35.34.",
+    "evidence": {
+      "po": {
+        "id": "PO-2167",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 18,
+            "unit_price": 285.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 106,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8167",
+        "lines": [
+          {
+            "sku": "SKU-1001",
+            "qty_received": 18
+          },
+          {
+            "sku": "SKU-1007",
+            "qty_received": 106
+          }
+        ],
+        "received_date": "2027-02-01"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1001",
+            "description": "A4 Copier Paper (ream)",
+            "qty": 18,
+            "unit_price": 320.34,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1007",
+            "description": "Packing Tape Roll",
+            "qty": 106,
+            "unit_price": 55.0,
+            "gst_rate": 12
+          }
+        ],
+        "total_amount": 12987.65,
+        "invoice_date": "2027-02-04"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "price_variance_out_tolerance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "price_variance",
+          "sku": "SKU-1001",
+          "po_value": 285.0,
+          "grn_value": null,
+          "invoice_value": 320.34,
+          "delta": 35.34,
+          "delta_pct": 12.4,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Route to Manager for approval.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2167 and GRN GRN-8167 for invoice INV-4167; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Price variance on SKU-1001: PO Rs 285.00 vs invoice Rs 320.34 (delta 12.40%) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Harbor Steel Works' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Harbor Steel Works invoices near Rs 12,987.65 within 30 days of 2027-02-04: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Price variance out tolerance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as price variance out tolerance (medium severity, confidence 0.95). Proposed: Route to Manager for approval.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4264",
+    "po_id": "PO-2264",
+    "vendor": "Kestrel Packaging",
+    "vendor_normalised_from": null,
+    "amount": 156812.8,
+    "invoice_date": "2027-02-12",
+    "exception_type": "quantity_variance",
+    "severity": "medium",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4264: SKU-1003 (Gloves) invoiced for 19, but only 14 received. Reject.",
+    "evidence": {
+      "po": {
+        "id": "PO-2264",
+        "lines": [
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 19,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 148,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8264",
+        "lines": [
+          {
+            "sku": "SKU-1003",
+            "qty_received": 14
+          },
+          {
+            "sku": "SKU-1008",
+            "qty_received": 148
+          }
+        ],
+        "received_date": "2027-02-08"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1003",
+            "description": "Industrial Gloves (pair)",
+            "qty": 19,
+            "unit_price": 65.0,
+            "gst_rate": 12
+          },
+          {
+            "sku": "SKU-1008",
+            "description": "Hydraulic Hose 2m",
+            "qty": 148,
+            "unit_price": 890.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 156812.8,
+        "invoice_date": "2027-02-12"
+      },
+      "related": []
+    },
+    "findings_detail": [
+      {
+        "type": "quantity_variance",
+        "severity": "medium",
+        "needs_judgement": false,
+        "detail": {
+          "type": "quantity_variance",
+          "sku": "SKU-1003",
+          "po_value": 19,
+          "grn_value": 14,
+          "invoice_value": 19,
+          "delta": 5,
+          "within_tolerance": false
+        }
+      }
+    ],
+    "proposed_resolution": "Reject Invoice INV-4264.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2264 and GRN GRN-8264 for invoice INV-4264; 2 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "Compared 2 line(s) across PO/GRN/invoice: 1 variance(s) outside tolerance, 0 within tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "tolerance_check",
+        "detail": "Quantity variance on SKU-1003: PO ordered 19, GRN received 14, invoice billed 19 (billed +5 vs received) -- outside tolerance.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Kestrel Packaging' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Kestrel Packaging invoices near Rs 156,812.80 within 30 days of 2027-02-12: no near-matches found.",
+        "source": "deterministic"
+      },
+      {
+        "n": 6,
+        "action": "rule_escalation",
+        "detail": "Quantity variance is a hard exception under the matching rules (medium severity); routed to a human without model judgement.",
+        "source": "deterministic"
+      },
+      {
+        "n": 7,
+        "action": "conclusion",
+        "detail": "Escalated as quantity variance (medium severity, confidence 0.95). Proposed: Reject Invoice INV-4264.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-4088-A",
+    "po_id": "PO-2088",
+    "vendor": "Harbor Steel Works",
+    "vendor_normalised_from": null,
+    "amount": 599676.0,
+    "invoice_date": "2027-02-22",
+    "exception_type": "suspected_duplicate",
+    "severity": "high",
+    "confidence": 0.95,
+    "summary": "Invoice INV-4088-A is a suspected duplicate of INV-4088. Both are for 599,676.00 for Harbor Steel Works. The previous invoice was already auto-cleared.",
+    "evidence": {
+      "po": {
+        "id": "PO-2088",
+        "lines": [
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 121,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ]
+      },
+      "grn": {
+        "id": "GRN-8088",
+        "lines": [
+          {
+            "sku": "SKU-1009",
+            "qty_received": 121
+          }
+        ],
+        "received_date": "2027-02-11"
+      },
+      "invoice": {
+        "qty_lines": [
+          {
+            "sku": "SKU-1009",
+            "description": "Office Chair (standard)",
+            "qty": 121,
+            "unit_price": 4200.0,
+            "gst_rate": 18
+          }
+        ],
+        "total_amount": 599676.0,
+        "invoice_date": "2027-02-22"
+      },
+      "related": [
+        {
+          "id": "INV-4088",
+          "status": "auto_clear",
+          "date": "2027-02-13"
+        }
+      ]
+    },
+    "findings_detail": [
+      {
+        "type": "suspected_duplicate",
+        "severity": "high",
+        "needs_judgement": true,
+        "detail": {
+          "candidates": [
+            {
+              "invoice_id": "INV-4088",
+              "vendor": "Harbor Steel Works",
+              "po_id": "PO-2088",
+              "total_amount": 599676.0,
+              "invoice_date": "2027-02-13",
+              "resolution": "auto_clear",
+              "posted_by": "agent",
+              "posted_at": "2026-09-06T19:51:08.364943Z"
+            }
+          ]
+        }
+      }
+    ],
+    "proposed_resolution": "Route to approver for manual review to prevent duplicate payment.",
+    "requires": "ap_clerk_approval",
+    "steps": [
+      {
+        "n": 1,
+        "action": "retrieve_documents",
+        "detail": "Retrieved PO PO-2088 and GRN GRN-8088 for invoice INV-4088-A; 1 invoice line(s) to compare.",
+        "source": "deterministic"
+      },
+      {
+        "n": 2,
+        "action": "three_way_match",
+        "detail": "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match.",
+        "source": "deterministic"
+      },
+      {
+        "n": 3,
+        "action": "vendor_check",
+        "detail": "Invoice vendor 'Harbor Steel Works' matches the PO vendor exactly.",
+        "source": "deterministic"
+      },
+      {
+        "n": 4,
+        "action": "ledger_duplicate_search",
+        "detail": "Searched posted ledger for Harbor Steel Works invoices near Rs 599,676.00 within 30 days of 2027-02-22: found 1 candidate(s) -- INV-4088 (posted 2027-02-13).",
+        "source": "deterministic"
+      },
+      {
+        "n": 5,
+        "action": "judgement_duplicate",
+        "detail": "Duplicate assessment against 1 ledger candidate(s): model says duplicate at confidence 0.95 (threshold 0.50), related invoice INV-4088. The new invoice (INV-4088-A) matches the vendor (Harbor Steel Works) and total amount (599,676.00) exactly. The invoice number differs only by a suffix '-A', which is a strong indicator of a duplicate submission (e.g., a reprint or split payment). The date difference (Feb 22 vs Feb 13) is likely a revised invoice date, but the core transaction is identical.",
+        "source": "llm:glm-4-7-flash"
+      },
+      {
+        "n": 6,
+        "action": "conclusion",
+        "detail": "Escalated as suspected duplicate (high severity, confidence 0.95). Proposed: Route to approver for manual review to prevent duplicate payment.",
+        "source": "llm:glm-4-7-flash"
+      }
+    ]
+  }
+]
