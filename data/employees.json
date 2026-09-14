@@ -1,0 +1,65 @@
+[
+  {
+    "employee_id": "EMP-001",
+    "name": "Meera Rao",
+    "email": "meera.rao@ourcompany.example",
+    "bank_account": "500100010001",
+    "department": "Procurement",
+    "role": "director",
+    "approval_limit": 20000000.0
+  },
+  {
+    "employee_id": "EMP-002",
+    "name": "Arjun Iyer",
+    "email": "arjun.iyer@ourcompany.example",
+    "bank_account": "500100010002",
+    "department": "Procurement",
+    "role": "staff",
+    "approval_limit": 75000.0
+  },
+  {
+    "employee_id": "EMP-003",
+    "name": "Divya Shah",
+    "email": "divya.shah@ourcompany.example",
+    "bank_account": "500100010003",
+    "department": "Facilities",
+    "role": "staff",
+    "approval_limit": 75000.0
+  },
+  {
+    "employee_id": "EMP-004",
+    "name": "Karan Mehta",
+    "email": "karan.mehta@ourcompany.example",
+    "bank_account": "500100010004",
+    "department": "Facilities",
+    "role": "staff",
+    "approval_limit": 75000.0
+  },
+  {
+    "employee_id": "EMP-005",
+    "name": "Neha Kulkarni",
+    "email": "neha.kulkarni@ourcompany.example",
+    "bank_account": "500100010005",
+    "department": "Warehouse",
+    "role": "staff",
+    "approval_limit": 75000.0
+  },
+  {
+    "employee_id": "EMP-006",
+    "name": "Rohit Bhatt",
+    "email": "rohit.bhatt@ourcompany.example",
+    "bank_account": "500100010006",
+    "department": "IT",
+    "role": "manager",
+    "approval_limit": 400000.0
+  },
+  {
+    "employee_id": "EMP-007",
+    "name": "Priya Nair",
+    "email": "priya.nair@ourcompany.example",
+    "bank_account": "500100010007",
+    "department": "Finance",
+    "role": "staff",
+    "approval_limit": 75000.0
+  }
+]

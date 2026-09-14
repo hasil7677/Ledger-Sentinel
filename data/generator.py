@@ -1,17 +1,35 @@
-"""Synthetic PO / GRN / Invoice dataset generator for Ledger Sentinel.
+"""Synthetic PO / GRN / Invoice / vendor-master / employee-master dataset
+generator for Ledger Sentinel.
 
-Produces a labelled dataset (POs, GRNs, invoices, and ground-truth labels)
-with a seeded anomaly taxonomy, matching the spec in STARTER.md section 6.
+Produces a labelled dataset (POs, GRNs, invoices, vendor master, employee
+master, and ground-truth labels) with a seeded anomaly taxonomy.
+
+The taxonomy has two halves now. The original eight types (quantity/price/tax/
+line-item variance, duplicate, missing PO, vendor name drift) are three-way-
+match failures: something on the PO, GRN or invoice disagrees. The five added
+here are not -- a vendor bank-account change, a brand-new vendor's first
+invoice, a vendor colliding with an employee record, and an approval-limit
+violation (single invoice or split across several) can all happen on an
+invoice where the PO, GRN and invoice agree on every line. Three-way match
+cannot see any of them, which is the point: they model the failure modes that
+actually cost money in accounts payable and that this project didn't have a
+detector for before this pass.
 
 Usage:
     python data/generator.py [--count 60] [--anomaly-rate 0.2] [--seed 42] [--out-dir data]
 """
 
 import argparse
+import itertools
 import json
 import os
 import random
+import sys
 from datetime import date, timedelta
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from core.vendor_master import VendorMaster
 
 VENDORS = [
     ("Acme Corp", "Acme Corporation Pvt Ltd"),
@@ -39,10 +57,63 @@ PRODUCTS = [
     ("SKU-1010", "Cleaning Solvent 5L", 460.00, 12),
 ]
 
-# Relative weights for the anomaly taxonomy. These are the proportions from the
-# original 60-invoice plan (2/2/1/2/1/2/1/1 out of 12); they are scaled to
-# whatever anomaly budget the requested --count/--anomaly-rate implies, so the
-# taxonomy stays proportionally represented at any dataset size.
+# Fixed org data, not seeded by rng: an employee master shouldn't reshuffle
+# every time someone regenerates the dataset with a different --seed. Only
+# which employee gets used where is randomised.
+EMPLOYEES = [
+    {"employee_id": "EMP-001", "name": "Meera Rao", "email": "meera.rao@ourcompany.example",
+     "bank_account": "500100010001", "department": "Procurement", "role": "director",
+     "approval_limit": 20_000_000.0},
+    {"employee_id": "EMP-002", "name": "Arjun Iyer", "email": "arjun.iyer@ourcompany.example",
+     "bank_account": "500100010002", "department": "Procurement", "role": "staff",
+     "approval_limit": 75_000.0},
+    {"employee_id": "EMP-003", "name": "Divya Shah", "email": "divya.shah@ourcompany.example",
+     "bank_account": "500100010003", "department": "Facilities", "role": "staff",
+     "approval_limit": 75_000.0},
+    {"employee_id": "EMP-004", "name": "Karan Mehta", "email": "karan.mehta@ourcompany.example",
+     "bank_account": "500100010004", "department": "Facilities", "role": "staff",
+     "approval_limit": 75_000.0},
+    {"employee_id": "EMP-005", "name": "Neha Kulkarni", "email": "neha.kulkarni@ourcompany.example",
+     "bank_account": "500100010005", "department": "Warehouse", "role": "staff",
+     "approval_limit": 75_000.0},
+    {"employee_id": "EMP-006", "name": "Rohit Bhatt", "email": "rohit.bhatt@ourcompany.example",
+     "bank_account": "500100010006", "department": "IT", "role": "manager",
+     "approval_limit": 400_000.0},
+    {"employee_id": "EMP-007", "name": "Priya Nair", "email": "priya.nair@ourcompany.example",
+     "bank_account": "500100010007", "department": "Finance", "role": "staff",
+     "approval_limit": 75_000.0},
+]
+
+# EMP-001's limit (Rs 2 crore) is comfortably above the highest total this
+# generator can produce (three lines, max qty 200, max unit price Rs 4,200,
+# 18% GST -- about Rs 29.7 lakh), so every invoice that doesn't deliberately
+# seed an approval-policy anomaly is safe to attribute to them without
+# accidentally tripping the approval-limit rule.
+DEFAULT_REQUESTER_ID = "EMP-001"
+# Dedicated pool for the split-invoice anomaly, one employee per group so two
+# groups never share a requester and get mistaken for one larger group.
+SPLIT_REQUESTER_POOL = ["EMP-003", "EMP-004", "EMP-005"]
+SINGLE_OVER_LIMIT_REQUESTER_ID = "EMP-002"
+# Never assigned as a requester -- exists solely to be the bank account /
+# email a fraud vendor is made to collide with.
+COLLISION_EMPLOYEE_ID = "EMP-007"
+
+SPLIT_GROUP_SIZE = 2
+
+FRAUD_VENDOR_ADJECTIVES = [
+    "Falcon", "Silver", "Granite", "Cobalt", "Harvest", "Ironclad", "Meridian",
+    "Lantern", "Copper", "Wraith", "Solace", "Pinnacle", "Anchor", "Cascade", "Beacon",
+]
+FRAUD_VENDOR_NOUNS = [
+    "Engineering", "Trading", "Supplies", "Logistics", "Industrial",
+    "Traders", "Works", "Enterprises", "Distributors", "Systems",
+]
+
+# Relative weights for the anomaly taxonomy. The original eight are the
+# proportions from the original 60-invoice plan (2/2/1/2/1/2/1/1 out of 12);
+# the five vendor-master / approval-policy types are weighted 1 each -- rarer
+# than routine three-way-match noise, which matches how often each actually
+# comes up in real AP, but present at any dataset size big enough to seed one.
 ANOMALY_WEIGHTS = [
     ("quantity_variance", 2),
     ("price_variance_in_tolerance", 2),
@@ -52,7 +123,24 @@ ANOMALY_WEIGHTS = [
     ("vendor_name_drift", 2),
     ("tax_mismatch", 1),
     ("line_item_mismatch", 1),
+    ("vendor_bank_detail_change", 1),
+    ("new_vendor_first_invoice", 1),
+    ("vendor_employee_collision", 1),
+    ("approval_threshold_exceeded", 1),
+    ("threshold_splitting", 1),
 ]
+
+# Types whose plan count is a count of INVOICES generated via the dedicated
+# seeding functions below (mirroring duplicate/missing_po, which already work
+# this way) rather than a count of in-place mutations of a "slots" triple.
+# threshold_splitting is the one exception: its plan count is a count of
+# GROUPS, and each group contributes SPLIT_GROUP_SIZE invoices -- see
+# generate() for how that's reconciled against --count.
+DEDICATED_SINGLE_TYPES = (
+    "vendor_bank_detail_change", "new_vendor_first_invoice",
+    "vendor_employee_collision", "approval_threshold_exceeded",
+)
+DEDICATED_TYPES = DEDICATED_SINGLE_TYPES + ("duplicate", "missing_po", "threshold_splitting")
 
 
 def scale_anomaly_plan(total_anomalies, weights=ANOMALY_WEIGHTS):
@@ -100,6 +188,7 @@ class IdGen:
         self.po = 2000
         self.grn = 8000
         self.inv = 4000
+        self.vendor = 100  # fraud-pool vendors start past the 10 canonical VEND-001..010
 
     def next_po(self):
         self.po += 1
@@ -112,6 +201,10 @@ class IdGen:
     def next_inv(self):
         self.inv += 1
         return f"INV-{self.inv}"
+
+    def next_vendor_id(self):
+        self.vendor += 1
+        return f"VEND-{self.vendor}"
 
 
 def make_lines(rng):
@@ -130,9 +223,74 @@ def make_lines(rng):
     return lines
 
 
-def build_clean_set(rng, ids, vendor, po_date):
+def controlled_lines(rng, target_total):
+    """A single line sized so the post-tax total lands near target_total.
+
+    Used by the approval-policy anomalies, which need to land deliberately on
+    one side of a requester's limit rather than wherever a random qty*price
+    happens to fall.
+    """
+    sku, desc, price, gst = rng.choice(PRODUCTS)
+    qty = max(1, round(target_total / (price * (1 + gst / 100))))
+    return [{"sku": sku, "description": desc, "qty": qty, "unit_price": price, "gst_rate": gst}]
+
+
+def fraud_vendor_names(rng, n):
+    """n distinct business-sounding names, disjoint from VENDORS and from each
+    other, for the vendor-master anomalies that must not share state with the
+    canonical 10 -- or with EACH OTHER.
+
+    Sharing a vendor between a fraud anomaly and an ordinary triple would let
+    the anomaly contaminate later invoices from the same vendor (every
+    subsequent invoice from a vendor with an unverified bank change on file
+    should, correctly, also be held -- which would then disagree with
+    labels.json calling those later invoices clean). Dedicated names sidestep
+    the problem entirely instead of trying to schedule around it.
+
+    Call this ONCE per generation run for the whole fraud-vendor budget and
+    hand out names from the returned list, rather than calling it once per
+    anomaly instance. Two separate calls each reshuffle the full combo space
+    independently, so nothing stops them drawing the same name -- which
+    happened in practice (seed=42, two "Meridian Trading Pvt Ltd" vendors)
+    and corrupted VendorMaster's name index: the second add_vendor() silently
+    overwrote the first's entry in _by_name, so every invoice for the first
+    vendor started resolving to the second vendor's (clean) state instead of
+    its own pending change, producing a false clear no detector logic was
+    actually wrong about.
+    """
+    combos = [f"{a} {b}" for a in FRAUD_VENDOR_ADJECTIVES for b in FRAUD_VENDOR_NOUNS]
+    rng.shuffle(combos)
+    if n > len(combos):
+        combos = combos + [f"{c} Group {i}" for i, c in enumerate(itertools.cycle(combos), start=1)][:n - len(combos)]
+    return [f"{name} Pvt Ltd" for name in combos[:n]]
+
+
+def build_vendor_master(base_date):
+    """The 10 canonical vendors, onboarded long before the dataset window so
+    none of them can be mistaken for a new vendor, with unremarkable payment
+    details and no pending changes. Fraud-pool vendors are added later by the
+    anomaly seeding functions that need them."""
+    vm = VendorMaster.empty()
+    onboarded = (base_date - timedelta(days=500)).isoformat()
+    for i, (canonical, alias) in enumerate(VENDORS, start=1):
+        vendor_id = f"VEND-{i:03d}"
+        domain = "".join(ch for ch in canonical.lower() if ch.isalnum())[:14]
+        vm.add_vendor(
+            vendor_id=vendor_id,
+            canonical_name=canonical,
+            bank_account=f"40010{i:07d}",
+            bank_ifsc=f"HDFC000{1000 + i}",
+            remit_to_name=canonical,
+            contact_email=f"accounts@{domain}.example",
+            onboarded_date=onboarded,
+            aliases=[alias],
+        )
+    return vm
+
+
+def build_clean_set(rng, ids, vendor, po_date, lines=None, requester_id=DEFAULT_REQUESTER_ID):
     """Build a matching PO / GRN / invoice triple with no variance."""
-    lines = make_lines(rng)
+    lines = lines if lines is not None else make_lines(rng)
     po_id = ids.next_po()
     grn_id = ids.next_grn()
     inv_id = ids.next_inv()
@@ -144,6 +302,7 @@ def build_clean_set(rng, ids, vendor, po_date):
         "id": po_id,
         "vendor": vendor,
         "date": po_date.isoformat(),
+        "requester_id": requester_id,
         "lines": [dict(l) for l in lines],
     }
     grn = {
@@ -159,6 +318,7 @@ def build_clean_set(rng, ids, vendor, po_date):
         "id": inv_id,
         "po_id": po_id,
         "vendor": vendor,
+        "requester_id": requester_id,
         "invoice_date": inv_date.isoformat(),
         "lines": inv_lines,
         "total_amount": total,
@@ -167,13 +327,27 @@ def build_clean_set(rng, ids, vendor, po_date):
 
 
 def apply_anomaly(anomaly_type, po, grn, invoice, rng, ids, vendor_variant):
-    """Mutate a clean triple in place to seed the given anomaly. Returns (label_notes, related_id)."""
+    """Mutate a clean triple in place to seed the given anomaly. Returns (label_notes, related_id).
+
+    Covers only the original eight three-way-match anomaly types. The five
+    vendor-master / approval-policy types are seeded by dedicated functions
+    below instead, since they need a different vendor identity or a
+    controlled invoice total rather than an in-place field mutation.
+    """
     notes = ""
     related_id = None
 
     if anomaly_type == "quantity_variance":
+        # short is drawn from [2, 5], never [1, 5]: the matcher's own tolerance
+        # is +-1 unit (core/matcher.py DEFAULT_TOLERANCES["qty_units"]), so a
+        # short of exactly 1 is not an anomaly at all -- it's a legitimate
+        # in-tolerance short-ship, and labelling it "quantity_variance /
+        # escalate" would be a wrong label, not a detector miss. (Found via
+        # eval/run_eval.py's per-type recall once it existed to show it: this
+        # type was scoring under 100% for a labelling reason, not a bug in
+        # core/matcher.py.)
         line = grn["lines"][0]
-        short = min(rng.randint(1, 5), line["qty_received"] - 1)
+        short = min(rng.randint(2, 5), line["qty_received"] - 1)
         line["qty_received"] -= short
         notes = f"GRN received qty short by {short} vs invoice/PO qty"
 
@@ -187,7 +361,16 @@ def apply_anomaly(anomaly_type, po, grn, invoice, rng, ids, vendor_variant):
         notes = f"Invoice unit price {bump*100:.2f}% over PO price, within tolerance"
 
     elif anomaly_type == "price_variance_out_tolerance":
-        line = invoice["lines"][0]
+        # The matcher clears a line if EITHER the percentage OR the Rs 500
+        # total-impact floor is satisfied (core/matcher.py: "tolerance is
+        # evaluated on total monetary impact, not per-unit price"). A 10-20%
+        # bump comfortably clears the percentage clause, but on a low
+        # qty*price line the rupee impact can still land under the floor --
+        # a 15% bump on 5 units of a Rs 38 item is under Rs 3. That's not a
+        # detector bug, it's the anomaly failing to be an anomaly under the
+        # project's own documented rule. Pick the highest qty*price line so
+        # the seeded bump reliably clears the floor as well.
+        line = max(invoice["lines"], key=lambda l: l["qty"] * l["unit_price"])
         bump = round(rng.uniform(0.10, 0.20), 3)
         line["unit_price"] = money(line["unit_price"] * (1 + bump))
         invoice["total_amount"] = money(sum(
@@ -225,15 +408,161 @@ def apply_anomaly(anomaly_type, po, grn, invoice, rng, ids, vendor_variant):
     return notes, related_id
 
 
+# --- vendor-master / approval-policy anomaly seeding ------------------------
+#
+# Each function returns (po, grn, invoice, label) for a single-invoice
+# anomaly, or a list of those for threshold_splitting's group. They all
+# append to `vendor_master` / consult `employees_by_id` as a side effect where
+# relevant, rather than only touching pos/grns/invoices/labels -- the whole
+# point of these anomalies is that they live in vendor-master and approval
+# state, not in the PO/GRN/invoice documents themselves.
+
+def seed_vendor_bank_detail_change(rng, ids, vendor_master, base_date, day_spread, name):
+    vendor_id = ids.next_vendor_id()
+    onboarded = (base_date - timedelta(days=500)).isoformat()  # aged, so this isn't ALSO a new-vendor case
+    domain = "".join(ch for ch in name.lower() if ch.isalnum())[:14]
+    old_account = f"77070{rng.randint(1000000, 9999999)}"
+    vendor_master.add_vendor(
+        vendor_id=vendor_id, canonical_name=name, bank_account=old_account,
+        bank_ifsc="ICIC0001234", remit_to_name=name,
+        contact_email=f"accounts@{domain}.example", onboarded_date=onboarded,
+    )
+
+    po_date = base_date + timedelta(days=rng.randint(0, day_spread))
+    po, grn, invoice = build_clean_set(rng, ids, name, po_date)
+
+    new_account = f"99988{rng.randint(1000000, 9999999)}"
+    change_date = (date.fromisoformat(invoice["invoice_date"]) - timedelta(days=rng.randint(1, 4))).isoformat()
+    vendor_master.record_change(
+        vendor_id, "bank_account", new_account, effective_at=change_date,
+        actor="email_request", channel="email",
+        note="Bank details update requested by email ahead of this invoice; not yet verified out of band.",
+    )
+
+    label = {
+        "invoice_id": invoice["id"],
+        "anomaly_type": "vendor_bank_detail_change",
+        "expected_outcome": "escalate",
+        "notes": f"Vendor '{name}' bank account changed by email on {change_date}, unverified, "
+                 f"{rng.randint(1, 4)} day(s) before this otherwise-clean invoice.",
+    }
+    return po, grn, invoice, label
+
+
+def seed_new_vendor_first_invoice(rng, ids, vendor_master, base_date, day_spread, name):
+    vendor_id = ids.next_vendor_id()
+
+    po_date = base_date + timedelta(days=rng.randint(0, day_spread))
+    po, grn, invoice = build_clean_set(rng, ids, name, po_date)
+
+    onboarded = (date.fromisoformat(invoice["invoice_date"]) - timedelta(days=rng.randint(5, 45))).isoformat()
+    domain = "".join(ch for ch in name.lower() if ch.isalnum())[:14]
+    vendor_master.add_vendor(
+        vendor_id=vendor_id, canonical_name=name,
+        bank_account=f"60060{rng.randint(1000000, 9999999)}",
+        bank_ifsc="AXIS0009876", remit_to_name=name,
+        contact_email=f"accounts@{domain}.example", onboarded_date=onboarded,
+    )
+
+    label = {
+        "invoice_id": invoice["id"],
+        "anomaly_type": "new_vendor_first_invoice",
+        "expected_outcome": "escalate",
+        "notes": f"Vendor '{name}' onboarded {onboarded}; this is their first invoice, "
+                 f"otherwise a clean three-way match.",
+    }
+    return po, grn, invoice, label
+
+
+def seed_vendor_employee_collision(rng, ids, vendor_master, employees_by_id, base_date, day_spread, name):
+    vendor_id = ids.next_vendor_id()
+    collider = employees_by_id[COLLISION_EMPLOYEE_ID]
+    onboarded = (base_date - timedelta(days=500)).isoformat()
+    vendor_master.add_vendor(
+        vendor_id=vendor_id, canonical_name=name,
+        bank_account=collider["bank_account"],  # the collision: paid to an employee's own account
+        bank_ifsc="UTIB0005555", remit_to_name=name,
+        contact_email=f"accounts@{name.lower().replace(' ', '')[:14]}.example",
+        onboarded_date=onboarded,
+    )
+
+    po_date = base_date + timedelta(days=rng.randint(0, day_spread))
+    po, grn, invoice = build_clean_set(rng, ids, name, po_date)
+
+    label = {
+        "invoice_id": invoice["id"],
+        "anomaly_type": "vendor_employee_collision",
+        "expected_outcome": "escalate",
+        "notes": f"Vendor '{name}' bank account matches employee {collider['name']} ({collider['employee_id']}).",
+    }
+    return po, grn, invoice, label
+
+
+def seed_approval_threshold_exceeded(rng, ids, employees_by_id, base_date, day_spread):
+    employee = employees_by_id[SINGLE_OVER_LIMIT_REQUESTER_ID]
+    canonical, _ = rng.choice(VENDORS)
+    po_date = base_date + timedelta(days=rng.randint(0, day_spread))
+    target = employee["approval_limit"] * rng.uniform(1.3, 1.8)
+    lines = controlled_lines(rng, target)
+    po, grn, invoice = build_clean_set(rng, ids, canonical, po_date, lines=lines,
+                                       requester_id=employee["employee_id"])
+
+    label = {
+        "invoice_id": invoice["id"],
+        "anomaly_type": "approval_threshold_exceeded",
+        "expected_outcome": "escalate",
+        "notes": f"Invoice Rs {invoice['total_amount']:,.2f} exceeds requester {employee['name']}'s "
+                 f"approval limit of Rs {employee['approval_limit']:,.2f}; otherwise a clean match.",
+    }
+    return po, grn, invoice, label
+
+
+def seed_threshold_splitting(rng, ids, employees_by_id, base_date, day_spread, group_index):
+    employee = employees_by_id[SPLIT_REQUESTER_POOL[group_index % len(SPLIT_REQUESTER_POOL)]]
+    canonical, _ = rng.choice(VENDORS)
+    limit = employee["approval_limit"]
+
+    # Reserve a slice of the timeline per group so two groups (even for the
+    # same requester, if the pool is exhausted) never fall inside each
+    # other's SPLIT_WINDOW_DAYS and get mistaken for one bigger group.
+    usable_span = max(day_spread - 30, 30)
+    slice_start = (group_index * 25) % usable_span
+    po_date_base = base_date + timedelta(days=slice_start)
+
+    per_invoice_target = limit * rng.uniform(0.55, 0.65)  # each member individually under the limit
+    members = []
+    for k in range(SPLIT_GROUP_SIZE):
+        po_date = po_date_base + timedelta(days=k * 3)
+        lines = controlled_lines(rng, per_invoice_target)
+        members.append(build_clean_set(rng, ids, canonical, po_date, lines=lines,
+                                       requester_id=employee["employee_id"]))
+
+    member_ids = [invoice["id"] for _, _, invoice in members]
+    labels = []
+    for po, grn, invoice in members:
+        others = [i for i in member_ids if i != invoice["id"]]
+        labels.append({
+            "invoice_id": invoice["id"],
+            "anomaly_type": "threshold_splitting",
+            "expected_outcome": "escalate",
+            "notes": f"Requester {employee['name']} split a purchase from {canonical} across "
+                     f"{SPLIT_GROUP_SIZE} invoices ({', '.join(member_ids)}), each individually under "
+                     f"their Rs {limit:,.2f} limit; the group sums over it.",
+            "related_invoice_id": ", ".join(others),
+        })
+    return members, labels
+
+
 def generate(count, anomaly_rate, seed, out_dir):
     rng = random.Random(seed)
     ids = IdGen()
+    base_date = date(2026, 7, 1)
+    vendor_master = build_vendor_master(base_date)
+    employees_by_id = {e["employee_id"]: e for e in EMPLOYEES}
 
     total_anomalies = round(count * anomaly_rate)
     anomaly_plan = scale_anomaly_plan(total_anomalies)
-
-    pos, grns, invoices, labels = [], [], [], []
-    base_date = date(2026, 7, 1)
+    plan_by_type = dict(anomaly_plan)
 
     # Spread invoices over a window proportional to the dataset size so invoices
     # per day stays constant as --count grows (60 invoices / 45 days). Holding the
@@ -242,20 +571,31 @@ def generate(count, anomaly_rate, seed, out_dir):
     # rather than a real property of the matching pipeline.
     day_spread = max(45, round(45 * count / 60))
 
+    n_duplicates = plan_by_type.get("duplicate", 0)
+    n_missing_po = plan_by_type.get("missing_po", 0)
+    n_bank_change = plan_by_type.get("vendor_bank_detail_change", 0)
+    n_new_vendor = plan_by_type.get("new_vendor_first_invoice", 0)
+    n_collision = plan_by_type.get("vendor_employee_collision", 0)
+    n_approval_exceeded = plan_by_type.get("approval_threshold_exceeded", 0)
+    n_splitting_groups = plan_by_type.get("threshold_splitting", 0)
+
+    dedicated_invoice_budget = (
+        n_duplicates + n_missing_po + n_bank_change + n_new_vendor
+        + n_collision + n_approval_exceeded + (n_splitting_groups * SPLIT_GROUP_SIZE)
+    )
+    n_own_triple = max(0, count - dedicated_invoice_budget)
+
     anomaly_queue = []
     for kind, n in anomaly_plan:
         anomaly_queue.extend([kind] * n)
     rng.shuffle(anomaly_queue)
 
-    n_duplicates = sum(1 for k in anomaly_queue if k == "duplicate")
-    n_missing_po = sum(1 for k in anomaly_queue if k == "missing_po")
-    n_own_triple = count - n_duplicates - n_missing_po  # clean + non-duplicate/non-missing anomalies
-
-    clean_pool_for_dup = []  # invoice_ids eligible to be duplicated
-
-    triple_anomalies = [k for k in anomaly_queue if k not in ("duplicate", "missing_po")]
-    slots = ["clean"] * (n_own_triple - len(triple_anomalies)) + triple_anomalies
+    triple_anomalies = [k for k in anomaly_queue if k not in DEDICATED_TYPES]
+    slots = ["clean"] * max(0, n_own_triple - len(triple_anomalies)) + triple_anomalies
     rng.shuffle(slots)
+
+    pos, grns, invoices, labels = [], [], [], []
+    clean_pool_for_dup = []  # invoice_ids eligible to be duplicated
 
     for slot in slots:
         po_date = base_date + timedelta(days=rng.randint(0, day_spread))
@@ -297,6 +637,7 @@ def generate(count, anomaly_rate, seed, out_dir):
             "id": dup_id,
             "po_id": original["po_id"],
             "vendor": original["vendor"],
+            "requester_id": original.get("requester_id", DEFAULT_REQUESTER_ID),
             "invoice_date": dup_date.isoformat(),
             "lines": [dict(l) for l in original["lines"]],
             "total_amount": original["total_amount"],
@@ -321,6 +662,7 @@ def generate(count, anomaly_rate, seed, out_dir):
             "id": inv_id,
             "po_id": None,
             "vendor": canonical,
+            "requester_id": DEFAULT_REQUESTER_ID,
             "invoice_date": inv_date.isoformat(),
             "lines": lines,
             "total_amount": total,
@@ -331,6 +673,41 @@ def generate(count, anomaly_rate, seed, out_dir):
             "expected_outcome": "escalate",
             "notes": "No matching PO exists for this invoice",
         })
+
+    # vendor-master and approval-policy anomalies. One shared name pool across
+    # all three fraud-vendor-consuming types -- see fraud_vendor_names'
+    # docstring for why per-call pools are not safe here.
+    fraud_names = iter(fraud_vendor_names(rng, n_bank_change + n_new_vendor + n_collision))
+
+    for _ in range(n_bank_change):
+        po, grn, invoice, label = seed_vendor_bank_detail_change(
+            rng, ids, vendor_master, base_date, day_spread, next(fraud_names)
+        )
+        pos.append(po); grns.append(grn); invoices.append(invoice); labels.append(label)
+
+    for _ in range(n_new_vendor):
+        po, grn, invoice, label = seed_new_vendor_first_invoice(
+            rng, ids, vendor_master, base_date, day_spread, next(fraud_names)
+        )
+        pos.append(po); grns.append(grn); invoices.append(invoice); labels.append(label)
+
+    for _ in range(n_collision):
+        po, grn, invoice, label = seed_vendor_employee_collision(
+            rng, ids, vendor_master, employees_by_id, base_date, day_spread, next(fraud_names)
+        )
+        pos.append(po); grns.append(grn); invoices.append(invoice); labels.append(label)
+
+    for _ in range(n_approval_exceeded):
+        po, grn, invoice, label = seed_approval_threshold_exceeded(rng, ids, employees_by_id, base_date, day_spread)
+        pos.append(po); grns.append(grn); invoices.append(invoice); labels.append(label)
+
+    for group_index in range(n_splitting_groups):
+        members, group_labels = seed_threshold_splitting(
+            rng, ids, employees_by_id, base_date, day_spread, group_index
+        )
+        for po, grn, invoice in members:
+            pos.append(po); grns.append(grn); invoices.append(invoice)
+        labels.extend(group_labels)
 
     invoices.sort(key=lambda i: i["invoice_date"])
     labels_by_id = {l["invoice_id"]: l for l in labels}
@@ -345,6 +722,9 @@ def generate(count, anomaly_rate, seed, out_dir):
         json.dump(invoices, f, indent=2)
     with open(os.path.join(out_dir, "labels.json"), "w") as f:
         json.dump(labels, f, indent=2)
+    vendor_master.save(os.path.join(out_dir, "vendors.json"))
+    with open(os.path.join(out_dir, "employees.json"), "w") as f:
+        json.dump(EMPLOYEES, f, indent=2)
 
     return pos, grns, invoices, labels
 
@@ -363,7 +743,8 @@ def main():
     for l in labels:
         by_type[l["anomaly_type"]] = by_type.get(l["anomaly_type"], 0) + 1
 
-    print(f"Generated {len(pos)} POs, {len(grns)} GRNs, {len(invoices)} invoices -> {args.out_dir}")
+    print(f"Generated {len(pos)} POs, {len(grns)} GRNs, {len(invoices)} invoices, "
+          f"{len(VENDORS)} core vendors + fraud-pool vendors, {len(EMPLOYEES)} employees -> {args.out_dir}")
     for k, v in sorted(by_type.items()):
         print(f"  {k}: {v}")
 

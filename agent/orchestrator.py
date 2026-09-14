@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.matcher import match_invoice
 from core.anomalies import classify
 from core.ledger import Ledger
+from core.vendor_master import VendorMaster
 from agent import tools
 from agent.escalation import build_packet
 from agent.trace import Trace, describe_variance, llm_source
@@ -35,7 +36,27 @@ def load_data(data_dir):
     return pos, grn_by_po, invoices
 
 
-def process_invoice(invoice, pos, grn_by_po, ledger):
+def load_vendor_master(data_dir):
+    """Optional. A dataset generated before core/vendor_master.py existed has
+    no vendors.json; every vendor-master check then simply finds no record and
+    is skipped (see core/anomalies.py::_vendor_master_findings), so older
+    datasets keep running rather than erroring out."""
+    path = os.path.join(data_dir, "vendors.json")
+    if not os.path.exists(path):
+        return VendorMaster.empty()
+    return VendorMaster.load(path)
+
+
+def load_employees(data_dir):
+    """Optional, same reasoning as load_vendor_master. Returns {employee_id: record}."""
+    path = os.path.join(data_dir, "employees.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        return {e["employee_id"]: e for e in json.load(f)}
+
+
+def process_invoice(invoice, pos, grn_by_po, ledger, vendor_master=None, employees_by_id=None):
     po = pos.get(invoice.get("po_id"))
     grn = grn_by_po.get(invoice.get("po_id"))
 
@@ -86,7 +107,8 @@ def process_invoice(invoice, pos, grn_by_po, ledger):
                       f"Invoice vendor '{invoice['vendor']}' differs from PO vendor '{po['vendor']}'; "
                       f"referred for entity resolution.")
 
-    findings = classify(invoice, match_result, ledger, trace=trace)
+    findings = classify(invoice, match_result, ledger,
+                        vendor_master=vendor_master, employees_by_id=employees_by_id, trace=trace)
 
     if not findings:
         trace.add("conclusion", "No exceptions raised. Auto-cleared and posted to the ledger.")
@@ -140,8 +162,11 @@ def process_invoice(invoice, pos, grn_by_po, ledger):
                 )
             escalate = True
         else:
-            # missing_po, price_variance_out_tolerance, tax_mismatch,
-            # quantity_variance, line_item_mismatch: no judgement call, always escalate.
+            # missing_po, price/qty/tax/line-item variance, and every vendor-master
+            # and approval-policy finding: no judgement call, always escalate. None
+            # of these ask "is this really a problem" -- they are already a fact
+            # (a bank account changed, a requester's invoices sum past their limit)
+            # and the only open question is what a human does about it.
             trace.add("rule_escalation",
                       f"{f['type'].replace('_', ' ').capitalize()} is a hard exception under the matching "
                       f"rules ({f['severity']} severity); routed to a human without model judgement.")
@@ -168,16 +193,29 @@ def process_invoice(invoice, pos, grn_by_po, ledger):
             "packet": packet, "steps": trace.steps()}
 
 
-def run(data_dir, out_dir):
+def run(data_dir, out_dir, fresh_ledger=False):
+    """`fresh_ledger=True` truncates runtime/ledger.json before the run.
+
+    The default (False) matches the pre-existing CLI behaviour: `python -m
+    agent.orchestrator` is meant to be runnable repeatedly against a live
+    `runtime/` directory, appending newly-arrived invoices onto whatever is
+    already posted -- that is what makes the duplicate detector meaningful in
+    a demo. `eval/run_eval.py` passes True, because a batch score has to be
+    reproducible from the dataset alone, not from whatever state a previous
+    eval run left behind.
+    """
     os.makedirs(out_dir, exist_ok=True)
     pos, grn_by_po, invoices = load_data(data_dir)
-    ledger = Ledger(os.path.join(out_dir, "ledger.json"))
+    vendor_master = load_vendor_master(data_dir)
+    employees_by_id = load_employees(data_dir)
+    ledger = Ledger(os.path.join(out_dir, "ledger.json"), fresh=fresh_ledger)
 
     tools.reset_usage()
     results = []
     exceptions = []
     for invoice in invoices:
-        result = process_invoice(invoice, pos, grn_by_po, ledger)
+        result = process_invoice(invoice, pos, grn_by_po, ledger,
+                                 vendor_master=vendor_master, employees_by_id=employees_by_id)
         results.append(result)
         if result["packet"] is not None:
             exceptions.append(result["packet"])
@@ -192,9 +230,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", default="data")
     parser.add_argument("--out-dir", default="runtime")
+    parser.add_argument("--fresh-ledger", action="store_true",
+                        help="Truncate the ledger before this run instead of appending to it.")
     args = parser.parse_args()
 
-    results, usage = run(args.data_dir, args.out_dir)
+    results, usage = run(args.data_dir, args.out_dir, fresh_ledger=args.fresh_ledger)
 
     auto_clear = sum(1 for r in results if r["decision"] == "auto_clear")
     escalate = sum(1 for r in results if r["decision"] == "escalate")

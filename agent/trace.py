@@ -13,7 +13,15 @@ DETERMINISTIC = "deterministic"
 
 
 def llm_source(judgement):
-    """Label a step by the path that actually produced it."""
+    """Label a step by the path that actually produced it.
+
+    The judgement result carries its own `source`, set in agent/tools.py from
+    whichever provider answered, so this reports rather than infers. The
+    `llm_used` branch below only covers judgement dicts assembled by hand.
+    """
+    source = judgement.get("source")
+    if source:
+        return source
     model = judgement.get("model")
     if judgement.get("llm_used"):
         return f"llm:{model}" if model else "llm"

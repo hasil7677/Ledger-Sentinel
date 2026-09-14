@@ -1,0 +1,48 @@
+name: tests
+
+# Runs entirely offline. LEDGER_SENTINEL_LLM is pinned to "stub" so the suite
+# never needs TENSORMUX_API_KEY / OPENAI_API_KEY and never makes a network
+# call to a model -- the whole point of agent/llm.py's injectable boundary is
+# that this is possible at all. No secrets are configured for this workflow
+# on purpose: if a test ever required one, that would itself be a bug worth
+# CI catching.
+on:
+  push:
+    branches: [main, v2]
+  pull_request:
+
+env:
+  LEDGER_SENTINEL_LLM: stub
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run test suite
+        run: python -m pytest tests/ -v
+
+      - name: Generate a dataset and run the agent pipeline end to end
+        run: |
+          python data/generator.py --count 120 --anomaly-rate 0.2 --seed 1 --out-dir /tmp/ci_data
+          python -m agent.orchestrator --data-dir /tmp/ci_data --out-dir /tmp/ci_runtime --fresh-ledger
+
+      - name: Verify the ledger produced by that run
+        run: python -m core.ledger verify --path /tmp/ci_runtime/ledger.json
+
+      - name: Run the eval and check for false clears CI should refuse to ship
+        run: |
+          python eval/run_eval.py --regenerate --seed 1 --count 300 --anomaly-rate 0.2 \
+            --data-dir /tmp/ci_eval_data --out-dir /tmp/ci_eval_out

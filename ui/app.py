@@ -28,14 +28,33 @@ SURFACE = "#1a1a19"
 BORDER = "#2c2c2a"
 MISMATCH_COLOR = SEVERITY_COLOR["high"]
 
-# (label, exception_type slug). None = no filter ("All"). Client-side filter only --
-# reads the same st.session_state.queue already loaded, no new data/fetch.
+# (label, exception_type slug). None = no filter ("All") EXCEPT for the last
+# tab, which is a combined filter -- see _matches_tab. Client-side filter only
+# -- reads the same st.session_state.queue already loaded, no new data/fetch.
 CATEGORIES = [
     ("All", None),
     ("Quantity Variance", "quantity_variance"),
     ("Suspected Duplicate", "suspected_duplicate"),
     ("Line Item Mismatch", "line_item_mismatch"),
+    ("Bank Change", "vendor_bank_detail_change"),
+    ("Employee Collision", "vendor_employee_collision"),
+    ("New Vendor", "new_vendor_first_invoice"),
+    ("Approval / Split", "__approval__"),
 ]
+
+# Two exception_types collapse into one tab: a requester exceeding their
+# authority, surfaced either as one invoice alone or as several together. A
+# clerk reviewing "approval issues" for the day shouldn't have to check two
+# tabs to see all of them.
+APPROVAL_TAB_TYPES = {"approval_threshold_exceeded", "threshold_splitting"}
+
+
+def matches_tab(packet, slug):
+    if slug is None:
+        return True
+    if slug == "__approval__":
+        return packet["exception_type"] in APPROVAL_TAB_TYPES
+    return packet["exception_type"] == slug
 
 st.set_page_config(page_title="Ledger Sentinel - Exception Queue", layout="wide")
 
@@ -261,7 +280,7 @@ left, right = st.columns([1, 2], gap="large")
 with left:
     tab_cols = st.columns(len(CATEGORIES), gap="small")
     for (label, slug), tab_col in zip(CATEGORIES, tab_cols):
-        count = sum(1 for p in queue if slug is None or p["exception_type"] == slug)
+        count = sum(1 for p in queue if matches_tab(p, slug))
         is_active = st.session_state.active_category == slug
         tab_key = f"tabbar_{slug or 'all'}" + ("_active" if is_active else "")
         with tab_col:
@@ -271,10 +290,7 @@ with left:
                     st.rerun()
     st.markdown(f"<div style='border-bottom:1px solid {BORDER};margin-bottom:16px'></div>", unsafe_allow_html=True)
 
-    filtered_queue = [
-        p for p in queue
-        if st.session_state.active_category is None or p["exception_type"] == st.session_state.active_category
-    ]
+    filtered_queue = [p for p in queue if matches_tab(p, st.session_state.active_category)]
     if not filtered_queue:
         st.caption("No exceptions in this category.")
 
@@ -327,6 +343,65 @@ with right:
         )
         if packet.get("vendor_normalised_from"):
             st.caption(f"Vendor normalised from '{packet['vendor_normalised_from']}' -> '{packet['vendor']}'")
+
+        vm_evidence = packet["evidence"].get("vendor_master")
+        if vm_evidence:
+            if vm_evidence.get("pending_changes"):
+                st.markdown(
+                    f"<div style='border:1px solid {SEVERITY_COLOR['high']};border-radius:8px;"
+                    f"padding:10px 14px;margin:6px 0 14px 0;background:{SEVERITY_COLOR['high']}14'>"
+                    f"<b style='color:{SEVERITY_COLOR['high']}'>Payment hold -- unverified bank-detail change</b>",
+                    unsafe_allow_html=True,
+                )
+                for change in vm_evidence["pending_changes"]:
+                    st.markdown(
+                        f"<div style='margin-top:6px;font-size:0.85rem'>"
+                        f"<code>{change['field']}</code>: {change['old_value']} &rarr; {change['new_value']}"
+                        f"<br><span style='color:{MUTED}'>requested {change['effective_at']} via {change['channel']} "
+                        f"({change['actor']})</span></div>",
+                        unsafe_allow_html=True,
+                    )
+                st.markdown(
+                    f"<div style='margin-top:8px;font-size:0.85rem'>{vm_evidence['hold']} Verify by phone using "
+                    f"the number already on file -- not one supplied with this request.</div></div>",
+                    unsafe_allow_html=True,
+                )
+            if vm_evidence.get("employee_collision"):
+                c = vm_evidence["employee_collision"]
+                st.markdown(
+                    f"<div style='border:1px solid {SEVERITY_COLOR['high']};border-radius:8px;padding:10px 14px;"
+                    f"margin:6px 0 14px 0;background:{SEVERITY_COLOR['high']}14;font-size:0.88rem'>"
+                    f"<b style='color:{SEVERITY_COLOR['high']}'>Vendor/employee collision</b><br>"
+                    f"This vendor's {c['match_field'].replace('_', ' ')} matches employee "
+                    f"{c['employee_name']} ({c['employee_id']}). Route to internal audit.</div>",
+                    unsafe_allow_html=True,
+                )
+            if vm_evidence.get("new_vendor"):
+                st.caption(f"First invoice from this vendor -- onboarded {vm_evidence['new_vendor']['onboarded_date']}.")
+
+        approval_evidence = packet["evidence"].get("approval")
+        if approval_evidence:
+            limit_str = f"Rs {approval_evidence['approval_limit']:,.0f}"
+            if approval_evidence["kind"] == "single_invoice_over_limit":
+                st.markdown(
+                    f"<div style='border:1px solid {SEVERITY_COLOR['medium']};border-radius:8px;padding:10px 14px;"
+                    f"margin:6px 0 14px 0;background:{SEVERITY_COLOR['medium']}14;font-size:0.88rem'>"
+                    f"<b style='color:{SEVERITY_COLOR['medium']}'>Over requester's approval limit</b><br>"
+                    f"{approval_evidence.get('requester_name', 'Requester')}'s limit is {limit_str}; this invoice "
+                    f"alone is over by Rs {approval_evidence.get('over_by', 0):,.0f}.</div>",
+                    unsafe_allow_html=True,
+                )
+            else:
+                members = ", ".join(m["invoice_id"] for m in approval_evidence["members"])
+                st.markdown(
+                    f"<div style='border:1px solid {SEVERITY_COLOR['high']};border-radius:8px;padding:10px 14px;"
+                    f"margin:6px 0 14px 0;background:{SEVERITY_COLOR['high']}14;font-size:0.88rem'>"
+                    f"<b style='color:{SEVERITY_COLOR['high']}'>Suspected threshold splitting</b><br>"
+                    f"{approval_evidence['requester_name']}'s limit is {limit_str}; invoices "
+                    f"{members} to this vendor within {approval_evidence['window_days']} days sum to "
+                    f"Rs {approval_evidence['group_total']:,.0f} -- over by Rs {approval_evidence['over_by']:,.0f}.</div>",
+                    unsafe_allow_html=True,
+                )
 
         steps = packet.get("steps") or []
         if steps:
