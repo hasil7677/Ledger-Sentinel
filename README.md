@@ -48,6 +48,12 @@ where it currently isn't.
 - [The eval](#the-eval)
 - [Known limitations](#known-limitations)
 
+See also [`EVAL_METHODOLOGY.md`](EVAL_METHODOLOGY.md) for the eval's full
+derivation — dataset reproducibility proof, the false-clear rate's stability
+across 8 seeds (not just the one in the table below), the structural-vs-LLM
+decision boundary made testable, and the adversarial testing done against the
+duplicate-veto invariant.
+
 ---
 
 ## How it works
@@ -553,6 +559,19 @@ rather than eyeballing the code, in case you're extending it:
   pipeline still runs to completion offline, and every judgement result
   carries `llm_used` and `source` so it's always visible which path actually
   answered.
+- **The fallback boundary trusted providers to keep their own contract, and
+  one adversarial test found that assumption breaks.** `agent/llm.py`'s
+  `Provider.judge()` docstring says "implementations must not raise" and
+  "a judgement that cannot be made returns `Judgement.unavailable()`" — but
+  nothing enforced either promise on the caller's side. A malformed
+  `confidence` value (a plain string, or `None`) crashed `process_invoice`
+  downstream via a `:.2f` format spec that raises on non-numeric input rather
+  than misformatting it; a provider that raised mid-call (despite the
+  contract) propagated the same way. `agent/tools.py::_judge` now catches
+  provider exceptions and coerces `confidence` defensively instead of
+  trusting the contract to hold — see
+  [`EVAL_METHODOLOGY.md` §7](EVAL_METHODOLOGY.md#7-the-duplicate-veto-adversarial-testing-not-just-the-happy-path)
+  for the full adversarial pass this came out of.
 - **Vendor-master and approval-policy state is opt-in on being supplied.** If
   a caller doesn't pass `vendor_master` or `employees_by_id` to
   `core.anomalies.classify()`, those checks are skipped entirely rather than
@@ -568,7 +587,7 @@ rather than eyeballing the code, in case you're extending it:
 
 ## Testing
 
-`tests/` is a real suite — 154 tests, all offline, none of them touch the
+`tests/` is a real suite — 194 tests, all offline, none of them touch the
 network (`LEDGER_SENTINEL_LLM=stub` is pinned in `tests/conftest.py`, and the
 one provider that *can* reach a network is only ever tested against a fake
 client). Roughly:
@@ -577,6 +596,9 @@ client). Roughly:
 |---|---|
 | `test_matcher.py` (21) | Every tolerance boundary named in this README on both sides: the 2% and ₹500 price clauses, the 1-unit quantity clause, and that GST has *no* tolerance at all — plus the per-unit-vs-total-impact regression above. |
 | `test_duplicate_veto.py` (4) | The one invariant this project is built around: a ledger near-match escalates even when the stub model insists, at 0.99 confidence, that it isn't a duplicate. Plus the true-negative case (no near-match, no escalation) and the ordinary agreeing-model path, so the invariant test isn't just passing because everything escalates. |
+| `test_llm_veto_adversarial.py` (20) | The same invariant under attack, not just disagreement: malformed confidence values, technically-valid-but-nonsensical JSON, and a provider that raises mid-call despite its documented contract — see [`EVAL_METHODOLOGY.md` §7](EVAL_METHODOLOGY.md#7-the-duplicate-veto-adversarial-testing-not-just-the-happy-path) for the two real crashes this found and fixed in `agent/tools.py`. |
+| `test_decision_boundary.py` (13) | Makes the structural-vs-LLM decision boundary testable: for every finding type, checks that `core/anomalies.py`'s `needs_judgement` flag and whether `agent/orchestrator.py` actually consults a provider agree, so the two can't silently drift apart. |
+| `test_eval_reproducibility.py` (7) | Byte-identical dataset regeneration (not just matching metrics) from a fixed seed, across several seeds and sizes, and under a forced different `PYTHONHASHSEED`; and an 8-seed rerun of the full eval pinning the false-clear rate's range and a seed-dependent false-escalate this pass found — see [`EVAL_METHODOLOGY.md`](EVAL_METHODOLOGY.md). |
 | `test_llm_boundary.py` (21) | Provider selection from config (`auto`/`openai`/`stub`/`off`), the stub's override mechanism, and that `OpenAICompatibleProvider.judge()` never raises — network errors, non-JSON replies, and non-object JSON all become a fallback-triggering `Judgement.unavailable()`. |
 | `test_vendor_master.py` (30) | Lookup by canonical name and alias, the change log, the bank-detail hold and its release on verification, the new-vendor window boundary, employee collision on bank account and on email, account masking, and hash-chain tamper detection on the vendor's own change log. |
 | `test_approval.py` (15) | Single-invoice threshold boundary, split detection (and every reason it should *not* fire: different requester, a member already over the limit alone, group size 1). |
@@ -588,6 +610,10 @@ client). Roughly:
 ```bash
 pip install -r requirements-dev.txt
 LEDGER_SENTINEL_LLM=stub python -m pytest tests/ -v
+
+# the slower dataset-reproducibility + 8-seed eval-stability pass on its own
+# (included in the command above too -- see pytest.ini's eval_full marker)
+LEDGER_SENTINEL_LLM=stub python -m pytest -m eval_full -v
 ```
 
 `.github/workflows/tests.yml` runs the suite on every push and PR, then
@@ -668,6 +694,16 @@ across the taxonomy above), scored offline (`LEDGER_SENTINEL_LLM=stub`):**
 | Escalation precision | 100% |
 | Cost-weighted score (50:1 asymmetry) | 200 total, 0.67 / invoice |
 
+**Every number above is from one seed (42).** Re-running the same eval
+across 8 seeds puts the false-clear rate in a **6.1%–8.2% range** (mean
+6.6%) — seed 42 sits at the high end, not the typical case — and finds
+escalation precision is **not actually 100% at every seed**: it drops to
+97.9% at 2 of the 8 (one `vendor_name_drift` invoice escalates instead of
+clearing, traced to a specific vendor-alias pair whose string similarity
+falls under the stub heuristic's own threshold). Full derivation, the
+per-seed table, and why this is a labelling gap rather than a detector bug:
+[`EVAL_METHODOLOGY.md` §4–5](EVAL_METHODOLOGY.md#4-the-82-number-what-it-does-and-doesnt-tell-you).
+
 This is **worse than the previous README's 0%-false-clear claim**, and the
 reason is not a regression in the matching logic — it's that this eval
 actually checks per-type recall instead of an aggregate, and two real gaps
@@ -725,6 +761,16 @@ Called out explicitly rather than left for someone to discover:
 - **`price_variance_out_tolerance` has a residual edge case** where a large
   percentage bump on a low-value, low-quantity line stays under the ₹500
   floor and legitimately clears — see [The eval](#the-eval).
+- **`vendor_name_drift`'s ground-truth label assumes every seeded alias pair
+  resolves above the stub heuristic's own confidence threshold; one doesn't.**
+  "Acme Corp" vs "Acme Corporation Pvt Ltd" scores 0.545 on the
+  `difflib.SequenceMatcher` ratio `agent/heuristics.py` uses, under its own
+  0.6 resolution threshold — so when the generator draws that specific pair
+  (it does at 2 of 8 tested seeds, not at the committed seed=42), the
+  invoice correctly escalates for a low-confidence vendor match instead of
+  auto-clearing, which the dataset's label doesn't expect. Not a bug in the
+  matcher or the orchestrator — see
+  [`EVAL_METHODOLOGY.md` §5](EVAL_METHODOLOGY.md#5-a-third-structural-blind-spot-found-by-running-more-than-one-seed).
 - **The hash-chained ledger and vendor-master log are tamper-*evident*, not
   tamper-*proof***. Anyone with write access to the JSON file can recompute
   the whole chain and forge a self-consistent replacement — see
