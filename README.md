@@ -1,10 +1,10 @@
 # Ledger Sentinel
 
-An accounts-payable agent, built for **Syndicate by Maximor**, Track 2 —
+An accounts-payable agent, built for **Syndicate by Maximor**, Track 2 -
 Autonomous Office of the CFO. The original 11-hour hackathon build did
 three-way match: reconcile Purchase Order vs Goods Receipt Note vs Invoice,
 auto-clear the clean ones, escalate the rest with a structured packet. This
-branch (`v2`) is a substantially larger pass on top of that submission —
+branch (`v2`) is a substantially larger pass on top of that submission -
 tests, a real eval, and three additions that go past three-way match into
 where accounts payable actually loses money.
 
@@ -14,7 +14,7 @@ Receipt Note** (what actually arrived), and the **Invoice** (what the vendor
 is billing us). If all three agree, the invoice gets coded and posted to the
 ledger. If they don't, it goes into an exception queue for a human to review.
 
-Ledger Sentinel automates the clean path — and treats the exception path as
+Ledger Sentinel automates the clean path - and treats the exception path as
 the actual product. It never guesses on an ambiguous invoice. It escalates
 with a structured packet a human can act on in one click, and it shows its
 work: every escalation carries an ordered trace of exactly what the agent
@@ -22,7 +22,7 @@ checked, in what order, before it decided to hand the invoice to a person.
 
 **The core thesis:** a false-clear (auto-paying an invoice that should have
 been escalated) costs far more than a false-escalate (sending a clean invoice
-to a human needlessly). The agent is deliberately conservative — tuned to
+to a human needlessly). The agent is deliberately conservative - tuned to
 escalate when uncertain, never to suppress a strong deterministic signal just
 because a language model disagrees with it. That thesis used to rest on a
 four-line metrics table and no tests. It still holds, but this branch is what
@@ -49,7 +49,7 @@ where it currently isn't.
 - [Known limitations](#known-limitations)
 
 See also [`EVAL_METHODOLOGY.md`](EVAL_METHODOLOGY.md) for the eval's full
-derivation — dataset reproducibility proof, the false-clear rate's stability
+derivation - dataset reproducibility proof, the false-clear rate's stability
 across 8 seeds (not just the one in the table below), the structural-vs-LLM
 decision boundary made testable, and the adversarial testing done against the
 duplicate-veto invariant.
@@ -60,7 +60,7 @@ duplicate-veto invariant.
 
 Every invoice goes through the same pipeline: deterministic matching decides
 **what's wrong**, and a language model is only ever consulted for genuine
-judgement calls — is this vendor name the same legal entity, is this really a
+judgement calls - is this vendor name the same legal entity, is this really a
 duplicate, how should this be explained to a human. The model is never asked
 to do arithmetic, and it is never allowed to be the *only* thing standing
 between an invoice and getting paid twice.
@@ -68,26 +68,26 @@ between an invoice and getting paid twice.
 ```mermaid
 flowchart TD
     A["Invoice arrives"] --> B{"Matching PO on file?"}
-    B -- "No" --> ESC_PO["Escalate — missing_po\n(no judgement call, hard rule)"]
+    B -- "No" --> ESC_PO["Escalate - missing_po\n(no judgement call, hard rule)"]
 
     B -- "Yes" --> C["core/matcher.py\nDeterministic 3-way match:\nPO vs GRN vs Invoice"]
 
     C --> D{"Vendor name\nexact match?"}
     D -- "No" --> VN["LLM: normalize_vendor\nsame entity? confidence?"]
     VN -- "same entity, conf >= 0.6" --> F
-    VN -- "not same / low confidence" --> ESC_V["Escalate — vendor_name_drift"]
+    VN -- "not same / low confidence" --> ESC_V["Escalate - vendor_name_drift"]
 
     D -- "Yes" --> F{"Any line variance\noutside tolerance?\n(price >2%/₹500, qty >1 unit, GST rate)"}
-    F -- "Yes" --> ESC_R["Escalate — price / qty / tax /\nline-item exception\n(no judgement call, hard rule)"]
+    F -- "Yes" --> ESC_R["Escalate - price / qty / tax /\nline-item exception\n(no judgement call, hard rule)"]
 
     F -- "No" --> VM["core/vendor_master.py + core/approval.py\nBank-detail hold? New vendor?\nEmployee collision? Over approval limit?\nSplit across recent invoices?"]
-    VM -- "any hit" --> ESC_VM["Escalate — vendor-master or\napproval-policy exception\n(no judgement call, hard rule)"]
+    VM -- "any hit" --> ESC_VM["Escalate - vendor-master or\napproval-policy exception\n(no judgement call, hard rule)"]
 
     VM -- "clean" --> G["core/ledger.py\nSearch posted ledger for a\nnear-match: same vendor,\namount ±₹1, within 30 days"]
 
     G -- "No match" --> CLEAR["Auto-clear\n→ post to ledger"]
     G -- "Match found" --> DUP["LLM: reason_duplicate\nis this really the same invoice?"]
-    DUP --> ESC_D["Escalate — suspected_duplicate\nALWAYS — a ledger near-match\nescalates regardless of the model's verdict.\nThe model may only adjust\nseverity / confidence, never suppress it."]
+    DUP --> ESC_D["Escalate - suspected_duplicate\nALWAYS - a ledger near-match\nescalates regardless of the model's verdict.\nThe model may only adjust\nseverity / confidence, never suppress it."]
 
     ESC_PO --> PACKET["agent/escalation.py\nBuild escalation packet\n+ full decision trace"]
     ESC_V --> PACKET
@@ -98,25 +98,25 @@ flowchart TD
     CLEAR --> LEDGERFILE["runtime/ledger.json"]
 ```
 
-That last branch — **suspected_duplicate always escalates, no matter what the
-model says** — exists because of a real bug found during development. Early on,
+That last branch - **suspected_duplicate always escalates, no matter what the
+model says** - exists because of a real bug found during development. Early on,
 escalation was gated on the model agreeing it was a duplicate; across repeated
 300-invoice runs, the model occasionally answered "not a duplicate" for an
-invoice that was, in fact, a re-submission of an already-posted one — which
+invoice that was, in fact, a re-submission of an already-posted one - which
 would have paid it twice. The fix: a ledger near-match on vendor + amount +
 date is sufficient **on its own** to route to a human. The model still runs
-and still shapes the packet's summary, confidence and proposed resolution —
+and still shapes the packet's summary, confidence and proposed resolution -
 it just can't veto the escalation anymore. `tests/test_duplicate_veto.py`
 pins this down by scripting the stub model to insist, at 0.99 confidence,
-that a genuine duplicate is not one, and asserting it escalates anyway — the
+that a genuine duplicate is not one, and asserting it escalates anyway - the
 test that fails if this ever regresses.
 
 Every vendor-master and approval-policy finding added on this branch is a
 **hard rule**, same as the price/qty/tax exceptions above: none of them ask
 the model's opinion. A bank-account change is either verified or it isn't; a
 requester's invoices to one vendor either sum past their limit or they don't.
-The model's job in this project has always been narrow — resolve identity,
-explain findings in plain English — and none of the new detectors needed to
+The model's job in this project has always been narrow - resolve identity,
+explain findings in plain English - and none of the new detectors needed to
 widen it.
 
 ---
@@ -135,7 +135,7 @@ payload) -> Judgement`, and three implementations:
 
 | Provider | What it does |
 |---|---|
-| `OpenAICompatibleProvider` | A real chat-completions endpoint (TensorMux, or anything OpenAI-API-compatible). Never raises out of `judge()` — a network error, a timeout, or a non-JSON reply all become an "unavailable" `Judgement` so the caller falls back, instead of taking the invoice down with it. |
+| `OpenAICompatibleProvider` | A real chat-completions endpoint (TensorMux, or anything OpenAI-API-compatible). Never raises out of `judge()` - a network error, a timeout, or a non-JSON reply all become an "unavailable" `Judgement` so the caller falls back, instead of taking the invoice down with it. |
 | `StubProvider` | Deterministic, no network. Defaults to `agent/heuristics.py`'s string-similarity rules; any of the three tasks can be overridden per-test with a fixed answer or a callable, which is what makes the duplicate-veto test above possible. |
 | `DisabledProvider` | Answers nothing. Every caller takes the heuristic fallback. Useful as a control: diff an eval run under `stub` against one under `off` and the difference is exactly the contribution of model judgement. |
 
@@ -148,16 +148,16 @@ LEDGER_SENTINEL_LLM=stub    deterministic stub, never touches the network
 LEDGER_SENTINEL_LLM=off     no provider; every judgement takes the heuristic fallback
 ```
 
-`auto` is the default so a real key still Just Works — but the test suite and
+`auto` is the default so a real key still Just Works - but the test suite and
 CI pin `LEDGER_SENTINEL_LLM=stub` explicitly, so a stray key in someone's
 `.env` can never change what a test asserts. Every judgement result carries
 `llm_used` and a `source` string (`llm:<model>`, `stub:<model>`, or
-`heuristic-fallback`) — visible all the way through to the trace steps in the
-review UI — so it's never ambiguous which path actually produced an answer.
+`heuristic-fallback`) - visible all the way through to the trace steps in the
+review UI - so it's never ambiguous which path actually produced an answer.
 
 I do not have a TensorMux key or network access to one in this environment.
 `OpenAICompatibleProvider` is exercised in the test suite against a fake
-client that returns canned responses and raises canned errors — that verifies
+client that returns canned responses and raises canned errors - that verifies
 the error handling and JSON parsing, but I have not made a single real call to
 TensorMux or any other model through this code. Treat the real-provider path
 as reviewed, not as proven against a live endpoint.
@@ -167,12 +167,12 @@ as reviewed, not as proven against a live endpoint.
 ## The anomaly taxonomy
 
 The synthetic dataset (`data/generator.py`) seeds exactly these anomaly
-types, proportionally, at any dataset size — 80% clean, 20% split across the
+types, proportionally, at any dataset size - 80% clean, 20% split across the
 taxonomy below. The first nine are match failures (eight three-way, plus a two-way fallback where no
 goods receipt exists): something on
 the PO, GRN or invoice itself disagrees. The last five are not: a PO, GRN and
 invoice can agree on every line and the invoice can still be exactly the kind
-of thing that empties a company's account into a fraudster's — see
+of thing that empties a company's account into a fraudster's - see
 [Vendor-master fraud controls](#vendor-master-fraud-controls) and
 [Approval and segregation of duties](#approval-and-segregation-of-duties) for
 why three-way match cannot see any of them.
@@ -194,7 +194,7 @@ why three-way match cannot see any of them.
 | Approval threshold exceeded | One invoice alone exceeds its requester's approval limit | Escalate for the approval the requester doesn't have |
 | Threshold splitting | Requester's invoices to one vendor, each under their limit, sum over it within 14 days | Escalate the group as suspected structuring |
 
-Two rows — in-tolerance price variance and vendor-name drift — are supposed
+Two rows - in-tolerance price variance and vendor-name drift - are supposed
 to auto-clear. The agent proving it doesn't panic on benign variance is as
 important as it catching real problems; that's tracked directly in the
 false-clear / auto-clear-rate metrics below.
@@ -203,14 +203,14 @@ false-clear / auto-clear-rate metrics below.
 
 ## Vendor-master fraud controls
 
-The single most expensive real AP attack is not a duplicate invoice — a
+The single most expensive real AP attack is not a duplicate invoice - a
 duplicate is a known amount to a known account, and it's recoverable. It's a
 **bank-account change**: someone compromises an email thread, sends a note on
 convincing letterhead saying "our banking has moved," AP updates the payment
 details, and the next genuine invoice for a genuine delivery is paid to the
 attacker. Every document in the three-way match is correct. The PO matches,
 the goods arrived, the invoice is right. Three-way match cannot see this,
-because nothing about it is a mismatch — the fraud is in *who gets paid*, not
+because nothing about it is a mismatch - the fraud is in *who gets paid*, not
 in what was bought. Nothing in the original submission modelled a vendor at
 all, let alone watched one change.
 
@@ -220,7 +220,7 @@ hash-chained change history (same mechanism as
 
 - **Bank/payment-detail-change hold.** Any change to `bank_account`,
   `bank_ifsc` or `remit_to_name` puts every subsequent invoice from that
-  vendor on hold — `vendor_bank_detail_change`, high severity — until a
+  vendor on hold - `vendor_bank_detail_change`, high severity - until a
   **verification event** is appended. Verification is a separate appended
   event, not a boolean flipped on the change record, deliberately: if
   "verified" were a field on the change itself, flipping it would be a
@@ -237,7 +237,7 @@ hash-chained change history (same mechanism as
 - **Vendor/employee collision.** If a vendor's bank account or contact email
   matches an employee's own record, that's escalated to internal audit
   (`vendor_employee_collision`, high severity) regardless of match quality on
-  anything else — the classic pattern of an employee routing payments to
+  anything else - the classic pattern of an employee routing payments to
   themselves through a vendor they control.
 
 A real packet, from a run against the committed dataset:
@@ -268,8 +268,8 @@ A real packet, from a run against the committed dataset:
 ```
 
 Account numbers are masked to their last four digits (`core.vendor_master.
-mask_account`) everywhere they leave `core/` — in the packet, and on the
-clerk's screen — because an escalation packet ends up on-screen and in logs,
+mask_account`) everywhere they leave `core/` - in the packet, and on the
+clerk's screen - because an escalation packet ends up on-screen and in logs,
 and the clerk needs enough to tell two accounts apart, not the whole number.
 
 ---
@@ -279,7 +279,7 @@ and the clerk needs enough to tell two accounts apart, not the whole number.
 Real AP has approval thresholds tied to who's asking, and the classic evasion
 is splitting one purchase that needs a manager's sign-off into several
 invoices that each individually don't. `core/approval.py` is a policy layer,
-not a workflow engine — there is no multi-step sign-off state machine and no
+not a workflow engine - there is no multi-step sign-off state machine and no
 named second approver recorded against an invoice, because that's a
 materially bigger feature (approval routing, reviewer identity, a
 pending/approved/rejected lifecycle) and this project doesn't have a UI for a
@@ -290,9 +290,9 @@ this system does have a UI for.
 
 Two findings, both hard rules:
 
-- **`approval_threshold_exceeded`** — one invoice, on its own, is over its
+- **`approval_threshold_exceeded`** - one invoice, on its own, is over its
   requester's `approval_limit`.
-- **`threshold_splitting`** — several invoices from the same requester to the
+- **`threshold_splitting`** - several invoices from the same requester to the
   same vendor, each individually within the limit, whose sum within a 14-day
   window is not. The single-invoice check above would miss every one of them
   individually by construction.
@@ -300,11 +300,11 @@ Two findings, both hard rules:
 The honest limitation here, found by writing the eval rather than glossed
 over: **detection is retrospective.** The first invoice of a two-invoice split
 has no prior history to be compared against yet, so it auto-clears on its own
-— the pattern only becomes visible once the second invoice arrives and the
+- the pattern only becomes visible once the second invoice arrives and the
 group's sum is checked against the limit. `tests/test_orchestrator.py::
 test_first_invoice_of_a_split_pair_auto_clears_alone` documents this on
 purpose rather than treating it as a bug to hide, and the eval's per-type
-recall for `threshold_splitting` (50% on the committed dataset — 3 of 6
+recall for `threshold_splitting` (50% on the committed dataset - 3 of 6
 seeded invoices escalate, one per pair) is the honest number, not a bug in the
 detector. This is not unique to this project: no system can flag a purchase
 as "part of a pattern" before enough of the pattern exists to see.
@@ -320,8 +320,8 @@ finding an invoice that's already in that file, and deleting the original
 posting is a one-line way to make a duplicate invoice pay twice with no trace
 of the edit.
 
-`core/chain.py` is a small hash-chain primitive — each record carries
-`sha256` of its own fields plus the hash of the record before it — shared by
+`core/chain.py` is a small hash-chain primitive - each record carries
+`sha256` of its own fields plus the hash of the record before it - shared by
 two stores that both need the same property: `core/ledger.py` (posted
 invoices) and `core/vendor_master.py` (vendor change history). `Ledger.
 verify()` walks the chain and reports the first place it breaks, and why:
@@ -339,18 +339,18 @@ status:  INTACT -- every entry hashes to its recorded value and links to the one
 
 Edit an amount, delete an entry, or reorder two entries, and `verify` reports
 exactly where the chain broke and what kind of break it is
-(`hash_mismatch` / `broken_link` / `bad_sequence`) — `tests/
+(`hash_mismatch` / `broken_link` / `bad_sequence`) - `tests/
 test_ledger_chain.py` exercises all three directly, including the specific
 "delete the original of a duplicate pair" attack this feature exists to
 catch.
 
 **The honest limit, stated once rather than implied:** a hash chain makes
 tampering *evident*, not impossible. Anyone with write access to the file can
-recompute the whole chain and produce a self-consistent forgery — that's true
+recompute the whole chain and produce a self-consistent forgery - that's true
 of any hash chain without an external anchor (a countersigned head, a WORM
 store, a notary outside the file), and this project doesn't have one. What it
-buys is that a casual or partial edit — the realistic case, someone deleting
-one entry so a duplicate clears — cannot be done without leaving a break at a
+buys is that a casual or partial edit - the realistic case, someone deleting
+one entry so a duplicate clears - cannot be done without leaving a break at a
 specific, reportable sequence number. That is a real, useful property. It is
 not the same claim as "this file cannot be forged," and the README isn't
 going to pretend otherwise.
@@ -420,7 +420,7 @@ flowchart TD
     ORCH --> EV
 ```
 
-`core/` never imports an LLM client and never sees a prompt — that includes
+`core/` never imports an LLM client and never sees a prompt - that includes
 `vendor_master.py` and `approval.py`. `agent/` never does arithmetic and never
 decides a policy threshold; it consumes `core/`'s output and only ever
 answers judgement questions, now routed through `agent/llm.py`'s Provider
@@ -435,7 +435,7 @@ rule, and which were reasoned about.
 
 Every escalation produces one JSON packet, designed to be read by a clerk in
 under 10 seconds. This is a real packet from the committed dataset (`data/`,
-`runtime/exceptions.json`) — trimmed to the fields that matter here, full
+`runtime/exceptions.json`) - trimmed to the fields that matter here, full
 `evidence.po` / `evidence.grn` / `evidence.invoice` bodies omitted for space.
 Note the `vendor_master_check` and `approval_check` steps at 4 and 6: those
 run on *every* invoice, not only ones that end up flagged, which is why they
@@ -476,7 +476,7 @@ vendor-master or approval finding:
 ```
 
 `source: "stub:stub-judge"` on steps 7 and 8, rather than `llm:glm-4-7-flash`,
-is not a placeholder I cleaned up before committing — it's the real value the
+is not a placeholder I cleaned up before committing - it's the real value the
 committed demo snapshot was generated with, because no TensorMux key is
 available in this environment. That's the point of
 [the LLM boundary](#the-llm-boundary): this packet, the review UI, and every
@@ -485,13 +485,13 @@ real key would run, with the source tag telling you, truthfully, which one
 actually answered.
 
 For a vendor-master or approval finding, the packet carries an extra evidence
-block instead (`evidence.vendor_master` or `evidence.approval` — see the
+block instead (`evidence.vendor_master` or `evidence.approval` - see the
 example under [Vendor-master fraud controls](#vendor-master-fraud-controls)
 above), and the corresponding step (4 or 6 above) is what escalates it,
 tagged `rule_escalation` rather than a judgement step, in the same
 "recorded as it ran" style as `ledger_duplicate_search`.
 
-The `steps` array (`agent/trace.py`) is not a summary written after the fact —
+The `steps` array (`agent/trace.py`) is not a summary written after the fact -
 each entry is appended by the orchestrator at the exact moment that check runs,
 from that check's own real output. If a step says "searched the ledger, found no
 near-matches," that search genuinely executed and genuinely found nothing.
@@ -506,18 +506,18 @@ of a decision was arithmetic, policy, or model judgement.
 `ui/app.py`, a single-page Streamlit app, dark-themed, meant to look like a
 tool an AP clerk uses forty times a day rather than a demo:
 
-- **Category filter tabs** — All / Quantity Variance / Suspected Duplicate /
+- **Category filter tabs** - All / Quantity Variance / Suspected Duplicate /
   Line Item Mismatch / Bank Change / Employee Collision / New Vendor /
   Approval & Split, each showing a live count, filtering the already-loaded
   queue client-side (no new data, no new fetch). The last tab is a combined
-  filter over `approval_threshold_exceeded` and `threshold_splitting` — the
+  filter over `approval_threshold_exceeded` and `threshold_splitting` - the
   same underlying control (a requester exceeding their authority) surfaced
   two ways, and a clerk reviewing "approval issues" for the day shouldn't
   have to check two tabs to see all of them.
-- **Queue cards** — vendor, amount, exception type, a color-coded severity
+- **Queue cards** - vendor, amount, exception type, a color-coded severity
   pill, and aging, in a bordered card that highlights on hover and gets an
   accent-color stripe when it's the item currently open in the detail pane.
-- **Detail pane** — the plain-English summary and proposed resolution up top;
+- **Detail pane** - the plain-English summary and proposed resolution up top;
   for a bank-detail-change hold or a vendor/employee collision, a red banner
   with the masked before/after account and the verification instruction,
   right under the summary, before the clerk has to expand anything; for an
@@ -525,7 +525,7 @@ tool an AP clerk uses forty times a day rather than a demo:
   invoices in the group. Then the full reasoning trace in an expander, then
   the PO / Goods Receipt / Invoice shown as three side-by-side labeled cards
   with every mismatched field in red.
-- **Approve / Reject** — one click each. Approve posts to the ledger; Reject
+- **Approve / Reject** - one click each. Approve posts to the ledger; Reject
   logs to `runtime/rejections.json`. Either way the row disappears from the
   queue.
 
@@ -568,14 +568,14 @@ rather than eyeballing the code, in case you're extending it:
 - **The fallback boundary trusted providers to keep their own contract, and
   one adversarial test found that assumption breaks.** `agent/llm.py`'s
   `Provider.judge()` docstring says "implementations must not raise" and
-  "a judgement that cannot be made returns `Judgement.unavailable()`" — but
+  "a judgement that cannot be made returns `Judgement.unavailable()`" - but
   nothing enforced either promise on the caller's side. A malformed
   `confidence` value (a plain string, or `None`) crashed `process_invoice`
   downstream via a `:.2f` format spec that raises on non-numeric input rather
   than misformatting it; a provider that raised mid-call (despite the
   contract) propagated the same way. `agent/tools.py::_judge` now catches
   provider exceptions and coerces `confidence` defensively instead of
-  trusting the contract to hold — see
+  trusting the contract to hold - see
   [`EVAL_METHODOLOGY.md` §7](EVAL_METHODOLOGY.md#7-the-duplicate-veto-adversarial-testing-not-just-the-happy-path)
   for the full adversarial pass this came out of.
 - **Vendor-master and approval-policy state is opt-in on being supplied.** If
@@ -583,7 +583,7 @@ rather than eyeballing the code, in case you're extending it:
   `core.anomalies.classify()`, those checks are skipped entirely rather than
   treating "no data" as "everything is suspicious." Early on, approval checks
   treated a missing employee master the same as an invoice with a genuinely
-  unrecorded requester and escalated every single invoice — visible
+  unrecorded requester and escalated every single invoice - visible
   immediately because most of the unit test suite started failing on
   unrelated assertions. `core/anomalies.py`'s `classify()` now runs those
   checks only when the caller actually supplied the data, matching how
@@ -593,24 +593,24 @@ rather than eyeballing the code, in case you're extending it:
 
 ## Testing
 
-`tests/` is a real suite — 194 tests, all offline, none of them touch the
+`tests/` is a real suite - 194 tests, all offline, none of them touch the
 network (`LEDGER_SENTINEL_LLM=stub` is pinned in `tests/conftest.py`, and the
 one provider that *can* reach a network is only ever tested against a fake
 client). Roughly:
 
 | File | What it covers |
 |---|---|
-| `test_matcher.py` (21) | Every tolerance boundary named in this README on both sides: the 2% and ₹500 price clauses, the 1-unit quantity clause, and that GST has *no* tolerance at all — plus the per-unit-vs-total-impact regression above. |
+| `test_matcher.py` (21) | Every tolerance boundary named in this README on both sides: the 2% and ₹500 price clauses, the 1-unit quantity clause, and that GST has *no* tolerance at all - plus the per-unit-vs-total-impact regression above. |
 | `test_duplicate_veto.py` (4) | The one invariant this project is built around: a ledger near-match escalates even when the stub model insists, at 0.99 confidence, that it isn't a duplicate. Plus the true-negative case (no near-match, no escalation) and the ordinary agreeing-model path, so the invariant test isn't just passing because everything escalates. |
-| `test_llm_veto_adversarial.py` (20) | The same invariant under attack, not just disagreement: malformed confidence values, technically-valid-but-nonsensical JSON, and a provider that raises mid-call despite its documented contract — see [`EVAL_METHODOLOGY.md` §7](EVAL_METHODOLOGY.md#7-the-duplicate-veto-adversarial-testing-not-just-the-happy-path) for the two real crashes this found and fixed in `agent/tools.py`. |
+| `test_llm_veto_adversarial.py` (20) | The same invariant under attack, not just disagreement: malformed confidence values, technically-valid-but-nonsensical JSON, and a provider that raises mid-call despite its documented contract - see [`EVAL_METHODOLOGY.md` §7](EVAL_METHODOLOGY.md#7-the-duplicate-veto-adversarial-testing-not-just-the-happy-path) for the two real crashes this found and fixed in `agent/tools.py`. |
 | `test_decision_boundary.py` (13) | Makes the structural-vs-LLM decision boundary testable: for every finding type, checks that `core/anomalies.py`'s `needs_judgement` flag and whether `agent/orchestrator.py` actually consults a provider agree, so the two can't silently drift apart. |
-| `test_eval_reproducibility.py` (7) | Byte-identical dataset regeneration (not just matching metrics) from a fixed seed, across several seeds and sizes, and under a forced different `PYTHONHASHSEED`; and an 8-seed rerun of the full eval pinning the false-clear rate's range and a seed-dependent false-escalate this pass found — see [`EVAL_METHODOLOGY.md`](EVAL_METHODOLOGY.md). |
-| `test_llm_boundary.py` (21) | Provider selection from config (`auto`/`openai`/`stub`/`off`), the stub's override mechanism, and that `OpenAICompatibleProvider.judge()` never raises — network errors, non-JSON replies, and non-object JSON all become a fallback-triggering `Judgement.unavailable()`. |
+| `test_eval_reproducibility.py` (7) | Byte-identical dataset regeneration (not just matching metrics) from a fixed seed, across several seeds and sizes, and under a forced different `PYTHONHASHSEED`; and an 8-seed rerun of the full eval pinning the false-clear rate's range and a seed-dependent false-escalate this pass found - see [`EVAL_METHODOLOGY.md`](EVAL_METHODOLOGY.md). |
+| `test_llm_boundary.py` (21) | Provider selection from config (`auto`/`openai`/`stub`/`off`), the stub's override mechanism, and that `OpenAICompatibleProvider.judge()` never raises - network errors, non-JSON replies, and non-object JSON all become a fallback-triggering `Judgement.unavailable()`. |
 | `test_vendor_master.py` (30) | Lookup by canonical name and alias, the change log, the bank-detail hold and its release on verification, the new-vendor window boundary, employee collision on bank account and on email, account masking, and hash-chain tamper detection on the vendor's own change log. |
 | `test_approval.py` (15) | Single-invoice threshold boundary, split detection (and every reason it should *not* fire: different requester, a member already over the limit alone, group size 1). |
-| `test_ledger_chain.py` (21) | Posting and chaining, `fresh=True` truncation (the eval-reproducibility fix), and tamper detection for edits, deletions and reordering — including deleting the original of a duplicate pair, the specific attack the chain exists to catch. |
-| `test_orchestrator.py` (17) | End-to-end `process_invoice` scenarios for every new detector, wired together the way the real pipeline wires them — not just unit tests of `core/anomalies.py` in isolation. |
-| `test_generator.py` (13) | Dataset invariants the eval depends on: exact invoice count, every seeded anomaly type actually landing on the correct side of the matcher's own tolerance rules, no fraud-vendor name collisions (a real bug — see [The eval](#the-eval)), and that the default requester's limit can never accidentally trip on a non-approval anomaly. |
+| `test_ledger_chain.py` (21) | Posting and chaining, `fresh=True` truncation (the eval-reproducibility fix), and tamper detection for edits, deletions and reordering - including deleting the original of a duplicate pair, the specific attack the chain exists to catch. |
+| `test_orchestrator.py` (17) | End-to-end `process_invoice` scenarios for every new detector, wired together the way the real pipeline wires them - not just unit tests of `core/anomalies.py` in isolation. |
+| `test_generator.py` (13) | Dataset invariants the eval depends on: exact invoice count, every seeded anomaly type actually landing on the correct side of the matcher's own tolerance rules, no fraud-vendor name collisions (a real bug - see [The eval](#the-eval)), and that the default requester's limit can never accidentally trip on a non-approval anomaly. |
 | `test_eval.py` (12) | The eval's own correctness: confusion matrix shape, reproducibility from a fixed seed, that re-running against a stale `--out-dir` doesn't leak state, and that the only false clears on the committed dataset are the two documented, understood ones. |
 
 ```bash
@@ -624,7 +624,7 @@ LEDGER_SENTINEL_LLM=stub python -m pytest -m eval_full -v
 
 `.github/workflows/tests.yml` runs the suite on every push and PR, then
 generates a dataset, runs the full agent pipeline, verifies the resulting
-ledger's hash chain, and runs the eval — all with `LEDGER_SENTINEL_LLM=stub`
+ledger's hash chain, and runs the eval - all with `LEDGER_SENTINEL_LLM=stub`
 and no secrets configured, so CI genuinely cannot reach a network model even
 if someone tried to make it.
 
@@ -658,9 +658,9 @@ LEDGER_SENTINEL_LLM=stub python -m pytest tests/ -v
 ```
 
 `.streamlit/config.toml` carries the app's dark theme. `TENSORMUX_API_KEY` is
-read from a `.env` file at the repo root if present (see `.gitignore` — this
+read from a `.env` file at the repo root if present (see `.gitignore` - this
 file is intentionally never committed). `LEDGER_SENTINEL_LLM` overrides
-provider selection regardless of what's in `.env` — see
+provider selection regardless of what's in `.env` - see
 [The LLM boundary](#the-llm-boundary).
 
 ---
@@ -673,7 +673,7 @@ rate is compatible with one anomaly type missing 100% of the time as long as
 the other seven are easy. The rebuild reports a **confusion matrix over the
 full anomaly taxonomy**, **per-anomaly-type recall**, and a **cost-weighted
 score** with the false-clear/false-escalate asymmetry as an explicit,
-overridable parameter (`--fc-cost` / `--fe-cost`, default 50:1) — so a weak
+overridable parameter (`--fc-cost` / `--fe-cost`, default 50:1) - so a weak
 detector cannot hide behind a strong one, and the "false-clears cost more"
 thesis is a number you can point at instead of a sentence.
 
@@ -722,19 +722,19 @@ detection improved. The new type itself is caught 3/3 at every one of the 8
 seeds. The 8-seed range and mean did not move.
 
 This is **worse than the previous README's 0%-false-clear claim**, and the
-reason is not a regression in the matching logic — it's that this eval
+reason is not a regression in the matching logic - it's that this eval
 actually checks per-type recall instead of an aggregate, and two real gaps
 were sitting underneath a 0% headline number the whole time:
 
 | Anomaly type | Recall | Why |
 |---|---|---|
-| `threshold_splitting` | 50% (3/6) | Detection is retrospective by construction — see [Approval and segregation of duties](#approval-and-segregation-of-duties). The first invoice of each split pair has no history to compare against yet. |
+| `threshold_splitting` | 50% (3/6) | Detection is retrospective by construction - see [Approval and segregation of duties](#approval-and-segregation-of-duties). The first invoice of each split pair has no history to compare against yet. |
 | `price_variance_out_tolerance` | 100% (4/4) at seed 42; 75% (3/4) at seeds 1 and 777 | At seeds 1 and 777, one seeded invoice's variance lands on a low-value, low-quantity line where even the maximum seeded bump keeps the total rupee impact under the ₹500 floor, which the matcher, correctly, treats as in tolerance (see [Design decisions](#design-decisions-worth-knowing-about)). The anomaly failed to be an anomaly under the project's own documented rule, not a detector miss. |
 
-Everything else in the taxonomy — quantity variance (the three-way check and the no-GRN two-way fallback), both price-variance
+Everything else in the taxonomy - quantity variance (the three-way check and the no-GRN two-way fallback), both price-variance
 directions on the more common case, duplicates, missing PO, tax mismatch,
 line-item mismatch, and all five new vendor-master/approval types except the
-one above — scores 100% recall on this dataset.
+one above - scores 100% recall on this dataset.
 
 Building this eval also surfaced and fixed two latent bugs in
 `data/generator.py`, neither previously visible because the old eval never
@@ -745,12 +745,12 @@ reported per-type numbers:
    fraud vendor from an independently-shuffled name pool; two calls could
    draw the same name (it happened at `seed=42`: two vendors both named
    "Meridian Trading Pvt Ltd"), and the second `add_vendor()` silently
-   overwrote the first in `VendorMaster`'s name index — so every invoice for
+   overwrote the first in `VendorMaster`'s name index - so every invoice for
    the first vendor started resolving to the second vendor's clean state
    instead of its own pending change. Fixed by drawing all fraud-vendor names
    for one generation run from a single shared pool.
 2. **`quantity_variance` seeded a within-tolerance short.** The generator drew
-   a short-ship of 1–5 units, but the matcher's own tolerance is ±1 unit — a
+   a short-ship of 1–5 units, but the matcher's own tolerance is ±1 unit - a
    short of exactly 1 is not an anomaly at all under the project's own rule.
    Fixed by drawing from 2–5.
 
@@ -773,28 +773,28 @@ LEDGER_SENTINEL_LLM=stub python eval/run_eval.py \
 Called out explicitly rather than left for someone to discover:
 
 - **`threshold_splitting` only catches the invoice that tips the group over
-  the limit**, not the first one — see [The eval](#the-eval). This is a
+  the limit**, not the first one - see [The eval](#the-eval). This is a
   structural property of retrospective detection, not a bug.
 - **`price_variance_out_tolerance` has a residual edge case** where a large
   percentage bump on a low-value, low-quantity line stays under the ₹500
-  floor and legitimately clears — see [The eval](#the-eval).
+  floor and legitimately clears - see [The eval](#the-eval).
 - **`vendor_name_drift`'s ground-truth label assumes every seeded alias pair
   resolves above the stub heuristic's own confidence threshold; one doesn't.**
   "Acme Corp" vs "Acme Corporation Pvt Ltd" scores 0.545 on the
   `difflib.SequenceMatcher` ratio `agent/heuristics.py` uses, under its own
-  0.6 resolution threshold — so when the generator draws that specific pair
+  0.6 resolution threshold - so when the generator draws that specific pair
   (it does at 2 of 8 tested seeds, not at the committed seed=42), the
   invoice correctly escalates for a low-confidence vendor match instead of
   auto-clearing, which the dataset's label doesn't expect. Not a bug in the
-  matcher or the orchestrator — see
+  matcher or the orchestrator - see
   [`EVAL_METHODOLOGY.md` §5](EVAL_METHODOLOGY.md#5-a-third-structural-blind-spot-found-by-running-more-than-one-seed).
 - **The hash-chained ledger and vendor-master log are tamper-*evident*, not
   tamper-*proof***. Anyone with write access to the JSON file can recompute
-  the whole chain and forge a self-consistent replacement — see
+  the whole chain and forge a self-consistent replacement - see
   [The tamper-evident ledger](#the-tamper-evident-ledger).
 - **Approval and segregation of duties is a policy layer, not a workflow.**
   There is no named second approver, no multi-step sign-off, and no UI for a
-  second human — see [Approval and segregation of duties](#approval-and-segregation-of-duties).
+  second human - see [Approval and segregation of duties](#approval-and-segregation-of-duties).
 - **`OpenAICompatibleProvider` has not been exercised against a live model in
   this environment.** No API key or network access to TensorMux was
   available while building this branch; the real-provider code path is
@@ -809,8 +809,8 @@ Called out explicitly rather than left for someone to discover:
   recorded as within tolerance, same as the three-way check. The dataset seeds
   3 such cases per 300 invoices and all are caught at every tested seed, which
   is a small sample.
-- **No OCR / real ERP integration** — invoices are structured synthetic JSON,
+- **No OCR / real ERP integration** - invoices are structured synthetic JSON,
   by design (see the original spec's scope, `.ao/attachments/`).
 - **`cost_per_invoice_inr` reports 0** unless `TENSORMUX_PRICE_PER_1K_INR` is
-  set — TensorMux's actual ₹/token pricing isn't hardcoded in.
-- **No payment execution, auth, or multi-tenancy** — explicitly out of scope.
+  set - TensorMux's actual ₹/token pricing isn't hardcoded in.
+- **No payment execution, auth, or multi-tenancy** - explicitly out of scope.
