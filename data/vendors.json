@@ -301,12 +301,12 @@
   },
   {
     "vendor_id": "VEND-101",
-    "canonical_name": "Ironclad Enterprises Pvt Ltd",
+    "canonical_name": "Harvest Supplies Pvt Ltd",
     "aliases": [],
-    "bank_account": "770707682298",
+    "bank_account": "770706969521",
     "bank_ifsc": "ICIC0001234",
-    "remit_to_name": "Ironclad Enterprises Pvt Ltd",
-    "contact_email": "accounts@ironcladenterp.example",
+    "remit_to_name": "Harvest Supplies Pvt Ltd",
+    "contact_email": "accounts@harvestsupplie.example",
     "onboarded_date": "2025-02-16",
     "status": "active",
     "changes": [
@@ -315,41 +315,41 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "770707682298",
+        "new_value": "770706969521",
         "effective_at": "2025-02-16",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********2298.",
+        "note": "Vendor onboarded with account ********9521.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "1db1fbe2ca88f3db4fba3aa96a12b912cad4425e0329eda460285fd5dc69614b"
+        "entry_hash": "680aadd53f129c6419deba22229bfac0415eb57127b2a806f84613a238a3ce67"
       },
       {
         "vendor_id": "VEND-101",
         "kind": "change",
         "field": "bank_account",
-        "old_value": "770707682298",
-        "new_value": "999886565503",
-        "effective_at": "2026-07-28",
+        "old_value": "770706969521",
+        "new_value": "999882437708",
+        "effective_at": "2026-11-27",
         "actor": "email_request",
         "channel": "email",
         "verifies_seq": null,
         "note": "Bank details update requested by email ahead of this invoice; not yet verified out of band.",
         "seq": 2,
-        "prev_hash": "1db1fbe2ca88f3db4fba3aa96a12b912cad4425e0329eda460285fd5dc69614b",
-        "entry_hash": "47108826cd806bf4382a14249e7d926541793a2b5367bdd01c8048211f9fd583"
+        "prev_hash": "680aadd53f129c6419deba22229bfac0415eb57127b2a806f84613a238a3ce67",
+        "entry_hash": "8d6021dfb123a40e2b0ca10d741fa3ef6dfee867f842f9a031e060832063bc3c"
       }
     ]
   },
   {
     "vendor_id": "VEND-102",
-    "canonical_name": "Beacon Logistics Pvt Ltd",
+    "canonical_name": "Cascade Traders Pvt Ltd",
     "aliases": [],
-    "bank_account": "770702315798",
+    "bank_account": "770702233237",
     "bank_ifsc": "ICIC0001234",
-    "remit_to_name": "Beacon Logistics Pvt Ltd",
-    "contact_email": "accounts@beaconlogistic.example",
+    "remit_to_name": "Cascade Traders Pvt Ltd",
+    "contact_email": "accounts@cascadetraders.example",
     "onboarded_date": "2025-02-16",
     "status": "active",
     "changes": [
@@ -358,41 +358,41 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "770702315798",
+        "new_value": "770702233237",
         "effective_at": "2025-02-16",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********5798.",
+        "note": "Vendor onboarded with account ********3237.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "a5f49ecf8666f7b17186b78e4f002579f03239080fc7ee20687f06cd2e1efaeb"
+        "entry_hash": "9ae7485fd5464509cc290899f4fb25a9fcb89b2627f5698be00a696ef54cab44"
       },
       {
         "vendor_id": "VEND-102",
         "kind": "change",
         "field": "bank_account",
-        "old_value": "770702315798",
-        "new_value": "999887655572",
-        "effective_at": "2026-11-12",
+        "old_value": "770702233237",
+        "new_value": "999886312979",
+        "effective_at": "2026-07-26",
         "actor": "email_request",
         "channel": "email",
         "verifies_seq": null,
         "note": "Bank details update requested by email ahead of this invoice; not yet verified out of band.",
         "seq": 2,
-        "prev_hash": "a5f49ecf8666f7b17186b78e4f002579f03239080fc7ee20687f06cd2e1efaeb",
-        "entry_hash": "992bcdfae7cc12f3340bf252b60f1058388a01d95d8a71f559a9d0f25c033867"
+        "prev_hash": "9ae7485fd5464509cc290899f4fb25a9fcb89b2627f5698be00a696ef54cab44",
+        "entry_hash": "522c3264a2cf294af781357c166d501686cc18767be8b11069427c9571ca5ae9"
       }
     ]
   },
   {
     "vendor_id": "VEND-103",
-    "canonical_name": "Copper Logistics Pvt Ltd",
+    "canonical_name": "Wraith Traders Pvt Ltd",
     "aliases": [],
-    "bank_account": "770705585666",
+    "bank_account": "770702535458",
     "bank_ifsc": "ICIC0001234",
-    "remit_to_name": "Copper Logistics Pvt Ltd",
-    "contact_email": "accounts@copperlogistic.example",
+    "remit_to_name": "Wraith Traders Pvt Ltd",
+    "contact_email": "accounts@wraithtradersp.example",
     "onboarded_date": "2025-02-16",
     "status": "active",
     "changes": [
@@ -401,42 +401,42 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "770705585666",
+        "new_value": "770702535458",
         "effective_at": "2025-02-16",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********5666.",
+        "note": "Vendor onboarded with account ********5458.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "af189333b2d7db5438260a249a856d23d313dd65dbacdd77e653137d1da655b3"
+        "entry_hash": "2d69408175dd243fd7514af41645bf18d6cc443ac6ab28cd4604d93b7ababf2e"
       },
       {
         "vendor_id": "VEND-103",
         "kind": "change",
         "field": "bank_account",
-        "old_value": "770705585666",
-        "new_value": "999884116163",
-        "effective_at": "2027-01-22",
+        "old_value": "770702535458",
+        "new_value": "999882464604",
+        "effective_at": "2026-07-04",
         "actor": "email_request",
         "channel": "email",
         "verifies_seq": null,
         "note": "Bank details update requested by email ahead of this invoice; not yet verified out of band.",
         "seq": 2,
-        "prev_hash": "af189333b2d7db5438260a249a856d23d313dd65dbacdd77e653137d1da655b3",
-        "entry_hash": "fe77a8b74f1b83fedf2698bd3b11b7e3ef7c6488c2d2f40ca3340553d637d67c"
+        "prev_hash": "2d69408175dd243fd7514af41645bf18d6cc443ac6ab28cd4604d93b7ababf2e",
+        "entry_hash": "1216322f5e107c62c9ef92c57b0cb131814a14915317227cd25d16c2092ed3d0"
       }
     ]
   },
   {
     "vendor_id": "VEND-104",
-    "canonical_name": "Granite Distributors Pvt Ltd",
+    "canonical_name": "Solace Distributors Pvt Ltd",
     "aliases": [],
-    "bank_account": "770705955645",
-    "bank_ifsc": "ICIC0001234",
-    "remit_to_name": "Granite Distributors Pvt Ltd",
-    "contact_email": "accounts@granitedistrib.example",
-    "onboarded_date": "2025-02-16",
+    "bank_account": "600606443037",
+    "bank_ifsc": "AXIS0009876",
+    "remit_to_name": "Solace Distributors Pvt Ltd",
+    "contact_email": "accounts@solacedistribu.example",
+    "onboarded_date": "2026-10-22",
     "status": "active",
     "changes": [
       {
@@ -444,42 +444,27 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "770705955645",
-        "effective_at": "2025-02-16",
+        "new_value": "600606443037",
+        "effective_at": "2026-10-22",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********5645.",
+        "note": "Vendor onboarded with account ********3037.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "6b155467df8f7d21129a0b0a33638f49cd7cb631d080bd321041c706d4bf27bf"
-      },
-      {
-        "vendor_id": "VEND-104",
-        "kind": "change",
-        "field": "bank_account",
-        "old_value": "770705955645",
-        "new_value": "999887375341",
-        "effective_at": "2027-01-25",
-        "actor": "email_request",
-        "channel": "email",
-        "verifies_seq": null,
-        "note": "Bank details update requested by email ahead of this invoice; not yet verified out of band.",
-        "seq": 2,
-        "prev_hash": "6b155467df8f7d21129a0b0a33638f49cd7cb631d080bd321041c706d4bf27bf",
-        "entry_hash": "a8a3fcfe4f4b709b08467008b9f6cbca05839671429a15916734b25fcc100f63"
+        "entry_hash": "0ba3ebdb28ea8a5a1205711dd02b4ca9462c834df311c361a46350752bdee58a"
       }
     ]
   },
   {
     "vendor_id": "VEND-105",
-    "canonical_name": "Solace Systems Pvt Ltd",
+    "canonical_name": "Lantern Traders Pvt Ltd",
     "aliases": [],
-    "bank_account": "600602715158",
+    "bank_account": "600609742683",
     "bank_ifsc": "AXIS0009876",
-    "remit_to_name": "Solace Systems Pvt Ltd",
-    "contact_email": "accounts@solacesystemsp.example",
-    "onboarded_date": "2026-09-06",
+    "remit_to_name": "Lantern Traders Pvt Ltd",
+    "contact_email": "accounts@lanterntraders.example",
+    "onboarded_date": "2027-01-25",
     "status": "active",
     "changes": [
       {
@@ -487,27 +472,27 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "600602715158",
-        "effective_at": "2026-09-06",
+        "new_value": "600609742683",
+        "effective_at": "2027-01-25",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********5158.",
+        "note": "Vendor onboarded with account ********2683.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "c0b8daa4d67ef042f91035b1b520eca1b920670041185e70fcf025e48e917c5f"
+        "entry_hash": "666af2f7b7008ecc484addafe8151d520fa04cb43430fe364809104711044c05"
       }
     ]
   },
   {
     "vendor_id": "VEND-106",
-    "canonical_name": "Pinnacle Enterprises Pvt Ltd",
+    "canonical_name": "Granite Systems Pvt Ltd",
     "aliases": [],
-    "bank_account": "600609597330",
+    "bank_account": "600603805274",
     "bank_ifsc": "AXIS0009876",
-    "remit_to_name": "Pinnacle Enterprises Pvt Ltd",
-    "contact_email": "accounts@pinnacleenterp.example",
-    "onboarded_date": "2026-07-04",
+    "remit_to_name": "Granite Systems Pvt Ltd",
+    "contact_email": "accounts@granitesystems.example",
+    "onboarded_date": "2026-08-11",
     "status": "active",
     "changes": [
       {
@@ -515,27 +500,27 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "600609597330",
-        "effective_at": "2026-07-04",
+        "new_value": "600603805274",
+        "effective_at": "2026-08-11",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********7330.",
+        "note": "Vendor onboarded with account ********5274.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "8eefb631bd977c00cb3483b34d24e301f76ec9882cf635ce511ce02fcf66ed8e"
+        "entry_hash": "a8104464374575db32e5158aca67e860da4d02a3492b1b70d93d3c990e458e14"
       }
     ]
   },
   {
     "vendor_id": "VEND-107",
-    "canonical_name": "Copper Systems Pvt Ltd",
+    "canonical_name": "Pinnacle Trading Pvt Ltd",
     "aliases": [],
-    "bank_account": "600606443037",
-    "bank_ifsc": "AXIS0009876",
-    "remit_to_name": "Copper Systems Pvt Ltd",
-    "contact_email": "accounts@coppersystemsp.example",
-    "onboarded_date": "2026-10-12",
+    "bank_account": "500100010007",
+    "bank_ifsc": "UTIB0005555",
+    "remit_to_name": "Pinnacle Trading Pvt Ltd",
+    "contact_email": "accounts@pinnacletradin.example",
+    "onboarded_date": "2025-02-16",
     "status": "active",
     "changes": [
       {
@@ -543,26 +528,26 @@
         "kind": "onboarded",
         "field": null,
         "old_value": null,
-        "new_value": "600606443037",
-        "effective_at": "2026-10-12",
+        "new_value": "500100010007",
+        "effective_at": "2025-02-16",
         "actor": "vendor_onboarding",
         "channel": "onboarding_form",
         "verifies_seq": null,
-        "note": "Vendor onboarded with account ********3037.",
+        "note": "Vendor onboarded with account ********0007.",
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "b0558c1253efbb4b92c7edf8f3385048bff2b9cdfaf831dc37eaa0dcda80ef46"
+        "entry_hash": "ac8f583dae34584e98fc60ace09d7aeb3d66f209c9895e7d56a958f6980cb83b"
       }
     ]
   },
   {
     "vendor_id": "VEND-108",
-    "canonical_name": "Cobalt Industrial Pvt Ltd",
+    "canonical_name": "Lantern Works Pvt Ltd",
     "aliases": [],
     "bank_account": "500100010007",
     "bank_ifsc": "UTIB0005555",
-    "remit_to_name": "Cobalt Industrial Pvt Ltd",
-    "contact_email": "accounts@cobaltindustri.example",
+    "remit_to_name": "Lantern Works Pvt Ltd",
+    "contact_email": "accounts@lanternworkspv.example",
     "onboarded_date": "2025-02-16",
     "status": "active",
     "changes": [
@@ -585,12 +570,12 @@
   },
   {
     "vendor_id": "VEND-109",
-    "canonical_name": "Cobalt Supplies Pvt Ltd",
+    "canonical_name": "Wraith Works Pvt Ltd",
     "aliases": [],
     "bank_account": "500100010007",
     "bank_ifsc": "UTIB0005555",
-    "remit_to_name": "Cobalt Supplies Pvt Ltd",
-    "contact_email": "accounts@cobaltsupplies.example",
+    "remit_to_name": "Wraith Works Pvt Ltd",
+    "contact_email": "accounts@wraithworkspvt.example",
     "onboarded_date": "2025-02-16",
     "status": "active",
     "changes": [
@@ -608,34 +593,6 @@
         "seq": 1,
         "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
         "entry_hash": "922e51fb729e673ea5102f7bf9091d2c506e3d361dcca8a37dd128ae534f2b47"
-      }
-    ]
-  },
-  {
-    "vendor_id": "VEND-110",
-    "canonical_name": "Beacon Industrial Pvt Ltd",
-    "aliases": [],
-    "bank_account": "500100010007",
-    "bank_ifsc": "UTIB0005555",
-    "remit_to_name": "Beacon Industrial Pvt Ltd",
-    "contact_email": "accounts@beaconindustri.example",
-    "onboarded_date": "2025-02-16",
-    "status": "active",
-    "changes": [
-      {
-        "vendor_id": "VEND-110",
-        "kind": "onboarded",
-        "field": null,
-        "old_value": null,
-        "new_value": "500100010007",
-        "effective_at": "2025-02-16",
-        "actor": "vendor_onboarding",
-        "channel": "onboarding_form",
-        "verifies_seq": null,
-        "note": "Vendor onboarded with account ********0007.",
-        "seq": 1,
-        "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-        "entry_hash": "212fc6b3836e1ef54b5f4b0d7a59a3d33e3247bb1e1af46ad372a0487ae59914"
       }
     ]
   }

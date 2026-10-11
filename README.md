@@ -168,7 +168,8 @@ as reviewed, not as proven against a live endpoint.
 
 The synthetic dataset (`data/generator.py`) seeds exactly these anomaly
 types, proportionally, at any dataset size — 80% clean, 20% split across the
-taxonomy below. The first eight are three-way-match failures — something on
+taxonomy below. The first nine are match failures (eight three-way, plus a two-way fallback where no
+goods receipt exists): something on
 the PO, GRN or invoice itself disagrees. The last five are not: a PO, GRN and
 invoice can agree on every line and the invoice can still be exactly the kind
 of thing that empties a company's account into a fraudster's — see
@@ -179,6 +180,7 @@ why three-way match cannot see any of them.
 | Anomaly | What it looks like | Agent behaviour |
 |---|---|---|
 | Quantity variance | Invoice bills more than GRN received | Escalate |
+| Quantity variance (no goods receipt) | No GRN covers the line; invoice bills a different quantity than the PO ordered | Escalate as a weaker two-way finding, `quantity_variance_no_grn` |
 | Price variance (in tolerance) | ≤2% or ≤₹500 total line impact over PO price | **Auto-clear** |
 | Price variance (out of tolerance) | Meaningfully over PO price | Escalate, with the variance amount |
 | Duplicate | Same vendor/amount/date, invoice number modified with a suffix | Escalate as suspected duplicate, linked to the original |
@@ -548,11 +550,15 @@ rather than eyeballing the code, in case you're extending it:
   model can sharpen severity and confidence; it cannot suppress the
   escalation. This is the one invariant with its own dedicated test file
   (`tests/test_duplicate_veto.py`) rather than a case inside a bigger one.
-- **An invoice with a PO but no goods receipt still auto-clears** if price and
-  tax match — quantity simply can't be verified against receiving in that case,
-  and the trace says so explicitly rather than falsely claiming "quantities
-  match." This is a known two-way-match gap, not a three-way match, for that
-  specific case — see [Known limitations](#known-limitations).
+- **An invoice with no goods receipt for a line falls back to a two-way check
+  against the PO's ordered quantity.** Received quantity is unknown there, not
+  zero, so it cannot be compared to what was billed. Skipping quantity
+  verification used to let such an invoice bill any quantity and still
+  auto-clear, so the matcher now compares against the PO and reports a
+  distinct `quantity_variance_no_grn` finding, never `quantity_variance`,
+  because receiving did not confirm it. It is a weaker check: a legitimate
+  partial shipment looks identical to an overbill. See
+  [Known limitations](#known-limitations).
 - **Every judgement call has a deterministic fallback**, now formalised as
   `agent/llm.py`'s Provider boundary rather than an inline try/except around
   an API key. If no provider is configured (or the real one fails), the
@@ -686,23 +692,34 @@ across the taxonomy above), scored offline (`LEDGER_SENTINEL_LLM=stub`):**
 
 | Metric | Result |
 |---|---|
-| Auto-clear rate | 85.0% (255 / 300) |
-| False-clear count | 4 (of 49 true anomalies) |
-| False-clear rate (of anomalies) | 8.2% |
-| False-clear rate (of auto-clears) | 1.6% |
+| Auto-clear rate | 84.7% (254 / 300) |
+| False-clear count | 3 (of 49 true anomalies) |
+| False-clear rate (of anomalies) | 6.1% |
+| False-clear rate (of auto-clears) | 1.2% |
 | False-escalate count | 0 |
 | Escalation precision | 100% |
-| Cost-weighted score (50:1 asymmetry) | 200 total, 0.67 / invoice |
+| Cost-weighted score (50:1 asymmetry) | 150 total, 0.50 / invoice |
 
 **Every number above is from one seed (42).** Re-running the same eval
-across 8 seeds puts the false-clear rate in a **6.1%–8.2% range** (mean
-6.6%) — seed 42 sits at the high end, not the typical case — and finds
+across 8 seeds puts the false-clear rate in a **6.1%-8.2% range** (mean
+6.6%). Seed 42 now sits at the *low* end of that range, not the typical case,
+so read 6.1% as the optimistic end of the observed spread. The eval also finds
 escalation precision is **not actually 100% at every seed**: it drops to
-97.9% at 2 of the 8 (one `vendor_name_drift` invoice escalates instead of
-clearing, traced to a specific vendor-alias pair whose string similarity
-falls under the stub heuristic's own threshold). Full derivation, the
-per-seed table, and why this is a labelling gap rather than a detector bug:
-[`EVAL_METHODOLOGY.md` §4–5](EVAL_METHODOLOGY.md#4-the-82-number-what-it-does-and-doesnt-tell-you).
+97.9% at seed 2026 (1 false escalate) and 93.8% at seed 777 (3), all
+`vendor_name_drift` invoices whose vendor-alias pair ("Acme Corp" / "Acme
+Corporation Pvt Ltd") has a string similarity under the stub heuristic's own
+threshold. Full derivation, the per-seed table, and why this is a labelling
+gap rather than a detector bug:
+[`EVAL_METHODOLOGY.md` §4-5](EVAL_METHODOLOGY.md#4-the-61-number-what-it-does-and-doesnt-tell-you).
+
+**Why these numbers differ from the previous version of this README (4 false
+clears, 8.2% at seed 42).** Adding `quantity_variance_no_grn` as a 14th seeded
+anomaly type changed the generator's random stream, so every seed now draws a
+different dataset than it did before. The seed-42 false-clear count fell from
+4 to 3 because the one price-variance case that landed under the ₹500 floor is
+no longer drawn at seed 42 (it still is at seeds 1 and 777), not because
+detection improved. The new type itself is caught 3/3 at every one of the 8
+seeds. The 8-seed range and mean did not move.
 
 This is **worse than the previous README's 0%-false-clear claim**, and the
 reason is not a regression in the matching logic — it's that this eval
@@ -712,9 +729,9 @@ were sitting underneath a 0% headline number the whole time:
 | Anomaly type | Recall | Why |
 |---|---|---|
 | `threshold_splitting` | 50% (3/6) | Detection is retrospective by construction — see [Approval and segregation of duties](#approval-and-segregation-of-duties). The first invoice of each split pair has no history to compare against yet. |
-| `price_variance_out_tolerance` | 75% (3/4) | One seeded invoice's variance lands on a low-value, low-quantity line where even the maximum seeded bump keeps the total rupee impact under the ₹500 floor — which the matcher, correctly, treats as in tolerance (see [Design decisions](#design-decisions-worth-knowing-about)). The anomaly failed to be an anomaly under the project's own documented rule, not a detector miss. |
+| `price_variance_out_tolerance` | 100% (4/4) at seed 42; 75% (3/4) at seeds 1 and 777 | At seeds 1 and 777, one seeded invoice's variance lands on a low-value, low-quantity line where even the maximum seeded bump keeps the total rupee impact under the ₹500 floor, which the matcher, correctly, treats as in tolerance (see [Design decisions](#design-decisions-worth-knowing-about)). The anomaly failed to be an anomaly under the project's own documented rule, not a detector miss. |
 
-Everything else in the taxonomy — quantity variance, both price-variance
+Everything else in the taxonomy — quantity variance (the three-way check and the no-GRN two-way fallback), both price-variance
 directions on the more common case, duplicates, missing PO, tax mismatch,
 line-item mismatch, and all five new vendor-master/approval types except the
 one above — scores 100% recall on this dataset.
@@ -784,9 +801,14 @@ Called out explicitly rather than left for someone to discover:
   covered by tests against a fake client (error handling, JSON parsing) but
   not by an actual call. Set `TENSORMUX_API_KEY` and run the pipeline to
   verify it end to end.
-- **PO + no GRN auto-clears** if price/tax match, without quantity
-  verification — a real two-way-match gap, since the generator never
-  produces this case it isn't reflected in any metric above.
+- **The no-GRN quantity check is weaker than three-way match.** When no goods
+  receipt covers a line, quantity is compared against the PO's ordered
+  quantity (`quantity_variance_no_grn`). A legitimate partial shipment is
+  indistinguishable from an overbill there, so it escalates for a human
+  instead of clearing. Differences inside the matcher's unit tolerance are
+  recorded as within tolerance, same as the three-way check. The dataset seeds
+  3 such cases per 300 invoices and all are caught at every tested seed, which
+  is a small sample.
 - **No OCR / real ERP integration** — invoices are structured synthetic JSON,
   by design (see the original spec's scope, `.ao/attachments/`).
 - **`cost_per_invoice_inr` reports 0** unless `TENSORMUX_PRICE_PER_1K_INR` is

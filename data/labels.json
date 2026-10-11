@@ -1,1013 +1,16 @@
 [
   {
-    "invoice_id": "INV-4288",
-    "anomaly_type": "threshold_splitting",
-    "expected_outcome": "escalate",
-    "notes": "Requester Divya Shah split a purchase from Marigold Stationery across 2 invoices (INV-4288, INV-4289), each individually under their Rs 75,000.00 limit; the group sums over it.",
-    "related_invoice_id": "INV-4289"
-  },
-  {
-    "invoice_id": "INV-4140",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4160",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4060",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4010",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4036",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4193",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4095",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4142",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4182",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4190",
-    "anomaly_type": "price_variance_out_tolerance",
-    "expected_outcome": "escalate",
-    "notes": "Invoice unit price 13.8% over PO price, exceeds tolerance"
-  },
-  {
-    "invoice_id": "INV-4289",
-    "anomaly_type": "threshold_splitting",
-    "expected_outcome": "escalate",
-    "notes": "Requester Divya Shah split a purchase from Marigold Stationery across 2 invoices (INV-4288, INV-4289), each individually under their Rs 75,000.00 limit; the group sums over it.",
-    "related_invoice_id": "INV-4288"
-  },
-  {
-    "invoice_id": "INV-4180",
-    "anomaly_type": "price_variance_in_tolerance",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 0.58% over PO price, within tolerance"
-  },
-  {
-    "invoice_id": "INV-4018",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4254",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4220",
-    "anomaly_type": "tax_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice applied 18% GST, correct rate is 12%"
-  },
-  {
-    "invoice_id": "INV-4093",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4164",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4175",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4116",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4134",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4156",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4106",
-    "anomaly_type": "vendor_name_drift",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Orion Industrial Supplies Ltd' vs canonical 'Orion Industrial Supplies'"
-  },
-  {
-    "invoice_id": "INV-4246",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4048",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4171",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4040",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4146",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4005",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4114",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4196",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
     "invoice_id": "INV-4275",
     "anomaly_type": "vendor_bank_detail_change",
     "expected_outcome": "escalate",
-    "notes": "Vendor 'Ironclad Enterprises Pvt Ltd' bank account changed by email on 2026-07-28, unverified, 2 day(s) before this otherwise-clean invoice."
-  },
-  {
-    "invoice_id": "INV-4083",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4211",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4236",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4250",
-    "anomaly_type": "price_variance_out_tolerance",
-    "expected_outcome": "escalate",
-    "notes": "Invoice unit price 16.8% over PO price, exceeds tolerance"
-  },
-  {
-    "invoice_id": "INV-4290",
-    "anomaly_type": "threshold_splitting",
-    "expected_outcome": "escalate",
-    "notes": "Requester Karan Mehta split a purchase from Orion Industrial Supplies across 2 invoices (INV-4290, INV-4291), each individually under their Rs 75,000.00 limit; the group sums over it.",
-    "related_invoice_id": "INV-4291"
-  },
-  {
-    "invoice_id": "INV-4291",
-    "anomaly_type": "threshold_splitting",
-    "expected_outcome": "escalate",
-    "notes": "Requester Karan Mehta split a purchase from Orion Industrial Supplies across 2 invoices (INV-4290, INV-4291), each individually under their Rs 75,000.00 limit; the group sums over it.",
-    "related_invoice_id": "INV-4290"
-  },
-  {
-    "invoice_id": "INV-4240",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4287",
-    "anomaly_type": "approval_threshold_exceeded",
-    "expected_outcome": "escalate",
-    "notes": "Invoice Rs 102,463.20 exceeds requester Arjun Iyer's approval limit of Rs 75,000.00; otherwise a clean match."
-  },
-  {
-    "invoice_id": "INV-4047",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4110",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4192",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4082",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4258",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4280",
-    "anomaly_type": "new_vendor_first_invoice",
-    "expected_outcome": "escalate",
-    "notes": "Vendor 'Pinnacle Enterprises Pvt Ltd' onboarded 2026-07-04; this is their first invoice, otherwise a clean three-way match."
-  },
-  {
-    "invoice_id": "INV-4004",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4257",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4008",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4161",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4202",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4064",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4167",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4148",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4045",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4080",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4201",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4260",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4076",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4104",
-    "anomaly_type": "price_variance_in_tolerance",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 1.69% over PO price, within tolerance"
-  },
-  {
-    "invoice_id": "INV-4133",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4203",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4227",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4195",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4217",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4293",
-    "anomaly_type": "threshold_splitting",
-    "expected_outcome": "escalate",
-    "notes": "Requester Neha Kulkarni split a purchase from Vantage Office Supplies across 2 invoices (INV-4292, INV-4293), each individually under their Rs 75,000.00 limit; the group sums over it.",
-    "related_invoice_id": "INV-4292"
-  },
-  {
-    "invoice_id": "INV-4016",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4035",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4292",
-    "anomaly_type": "threshold_splitting",
-    "expected_outcome": "escalate",
-    "notes": "Requester Neha Kulkarni split a purchase from Vantage Office Supplies across 2 invoices (INV-4292, INV-4293), each individually under their Rs 75,000.00 limit; the group sums over it.",
-    "related_invoice_id": "INV-4293"
-  },
-  {
-    "invoice_id": "INV-4132",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4261",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4029",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4026",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4033",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4165",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4214",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4265",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4210",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4238",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4044",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4094",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4147",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4177",
-    "anomaly_type": "quantity_variance",
-    "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 2 vs invoice/PO qty"
-  },
-  {
-    "invoice_id": "INV-4096",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4111",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4207",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4165-A",
-    "anomaly_type": "duplicate",
-    "expected_outcome": "escalate",
-    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4165",
-    "related_invoice_id": "INV-4165"
-  },
-  {
-    "invoice_id": "INV-4283",
-    "anomaly_type": "vendor_employee_collision",
-    "expected_outcome": "escalate",
-    "notes": "Vendor 'Cobalt Supplies Pvt Ltd' bank account matches employee Priya Nair (EMP-007)."
-  },
-  {
-    "invoice_id": "INV-4235",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4268",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4098",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4020",
-    "anomaly_type": "quantity_variance",
-    "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 4 vs invoice/PO qty"
-  },
-  {
-    "invoice_id": "INV-4206",
-    "anomaly_type": "quantity_variance",
-    "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 5 vs invoice/PO qty"
-  },
-  {
-    "invoice_id": "INV-4042",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4130",
-    "anomaly_type": "line_item_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice has extra line SKU-1010 not present on PO/GRN"
-  },
-  {
-    "invoice_id": "INV-4157",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4273",
-    "anomaly_type": "missing_po",
-    "expected_outcome": "escalate",
-    "notes": "No matching PO exists for this invoice"
-  },
-  {
-    "invoice_id": "INV-4006",
-    "anomaly_type": "vendor_name_drift",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Orion Industrial Supplies Ltd' vs canonical 'Orion Industrial Supplies'"
-  },
-  {
-    "invoice_id": "INV-4073",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4078",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4081",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4215",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4066",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4137",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4139",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4272",
-    "anomaly_type": "missing_po",
-    "expected_outcome": "escalate",
-    "notes": "No matching PO exists for this invoice"
-  },
-  {
-    "invoice_id": "INV-4061",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
+    "notes": "Vendor 'Wraith Traders Pvt Ltd' bank account changed by email on 2026-07-04, unverified, 4 day(s) before this otherwise-clean invoice."
   },
   {
     "invoice_id": "INV-4285",
-    "anomaly_type": "approval_threshold_exceeded",
+    "anomaly_type": "threshold_splitting",
     "expected_outcome": "escalate",
-    "notes": "Invoice Rs 115,645.90 exceeds requester Arjun Iyer's approval limit of Rs 75,000.00; otherwise a clean match."
-  },
-  {
-    "invoice_id": "INV-4158",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4255",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4199",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4003",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4056",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4270",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4058",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4119",
-    "anomaly_type": "line_item_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice has extra line SKU-1010 not present on PO/GRN"
-  },
-  {
-    "invoice_id": "INV-4186",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4244",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4279",
-    "anomaly_type": "new_vendor_first_invoice",
-    "expected_outcome": "escalate",
-    "notes": "Vendor 'Solace Systems Pvt Ltd' onboarded 2026-09-06; this is their first invoice, otherwise a clean three-way match."
-  },
-  {
-    "invoice_id": "INV-4062",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4123",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4052",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4057",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4077",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4053",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4019",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4087",
-    "anomaly_type": "vendor_name_drift",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Solstice Electricals Co.' vs canonical 'Solstice Electricals'"
-  },
-  {
-    "invoice_id": "INV-4170",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4043",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4179",
-    "anomaly_type": "tax_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice applied 12% GST, correct rate is 18%"
-  },
-  {
-    "invoice_id": "INV-4108",
-    "anomaly_type": "vendor_name_drift",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Nimbus Logistics Pvt Ltd' vs canonical 'Nimbus Logistics'"
-  },
-  {
-    "invoice_id": "INV-4135",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4224",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4013",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4185",
-    "anomaly_type": "price_variance_in_tolerance",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 1.21% over PO price, within tolerance"
-  },
-  {
-    "invoice_id": "INV-4089",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4219",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4163",
-    "anomaly_type": "price_variance_out_tolerance",
-    "expected_outcome": "escalate",
-    "notes": "Invoice unit price 17.2% over PO price, exceeds tolerance"
-  },
-  {
-    "invoice_id": "INV-4178",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4041",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4034",
-    "anomaly_type": "quantity_variance",
-    "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 2 vs invoice/PO qty"
-  },
-  {
-    "invoice_id": "INV-4085",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4256",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4028",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4126",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4088",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4063",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4143",
-    "anomaly_type": "vendor_name_drift",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Vantage Office Supplies Ltd' vs canonical 'Vantage Office Supplies'"
-  },
-  {
-    "invoice_id": "INV-4185-A",
-    "anomaly_type": "duplicate",
-    "expected_outcome": "escalate",
-    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4185",
-    "related_invoice_id": "INV-4185"
-  },
-  {
-    "invoice_id": "INV-4017",
-    "anomaly_type": "quantity_variance",
-    "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 4 vs invoice/PO qty"
-  },
-  {
-    "invoice_id": "INV-4112",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4091",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4208",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4228",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4281",
-    "anomaly_type": "new_vendor_first_invoice",
-    "expected_outcome": "escalate",
-    "notes": "Vendor 'Copper Systems Pvt Ltd' onboarded 2026-10-12; this is their first invoice, otherwise a clean three-way match."
-  },
-  {
-    "invoice_id": "INV-4002",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4068",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4259",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4031",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4024",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4055",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4169",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4149",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4151",
-    "anomaly_type": "line_item_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice has extra line SKU-1003 not present on PO/GRN"
-  },
-  {
-    "invoice_id": "INV-4144",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4187",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4241",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
+    "notes": "Requester Divya Shah split a purchase from Solstice Electricals across 2 invoices (INV-4285, INV-4286), each individually under their Rs 75,000.00 limit; the group sums over it.",
+    "related_invoice_id": "INV-4286"
   },
   {
     "invoice_id": "INV-4138",
@@ -1016,527 +19,7 @@
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4237",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4241-A",
-    "anomaly_type": "duplicate",
-    "expected_outcome": "escalate",
-    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4241",
-    "related_invoice_id": "INV-4241"
-  },
-  {
-    "invoice_id": "INV-4038",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4225",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4009",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4121",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4213",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4284",
-    "anomaly_type": "vendor_employee_collision",
-    "expected_outcome": "escalate",
-    "notes": "Vendor 'Beacon Industrial Pvt Ltd' bank account matches employee Priya Nair (EMP-007)."
-  },
-  {
-    "invoice_id": "INV-4084",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4054",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4276",
-    "anomaly_type": "vendor_bank_detail_change",
-    "expected_outcome": "escalate",
-    "notes": "Vendor 'Beacon Logistics Pvt Ltd' bank account changed by email on 2026-11-12, unverified, 1 day(s) before this otherwise-clean invoice."
-  },
-  {
-    "invoice_id": "INV-4221",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4252",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4189",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4155",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4229",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4198",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4263",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4011",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4176",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4022",
-    "anomaly_type": "tax_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice applied 18% GST, correct rate is 12%"
-  },
-  {
-    "invoice_id": "INV-4269",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4109",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4141",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4129",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4232",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4159",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4191",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4100",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4012",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4011-A",
-    "anomaly_type": "duplicate",
-    "expected_outcome": "escalate",
-    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4011",
-    "related_invoice_id": "INV-4011"
-  },
-  {
-    "invoice_id": "INV-4099",
-    "anomaly_type": "line_item_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice has extra line SKU-1002 not present on PO/GRN"
-  },
-  {
-    "invoice_id": "INV-4145",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4223",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4075",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4065",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4152",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4023",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4027",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4188",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4039",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4074",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4150",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4222",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4067",
-    "anomaly_type": "price_variance_out_tolerance",
-    "expected_outcome": "escalate",
-    "notes": "Invoice unit price 11.6% over PO price, exceeds tolerance"
-  },
-  {
-    "invoice_id": "INV-4102",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4124",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4266",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4242",
-    "anomaly_type": "quantity_variance",
-    "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 5 vs invoice/PO qty"
-  },
-  {
-    "invoice_id": "INV-4074-A",
-    "anomaly_type": "duplicate",
-    "expected_outcome": "escalate",
-    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4074",
-    "related_invoice_id": "INV-4074"
-  },
-  {
-    "invoice_id": "INV-4153",
-    "anomaly_type": "price_variance_in_tolerance",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 0.63% over PO price, within tolerance"
-  },
-  {
-    "invoice_id": "INV-4204",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4070",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4200",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4007",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4021",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4115",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4118",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4230",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4262",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4127",
-    "anomaly_type": "price_variance_in_tolerance",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 0.63% over PO price, within tolerance"
-  },
-  {
-    "invoice_id": "INV-4136",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4046",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4113",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4166",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4247",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4021-A",
-    "anomaly_type": "duplicate",
-    "expected_outcome": "escalate",
-    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4021",
-    "related_invoice_id": "INV-4021"
-  },
-  {
-    "invoice_id": "INV-4092",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4233",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4168",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4267",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4271",
-    "anomaly_type": "missing_po",
-    "expected_outcome": "escalate",
-    "notes": "No matching PO exists for this invoice"
-  },
-  {
-    "invoice_id": "INV-4251",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4069",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4194",
-    "anomaly_type": "tax_mismatch",
-    "expected_outcome": "escalate",
-    "notes": "Invoice applied 18% GST, correct rate is 12%"
-  },
-  {
-    "invoice_id": "INV-4049",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4209",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4253",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4286",
-    "anomaly_type": "approval_threshold_exceeded",
-    "expected_outcome": "escalate",
-    "notes": "Invoice Rs 121,072.00 exceeds requester Arjun Iyer's approval limit of Rs 75,000.00; otherwise a clean match."
-  },
-  {
-    "invoice_id": "INV-4212",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4120",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4183",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4216",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4103",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4245",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4072",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4248",
+    "invoice_id": "INV-4158",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
@@ -1548,13 +31,656 @@
     "notes": "Clean match, no variance"
   },
   {
+    "invoice_id": "INV-4011",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4286",
+    "anomaly_type": "threshold_splitting",
+    "expected_outcome": "escalate",
+    "notes": "Requester Divya Shah split a purchase from Solstice Electricals across 2 invoices (INV-4285, INV-4286), each individually under their Rs 75,000.00 limit; the group sums over it.",
+    "related_invoice_id": "INV-4285"
+  },
+  {
+    "invoice_id": "INV-4093",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4140",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4020",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4231",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4215",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4091",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4179",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4162",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4172",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4114",
+    "anomaly_type": "vendor_name_drift",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice vendor 'Zenith Chemicals Industries' vs canonical 'Zenith Chemicals'"
+  },
+  {
+    "invoice_id": "INV-4132",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4154",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4187",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4242",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4047",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4144",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4209",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4274",
+    "anomaly_type": "vendor_bank_detail_change",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Cascade Traders Pvt Ltd' bank account changed by email on 2026-07-26, unverified, 1 day(s) before this otherwise-clean invoice."
+  },
+  {
+    "invoice_id": "INV-4003",
+    "anomaly_type": "vendor_name_drift",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice vendor 'Vantage Office Supplies Ltd' vs canonical 'Vantage Office Supplies'"
+  },
+  {
+    "invoice_id": "INV-4112",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4192",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4081",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4102",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4288",
+    "anomaly_type": "threshold_splitting",
+    "expected_outcome": "escalate",
+    "notes": "Requester Karan Mehta split a purchase from Acme Corp across 2 invoices (INV-4287, INV-4288), each individually under their Rs 75,000.00 limit; the group sums over it.",
+    "related_invoice_id": "INV-4287"
+  },
+  {
+    "invoice_id": "INV-4130",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4246",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4287",
+    "anomaly_type": "threshold_splitting",
+    "expected_outcome": "escalate",
+    "notes": "Requester Karan Mehta split a purchase from Acme Corp across 2 invoices (INV-4287, INV-4288), each individually under their Rs 75,000.00 limit; the group sums over it.",
+    "related_invoice_id": "INV-4288"
+  },
+  {
+    "invoice_id": "INV-4126",
+    "anomaly_type": "tax_mismatch",
+    "expected_outcome": "escalate",
+    "notes": "Invoice applied 12% GST, correct rate is 18%"
+  },
+  {
+    "invoice_id": "INV-4236",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4046",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4144-A",
+    "anomaly_type": "duplicate",
+    "expected_outcome": "escalate",
+    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4144",
+    "related_invoice_id": "INV-4144"
+  },
+  {
+    "invoice_id": "INV-4002",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4108",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4206",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4080",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4253",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4252",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4067",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4159",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4198",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4063",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4165",
+    "anomaly_type": "line_item_mismatch",
+    "expected_outcome": "escalate",
+    "notes": "Invoice has extra line SKU-1009 not present on PO/GRN"
+  },
+  {
+    "invoice_id": "INV-4146",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4221",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4278",
+    "anomaly_type": "new_vendor_first_invoice",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Granite Systems Pvt Ltd' onboarded 2026-08-11; this is their first invoice, otherwise a clean three-way match."
+  },
+  {
+    "invoice_id": "INV-4044",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4234",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4078",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4197",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4255",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4251",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4074",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4208",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4240",
+    "anomaly_type": "price_variance_in_tolerance",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice unit price 1.08% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4268",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4024",
+    "anomaly_type": "vendor_name_drift",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice vendor 'Vantage Office Supplies Ltd' vs canonical 'Vantage Office Supplies'"
+  },
+  {
+    "invoice_id": "INV-4131",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4199",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4222",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4191",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4267",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4290",
+    "anomaly_type": "threshold_splitting",
+    "expected_outcome": "escalate",
+    "notes": "Requester Neha Kulkarni split a purchase from Vantage Office Supplies across 2 invoices (INV-4289, INV-4290), each individually under their Rs 75,000.00 limit; the group sums over it.",
+    "related_invoice_id": "INV-4289"
+  },
+  {
+    "invoice_id": "INV-4171",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4289",
+    "anomaly_type": "threshold_splitting",
+    "expected_outcome": "escalate",
+    "notes": "Requester Neha Kulkarni split a purchase from Vantage Office Supplies across 2 invoices (INV-4289, INV-4290), each individually under their Rs 75,000.00 limit; the group sums over it.",
+    "related_invoice_id": "INV-4290"
+  },
+  {
+    "invoice_id": "INV-4025",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4169",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4256",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4030",
+    "anomaly_type": "line_item_mismatch",
+    "expected_outcome": "escalate",
+    "notes": "Invoice has extra line SKU-1010 not present on PO/GRN"
+  },
+  {
+    "invoice_id": "INV-4004",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4027",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4163",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4260",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4043",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4092",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4145",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4174",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4094",
+    "anomaly_type": "price_variance_in_tolerance",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice unit price 1.63% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4109",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4280",
+    "anomaly_type": "vendor_employee_collision",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Lantern Works Pvt Ltd' bank account matches employee Priya Nair (EMP-007)."
+  },
+  {
+    "invoice_id": "INV-4101",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4230",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4263",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4189",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4040",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4241",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4202",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
     "invoice_id": "INV-4128",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4173",
+    "invoice_id": "INV-4155",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4227",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4071",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4076",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4079",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4084",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4065",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4233",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4266",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4135",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4009",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4137",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4060",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4156",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4195",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4084-A",
+    "anomaly_type": "duplicate",
+    "expected_outcome": "escalate",
+    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4084",
+    "related_invoice_id": "INV-4084"
+  },
+  {
+    "invoice_id": "INV-4055",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4265",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4057",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
@@ -1566,16 +692,161 @@
     "notes": "Clean match, no variance"
   },
   {
+    "invoice_id": "INV-4034",
+    "anomaly_type": "quantity_variance",
+    "expected_outcome": "escalate",
+    "notes": "GRN received qty short by 2 vs invoice/PO qty"
+  },
+  {
+    "invoice_id": "INV-4061",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4282",
+    "anomaly_type": "approval_threshold_exceeded",
+    "expected_outcome": "escalate",
+    "notes": "Invoice Rs 120,265.60 exceeds requester Arjun Iyer's approval limit of Rs 75,000.00; otherwise a clean match."
+  },
+  {
+    "invoice_id": "INV-4121",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4184",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4051",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4056",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4075",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4281",
+    "anomaly_type": "vendor_employee_collision",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Wraith Works Pvt Ltd' bank account matches employee Priya Nair (EMP-007)."
+  },
+  {
+    "invoice_id": "INV-4052",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4097",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4038",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4042",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4186",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4097-A",
+    "anomaly_type": "duplicate",
+    "expected_outcome": "escalate",
+    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4097",
+    "related_invoice_id": "INV-4097"
+  },
+  {
+    "invoice_id": "INV-4271",
+    "anomaly_type": "missing_po",
+    "expected_outcome": "escalate",
+    "notes": "No matching PO exists for this invoice"
+  },
+  {
+    "invoice_id": "INV-4022",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4106",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4133",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4212",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4014",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
     "invoice_id": "INV-4181",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4239",
+    "invoice_id": "INV-4188",
+    "anomaly_type": "price_variance_out_tolerance",
+    "expected_outcome": "escalate",
+    "notes": "Invoice unit price 16.5% over PO price, exceeds tolerance"
+  },
+  {
+    "invoice_id": "INV-4087",
+    "anomaly_type": "vendor_name_drift",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice vendor 'Orion Industrial Supplies Ltd' vs canonical 'Orion Industrial Supplies'"
+  },
+  {
+    "invoice_id": "INV-4214",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4161",
+    "anomaly_type": "price_variance_out_tolerance",
+    "expected_outcome": "escalate",
+    "notes": "Invoice unit price 17.2% over PO price, exceeds tolerance"
   },
   {
     "invoice_id": "INV-4249",
@@ -1584,28 +855,148 @@
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4050",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4226",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4274",
-    "anomaly_type": "missing_po",
+    "invoice_id": "INV-4182",
+    "anomaly_type": "quantity_variance",
     "expected_outcome": "escalate",
-    "notes": "No matching PO exists for this invoice"
+    "notes": "GRN received qty short by 4 vs invoice/PO qty"
   },
   {
-    "invoice_id": "INV-4015",
-    "anomaly_type": "vendor_name_drift",
+    "invoice_id": "INV-4083",
+    "anomaly_type": "price_variance_in_tolerance",
     "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Vantage Office Supplies Ltd' vs canonical 'Vantage Office Supplies'"
+    "notes": "Invoice unit price 1.57% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4029",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4036",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4124",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4086",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4205",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4062",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4141",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4168",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4018",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4110",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4283",
+    "anomaly_type": "approval_threshold_exceeded",
+    "expected_outcome": "escalate",
+    "notes": "Invoice Rs 133,808.64 exceeds requester Arjun Iyer's approval limit of Rs 75,000.00; otherwise a clean match."
+  },
+  {
+    "invoice_id": "INV-4035",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4089",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4204",
+    "anomaly_type": "quantity_variance",
+    "expected_outcome": "escalate",
+    "notes": "GRN received qty short by 4 vs invoice/PO qty"
+  },
+  {
+    "invoice_id": "INV-4223",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4069",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4254",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4250",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4279",
+    "anomaly_type": "vendor_employee_collision",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Pinnacle Trading Pvt Ltd' bank account matches employee Priya Nair (EMP-007)."
+  },
+  {
+    "invoice_id": "INV-4054",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4151",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4005",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
   },
   {
     "invoice_id": "INV-4032",
@@ -1614,10 +1005,196 @@
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4231",
+    "invoice_id": "INV-4096",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4147",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4149",
+    "anomaly_type": "tax_mismatch",
+    "expected_outcome": "escalate",
+    "notes": "Invoice applied 18% GST, correct rate is 12%"
+  },
+  {
+    "invoice_id": "INV-4276",
+    "anomaly_type": "new_vendor_first_invoice",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Solace Distributors Pvt Ltd' onboarded 2026-10-22; this is their first invoice, otherwise a clean three-way match."
+  },
+  {
+    "invoice_id": "INV-4142",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4185",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4237",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4136",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4033",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4104",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4203",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4026",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4210",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4010",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4119",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4082",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4053",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4216",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4118",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4248",
+    "anomaly_type": "price_variance_out_tolerance",
+    "expected_outcome": "escalate",
+    "notes": "Invoice unit price 17.2% over PO price, exceeds tolerance"
+  },
+  {
+    "invoice_id": "INV-4037",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4153",
+    "anomaly_type": "vendor_name_drift",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice vendor 'Zenith Chemicals Industries' vs canonical 'Zenith Chemicals'"
+  },
+  {
+    "invoice_id": "INV-4224",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4194",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4258",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4103",
     "anomaly_type": "price_variance_in_tolerance",
     "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 0.87% over PO price, within tolerance"
+    "notes": "Invoice unit price 1.55% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4012",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4173",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4175",
+    "anomaly_type": "quantity_variance",
+    "expected_outcome": "escalate",
+    "notes": "GRN received qty short by 4 vs invoice/PO qty"
+  },
+  {
+    "invoice_id": "INV-4232",
+    "anomaly_type": "tax_mismatch",
+    "expected_outcome": "escalate",
+    "notes": "Invoice applied 12% GST, correct rate is 18%"
+  },
+  {
+    "invoice_id": "INV-4264",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4085",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
   },
   {
     "invoice_id": "INV-4107",
@@ -1626,7 +1203,25 @@
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4197",
+    "invoice_id": "INV-4139",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4039",
+    "anomaly_type": "quantity_variance",
+    "expected_outcome": "escalate",
+    "notes": "GRN received qty short by 2 vs invoice/PO qty"
+  },
+  {
+    "invoice_id": "INV-4127",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4190",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
@@ -1639,73 +1234,134 @@
     "related_invoice_id": "INV-4103"
   },
   {
-    "invoice_id": "INV-4172",
+    "invoice_id": "INV-4157",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4277",
+    "invoice_id": "INV-4273",
     "anomaly_type": "vendor_bank_detail_change",
     "expected_outcome": "escalate",
-    "notes": "Vendor 'Copper Logistics Pvt Ltd' bank account changed by email on 2027-01-22, unverified, 1 day(s) before this otherwise-clean invoice."
+    "notes": "Vendor 'Harvest Supplies Pvt Ltd' bank account changed by email on 2026-11-27, unverified, 2 day(s) before this otherwise-clean invoice."
   },
   {
-    "invoice_id": "INV-4278",
-    "anomaly_type": "vendor_bank_detail_change",
+    "invoice_id": "INV-4013",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4021",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4099",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4143",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4218",
+    "anomaly_type": "line_item_mismatch",
     "expected_outcome": "escalate",
-    "notes": "Vendor 'Granite Distributors Pvt Ltd' bank account changed by email on 2027-01-25, unverified, 4 day(s) before this otherwise-clean invoice."
+    "notes": "Invoice has extra line SKU-1003 not present on PO/GRN"
   },
   {
-    "invoice_id": "INV-4125",
+    "invoice_id": "INV-4073",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4184",
-    "anomaly_type": "price_variance_in_tolerance",
-    "expected_outcome": "auto_clear",
-    "notes": "Invoice unit price 1.40% over PO price, within tolerance"
-  },
-  {
-    "invoice_id": "INV-4037",
+    "invoice_id": "INV-4070",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4025",
+    "invoice_id": "INV-4127-A",
+    "anomaly_type": "duplicate",
+    "expected_outcome": "escalate",
+    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4127",
+    "related_invoice_id": "INV-4127"
+  },
+  {
+    "invoice_id": "INV-4064",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4264",
+    "invoice_id": "INV-4220",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4030",
+    "invoice_id": "INV-4100",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4007",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4239",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4028",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4072",
     "anomaly_type": "vendor_name_drift",
     "expected_outcome": "auto_clear",
-    "notes": "Invoice vendor 'Harbor Steel Works Pvt Ltd' vs canonical 'Harbor Steel Works'"
+    "notes": "Invoice vendor 'Nimbus Logistics Pvt Ltd' vs canonical 'Nimbus Logistics'"
   },
   {
-    "invoice_id": "INV-4105",
+    "invoice_id": "INV-4148",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4174",
+    "invoice_id": "INV-4217",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4243",
+    "invoice_id": "INV-4066",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4272",
+    "anomaly_type": "missing_po",
+    "expected_outcome": "escalate",
+    "notes": "No matching PO exists for this invoice"
+  },
+  {
+    "invoice_id": "INV-4095",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
@@ -1717,64 +1373,143 @@
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4071",
+    "invoice_id": "INV-4261",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4086",
-    "anomaly_type": "clean",
+    "invoice_id": "INV-4238",
+    "anomaly_type": "vendor_name_drift",
     "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
+    "notes": "Invoice vendor 'Nimbus Logistics Pvt Ltd' vs canonical 'Nimbus Logistics'"
   },
   {
-    "invoice_id": "INV-4218",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4162",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4205",
-    "anomaly_type": "clean",
-    "expected_outcome": "auto_clear",
-    "notes": "Clean match, no variance"
-  },
-  {
-    "invoice_id": "INV-4234",
-    "anomaly_type": "quantity_variance",
+    "invoice_id": "INV-4072-A",
+    "anomaly_type": "duplicate",
     "expected_outcome": "escalate",
-    "notes": "GRN received qty short by 3 vs invoice/PO qty"
+    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4072",
+    "related_invoice_id": "INV-4072"
   },
   {
-    "invoice_id": "INV-4154",
+    "invoice_id": "INV-4150",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4131",
+    "invoice_id": "INV-4200",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4001",
+    "invoice_id": "INV-4196",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4079",
+    "invoice_id": "INV-4113",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4116",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4129",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4293",
+    "anomaly_type": "quantity_variance_no_grn",
+    "expected_outcome": "escalate",
+    "notes": "No goods receipt on file for PO-2289; invoice bills 7 more unit(s) of SKU-1006 than the PO ordered (149 -> 156). Price and GST rate otherwise match the PO exactly -- the two-way-match gap."
+  },
+  {
+    "invoice_id": "INV-4225",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4257",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4031",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4219",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4125",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4134",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4247",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4019",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4045",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4111",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4164",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4243",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4270",
+    "anomaly_type": "missing_po",
+    "expected_outcome": "escalate",
+    "notes": "No matching PO exists for this invoice"
   },
   {
     "invoice_id": "INV-4090",
@@ -1783,31 +1518,296 @@
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4282",
-    "anomaly_type": "vendor_employee_collision",
+    "invoice_id": "INV-4228",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4262",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4068",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4023",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4048",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4177",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4041",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4176",
+    "anomaly_type": "price_variance_in_tolerance",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice unit price 1.50% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4244",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4058",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4115",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4235",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4245",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4049",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4211",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4016",
+    "anomaly_type": "price_variance_out_tolerance",
     "expected_outcome": "escalate",
-    "notes": "Vendor 'Cobalt Industrial Pvt Ltd' bank account matches employee Priya Nair (EMP-007)."
+    "notes": "Invoice unit price 12.2% over PO price, exceeds tolerance"
   },
   {
-    "invoice_id": "INV-4014",
+    "invoice_id": "INV-4226",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4097",
+    "invoice_id": "INV-4193",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4101",
+    "invoice_id": "INV-4284",
+    "anomaly_type": "approval_threshold_exceeded",
+    "expected_outcome": "escalate",
+    "notes": "Invoice Rs 106,568.00 exceeds requester Arjun Iyer's approval limit of Rs 75,000.00; otherwise a clean match."
+  },
+  {
+    "invoice_id": "INV-4123",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"
   },
   {
-    "invoice_id": "INV-4051",
+    "invoice_id": "INV-4291",
+    "anomaly_type": "quantity_variance_no_grn",
+    "expected_outcome": "escalate",
+    "notes": "No goods receipt on file for PO-2287; invoice bills 10 more unit(s) of SKU-1002 than the PO ordered (158 -> 168). Price and GST rate otherwise match the PO exactly -- the two-way-match gap."
+  },
+  {
+    "invoice_id": "INV-4183",
+    "anomaly_type": "price_variance_in_tolerance",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice unit price 0.63% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4178",
+    "anomaly_type": "price_variance_in_tolerance",
+    "expected_outcome": "auto_clear",
+    "notes": "Invoice unit price 0.88% over PO price, within tolerance"
+  },
+  {
+    "invoice_id": "INV-4180",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4152",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4259",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4167",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4170",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4017",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4120",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4213",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4160",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4269",
+    "anomaly_type": "missing_po",
+    "expected_outcome": "escalate",
+    "notes": "No matching PO exists for this invoice"
+  },
+  {
+    "invoice_id": "INV-4201",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4229",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4178-A",
+    "anomaly_type": "duplicate",
+    "expected_outcome": "escalate",
+    "notes": "Same vendor/amount, invoice number suffix vs already-posted INV-4178",
+    "related_invoice_id": "INV-4178"
+  },
+  {
+    "invoice_id": "INV-4105",
+    "anomaly_type": "quantity_variance",
+    "expected_outcome": "escalate",
+    "notes": "GRN received qty short by 5 vs invoice/PO qty"
+  },
+  {
+    "invoice_id": "INV-4166",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4001",
+    "anomaly_type": "quantity_variance",
+    "expected_outcome": "escalate",
+    "notes": "GRN received qty short by 5 vs invoice/PO qty"
+  },
+  {
+    "invoice_id": "INV-4292",
+    "anomaly_type": "quantity_variance_no_grn",
+    "expected_outcome": "escalate",
+    "notes": "No goods receipt on file for PO-2288; invoice bills 3 more unit(s) of SKU-1007 than the PO ordered (97 -> 100). Price and GST rate otherwise match the PO exactly -- the two-way-match gap."
+  },
+  {
+    "invoice_id": "INV-4077",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4088",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4098",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4277",
+    "anomaly_type": "new_vendor_first_invoice",
+    "expected_outcome": "escalate",
+    "notes": "Vendor 'Lantern Traders Pvt Ltd' onboarded 2027-01-25; this is their first invoice, otherwise a clean three-way match."
+  },
+  {
+    "invoice_id": "INV-4015",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4008",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4207",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4006",
+    "anomaly_type": "clean",
+    "expected_outcome": "auto_clear",
+    "notes": "Clean match, no variance"
+  },
+  {
+    "invoice_id": "INV-4050",
     "anomaly_type": "clean",
     "expected_outcome": "auto_clear",
     "notes": "Clean match, no variance"

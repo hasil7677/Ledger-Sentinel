@@ -1,6 +1,6 @@
 # Eval methodology
 
-This document exists because "the eval says 8.2%" is not, by itself, a
+This document exists because "the eval says 6.1%" is not, by itself, a
 defensible claim. A single number from a single run tells you almost nothing
 about whether it would survive a different seed, a different reviewer's
 questions, or six months of changes to the orchestrator. This is the
@@ -90,8 +90,8 @@ being gamed on its own.
 
 None of these are aggregated across anomaly types before being reported —
 `confusion_matrix` and `per_anomaly_type_recall` break every metric out by
-the 13 seeded anomaly types plus `clean`, specifically so a detector that is
-excellent at 12 types and silently blind on the 13th can't average its way
+the 14 seeded anomaly types plus `clean`, specifically so a detector that is
+excellent at 13 types and silently blind on the 14th can't average its way
 to a good-looking headline. This is not a hypothetical: it's exactly the
 failure mode the eval rebuild (see README) found in the *previous* version of
 this eval, which reported one aggregate false-clear rate and no per-type
@@ -122,22 +122,23 @@ really is relative to a false escalate. If it only looks good at exactly
 
 ---
 
-## 4. The 8.2% number: what it does and doesn't tell you
+## 4. The 6.1% number: what it does and doesn't tell you
 
 **What it is:** at `seed=42, count=300, anomaly_rate=0.2` (237 clean
 invoices, 63 seeded anomalies of which 49 have `expected_outcome: escalate`),
-4 of those 49 true anomalies were auto-cleared instead of escalated —
-`false_clear_rate_of_anomalies = 4/49 = 0.0816`, reported as 8.2%.
+3 of those 49 true anomalies were auto-cleared instead of escalated (all three
+`threshold_splitting`): `false_clear_rate_of_anomalies = 3/49 = 0.0612`,
+reported as 6.1%.
 
 **Sample size.** 49 true anomalies is not a large sample, and a rate built
-from a numerator of 4 moves in large discrete steps — one more or one fewer
+from a numerator of 3 moves in large discrete steps: one more or one fewer
 false clear changes the reported rate by roughly two percentage points. A
-95% Wilson confidence interval on 4/49 is roughly **3.2% – 19.4%** — wide
-enough that "8.2%" should be read as "clearly not zero, plausibly somewhere
-in the high single digits to high teens," not as a number with two
-significant figures of precision. Quoting 8.2% without this interval, the
+95% Wilson confidence interval on 3/49 is roughly **2.1% - 16.5%**, wide
+enough that "6.1%" should be read as "clearly not zero, plausibly somewhere
+from the low single digits to the mid teens," not as a number with two
+significant figures of precision. Quoting 6.1% without this interval, the
 way the README's headline table does, is standard practice for a point
-estimate but is not the same claim as "the true rate is 8.2%."
+estimate but is not the same claim as "the true rate is 6.1%."
 
 **Seed stability — the range, not just one number.**
 `tests/test_eval_reproducibility.py::test_false_clear_rate_of_anomalies_stays_within_the_documented_range`
@@ -146,28 +147,40 @@ reruns the full eval (regenerate + score) at 8 seeds: `1, 2, 3, 42, 99, 123,
 
 | seed | true anomalies | false clears | rate of anomalies |
 |---|---|---|---|
-| 1 | 49 | 3 | 6.1% |
+| 1 | 49 | 4 | 8.2% |
 | 2 | 49 | 3 | 6.1% |
 | 3 | 49 | 3 | 6.1% |
-| **42** | 49 | **4** | **8.2%** |
+| **42** | 49 | **3** | **6.1%** |
 | 99 | 49 | 3 | 6.1% |
 | 123 | 49 | 3 | 6.1% |
 | 777 | 49 | 4 | 8.2% |
 | 2026 | 49 | 3 | 6.1% |
 
-**Range: 6.1% – 8.2%. Mean across the 8 seeds: 6.6%.** Seed 42 — the one in
-the README's headline table — sits at the *high* end of the observed range,
-not the middle or the low end. It is not cherry-picked (it's the project's
-long-standing default seed, used before this pass existed, not chosen because
-it produced a worse-looking number), but a reader should know the headline
-number is not the typical case across seeds; it's one of the two
-worst-of-eight observed. `true_anomaly_count` is exactly 49 at every seed
-(the largest-remainder allocation in `scale_anomaly_plan` is deterministic
-given `count`/`anomaly_rate` and doesn't depend on the seed — only *which*
-invoices draw which anomaly does), so the denominator isn't part of the
-variation; only the numerator moves, and by design it can only take integer
-values, which is why the observed rates cluster at 3/49 and 4/49 rather than
-forming a smooth distribution.
+**Range: 6.1% - 8.2%. Mean across the 8 seeds: 6.6%.** Seed 42, the one in
+the README's headline table, now sits at the *low* end of the observed range,
+tied with five other seeds at 3/49. That reverses what an earlier version of
+this document said: seed 42 used to be at the high end, one of the two
+worst-of-eight, which made the headline conservative. The change is not a real
+improvement. Adding the `quantity_variance_no_grn` type to the generator
+changed its random stream, so every seed now draws a different dataset, and
+the ₹500-floor price-variance case that used to land at seed 42 now lands at
+seeds 1 and 777 instead. Seed 42 is still not cherry-picked (it is the
+project's long-standing default seed, used before this pass existed), but a
+reader should know the headline number is now the optimistic end of the
+observed spread, and the 8-seed mean, 6.6%, is the better single summary.
+`true_anomaly_count` is exactly 49 at every seed (the largest-remainder
+allocation in `scale_anomaly_plan` is deterministic given `count`/
+`anomaly_rate` and doesn't depend on the seed; only *which* invoices draw
+which anomaly does), so the denominator isn't part of the variation; only the
+numerator moves, and by design it can only take integer values, which is why
+the observed rates cluster at 3/49 and 4/49 rather than forming a smooth
+distribution.
+
+**The new type is caught at every seed.** `quantity_variance_no_grn` (3 per
+300-invoice dataset) is escalated 3 of 3 times at all 8 seeds, with no false
+clears and no false escalates. That is 24 cases in total, which is enough to
+say the fallback works on this generator's shape of case and not enough to say
+anything about real invoices.
 
 Every false clear across every one of the 8 seeds traces back to one of the
 two types already named in the README as structural, never a new type:
@@ -177,8 +190,7 @@ two types already named in the README as structural, never a new type:
 checks this across all 8 seeds, not just 42 — the single-seed version of this
 check already existed in `tests/test_eval.py`.
 
-**What this range does and doesn't prove.** It's evidence the 8.2% figure
-isn't a one-off fluke in either direction — every seed lands in a fairly
+**What this range does and doesn't prove.** It's evidence the 6.1% figure isn't a one-off fluke in either direction — every seed lands in a fairly
 narrow 6–8% band, not "2% at one seed, 30% at another." It is *not* evidence
 about performance outside this generator's specific anomaly mix, invoice
 volume, or the stub heuristic's behaviour — a differently-shaped dataset (a
@@ -197,9 +209,10 @@ because a single-seed report isn't defensible under questioning — surfaced a
 show at all:
 
 **`escalation_precision` is not actually 100% across seeds.** It holds at
-6 of 8 tested seeds, but at `seed=3` and `seed=99` it drops to **97.9%**
-(44/45 escalations correct): one `vendor_name_drift` invoice escalates when
-its label says it should auto-clear.
+6 of 8 tested seeds, but at `seed=2026` it drops to **97.9%** (46/47
+escalations correct: one `vendor_name_drift` invoice escalates when its label
+says it should auto-clear) and at `seed=777` to **93.8%** (45/48: three of
+them).
 
 **Root cause, traced exactly:** `agent/heuristics.py::normalize_vendor` (the
 stub's deterministic vendor-matching logic) resolves two vendor-name strings
@@ -213,7 +226,7 @@ comfortably above that threshold (0.74–0.93). One does not:
 | "Acme Corporation Pvt Ltd" | "Acme Corp" | **0.545** |
 
 When the generator's per-slot RNG happens to draw the Acme Corp pair for a
-`vendor_name_drift` anomaly (it did at seeds 3 and 99, not at 42), the stub
+`vendor_name_drift` anomaly (it did at seeds 777 and 2026, not at 42), the stub
 heuristic correctly reports low confidence that the names match, and
 `agent/orchestrator.py` correctly escalates a vendor match it isn't
 confident about — that is the system working as documented, not a detector
@@ -389,12 +402,12 @@ the claim-verification numbers rather than the full ~40s run.
 
 ## What this document is not
 
-It is not a claim that Ledger Sentinel's false-clear rate is "8.2%, proven."
-It's a claim that 8.2% is what one particular, reproducible, seed-42 run of
+It is not a claim that Ledger Sentinel's false-clear rate is "6.1%, proven."
+It's a claim that 6.1% is what one particular, reproducible, seed-42 run of
 a specific synthetic dataset produces; that seven other seeds put the same
 statistic in a 6.1%–8.2% range; that the sample behind any single seed's
 number is small enough to carry a wide confidence interval; and that two
 (now three, counting §5) specific, named gaps account for every false clear
 observed across all eight seeds tested, with nothing swept under an average.
-That is a narrower and more defensible claim than "8.2%" read on its own,
+That is a narrower and more defensible claim than "6.1%" read on its own,
 which is the point of writing it down.

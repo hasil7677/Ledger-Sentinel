@@ -10,7 +10,7 @@
    reviewer would ask for first.
 
 2. **Seed stability of the headline number.** The README reports one number
-   -- an 8.2% false-clear rate -- from one seed (42). A single seed is not
+   -- a 6.1% false-clear rate -- from one seed (42). A single seed is not
    evidence that the number is a property of the system rather than a
    property of that seed's particular draw of invoices. This file reruns the
    full eval across 8 different seeds and asserts the false-clear rate stays
@@ -107,7 +107,7 @@ def test_false_clear_rate_of_anomalies_stays_within_the_documented_range(multi_s
     The range is empirical, not a target: it was measured by running exactly
     this fixture and copied into EVAL_METHODOLOGY.md, not chosen first and
     then made to pass. Widen it only alongside updating that document, with
-    the same honesty the README already applies to the base 8.2% figure --
+    the same honesty the README already applies to the base 6.1% figure --
     never narrow it to make a change look more stable than it is.
     """
     rates = {seed: m["false_clear_rate_of_anomalies"] for seed, m in multi_seed_metrics.items()}
@@ -116,7 +116,7 @@ def test_false_clear_rate_of_anomalies_stays_within_the_documented_range(multi_s
     # seed=42 is the one number the README puts in its headline table --
     # pin it exactly so a regression there is caught precisely, not just
     # detected as "somewhere in range."
-    assert multi_seed_metrics[42]["false_clear_rate_of_anomalies"] == 0.0816
+    assert multi_seed_metrics[42]["false_clear_rate_of_anomalies"] == 0.0612
 
 
 def test_false_clears_across_all_seeds_are_only_the_two_documented_structural_types(multi_seed_metrics):
@@ -140,8 +140,8 @@ def test_escalation_precision_is_not_actually_100_percent_across_seeds(multi_see
     test_escalation_precision_is_100_percent, which only holds at seed=42.
 
     Running the eval across 8 seeds found escalation_precision drops below
-    100% at 2 of them (seed=3, seed=99): one `vendor_name_drift` invoice
-    escalates instead of auto-clearing, because the seeded alias pair "Acme
+    100% at 2 of them (seed=777: three, seed=2026: one): `vendor_name_drift` invoices
+    escalate instead of auto-clearing, because the seeded alias pair "Acme
     Corp" / "Acme Corporation Pvt Ltd" has a difflib.SequenceMatcher ratio of
     0.545 (see agent/heuristics.py::VENDOR_SIMILARITY_THRESHOLD = 0.6) --
     below the stub heuristic's own resolution threshold. When that specific
@@ -169,7 +169,8 @@ def test_escalation_precision_is_not_actually_100_percent_across_seeds(multi_see
     # so a future run that finds MORE of them (a real regression, e.g. the
     # heuristic threshold or a different vendor pair drifting under it) fails
     # loudly instead of being masked by a vague ">= 0" assertion.
-    assert imprecise_seeds == {3: 0.9787, 99: 0.9787}
+    assert imprecise_seeds == {777: 0.9375, 2026: 0.9787}
+    expected_false_escalates = {777: 3, 2026: 1}
     for seed in imprecise_seeds:
         confusion = multi_seed_metrics[seed]["confusion_matrix"]
         offending = {
@@ -177,7 +178,7 @@ def test_escalation_precision_is_not_actually_100_percent_across_seeds(multi_see
             for atype, row in confusion.items()
             if row["false_escalate_count"] > 0
         }
-        assert offending == {"vendor_name_drift": 1}, f"seed={seed}: {offending}"
+        assert offending == {"vendor_name_drift": expected_false_escalates[seed]}, f"seed={seed}: {offending}"
 
 
 def test_true_anomaly_count_is_stable_across_seeds(multi_seed_metrics):
