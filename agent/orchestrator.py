@@ -70,10 +70,14 @@ def process_invoice(invoice, pos, grn_by_po, ledger, vendor_master=None, employe
     elif grn is None:
         # PO on file but nothing received yet -- matcher treats received qty as
         # unknown rather than zero, so say so instead of implying a GRN exists.
+        # Quantity still gets checked, just against the PO's own ordered qty
+        # rather than what was actually received (core/matcher.py's
+        # quantity_variance_no_grn fallback) -- a weaker check than a real
+        # goods receipt, but not "skipped".
         trace.add("retrieve_documents",
                   f"Retrieved PO {po['id']} for invoice {invoice['id']}; no goods receipt on file, "
-                  f"so quantities cannot be confirmed against receiving. "
-                  f"{len(invoice['lines'])} invoice line(s) to compare on price and tax only.")
+                  f"so quantities are checked against the PO's ordered quantity instead of what was "
+                  f"actually received. {len(invoice['lines'])} invoice line(s) to compare.")
     else:
         trace.add("retrieve_documents",
                   f"Retrieved PO {po['id']} and GRN {grn['id']} for invoice {invoice['id']}; "
@@ -89,8 +93,9 @@ def process_invoice(invoice, pos, grn_by_po, ledger, vendor_master=None, employe
             trace.add("three_way_match",
                       "PO, GRN and invoice agree on every line: quantities, unit prices and GST rates all match."
                       if grn is not None else
-                      "Invoice agrees with the PO on unit prices and GST rates. Quantities were not verified "
-                      "against receiving because no goods receipt exists.")
+                      "Invoice agrees with the PO on unit prices, GST rates, and ordered quantities. "
+                      "Quantities were checked against the PO only, not against actual receiving, "
+                      "because no goods receipt exists.")
         else:
             trace.add("three_way_match",
                       f"Compared {len(invoice['lines'])} line(s) across PO/GRN/invoice: "

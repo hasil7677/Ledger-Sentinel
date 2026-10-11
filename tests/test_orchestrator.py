@@ -52,6 +52,33 @@ def test_quantity_variance_out_of_tolerance_escalates(tmp_path):
     assert result["packet"]["exception_type"] == "quantity_variance"
 
 
+def test_po_with_no_grn_and_matching_quantity_auto_clears(tmp_path):
+    """PO on file, no goods receipt, invoice matches the PO on qty/price/tax:
+    still a clean auto-clear -- the two-way fallback shouldn't flag anything
+    that actually agrees just because there's no GRN to double-check against."""
+    ledger = Ledger(str(tmp_path / "ledger.json"))
+    po, _, invoice = make_clean_triple()
+    result = process_invoice(invoice, {po["id"]: po}, {}, ledger)  # no GRN for this PO
+    assert result["decision"] == "auto_clear"
+
+
+def test_po_with_no_grn_and_mismatched_quantity_escalates_instead_of_auto_clearing(tmp_path):
+    """The two-way-match gap the README used to document by name: 'PO + no
+    GRN auto-clears if price/tax match, without quantity verification.' Price
+    and tax agree here; only quantity disagrees, and there's no GRN to check
+    it against. Before core/matcher.py's quantity_variance_no_grn fallback,
+    this invoice auto-cleared -- nothing compared the billed qty to anything
+    at all. It must now escalate instead."""
+    ledger = Ledger(str(tmp_path / "ledger.json"))
+    po, _, invoice = make_clean_triple(qty=10)
+    invoice["lines"][0]["qty"] = 15  # billed 5 more than the PO ordered, no GRN to check against
+    invoice["total_amount"] = round(15 * 100.0 * 1.18, 2)
+    result = process_invoice(invoice, {po["id"]: po}, {}, ledger)  # no GRN for this PO
+    assert result["decision"] == "escalate"
+    assert result["packet"]["exception_type"] == "quantity_variance_no_grn"
+    assert len(ledger.all()) == 0  # definitely not posted
+
+
 def test_missing_po_escalates_without_touching_vendor_or_approval_checks(tmp_path):
     ledger = Ledger(str(tmp_path / "ledger.json"))
     po, grn, invoice = make_clean_triple()

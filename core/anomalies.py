@@ -18,6 +18,10 @@ SEVERITY_BY_TYPE = {
     "price_variance_out_tolerance": "medium",
     "tax_mismatch": "medium",
     "quantity_variance": "medium",
+    # Same severity as quantity_variance -- it's the same underlying problem
+    # (billed more/less than agreed), just detected with weaker evidence
+    # because there's no goods receipt to check against. See core/matcher.py.
+    "quantity_variance_no_grn": "medium",
     "line_item_mismatch": "medium",
     "vendor_name_drift": "low",
     # Vendor-master fraud controls. A bank-detail change or an employee/vendor

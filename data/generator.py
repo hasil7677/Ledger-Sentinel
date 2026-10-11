@@ -15,6 +15,14 @@ cannot see any of them, which is the point: they model the failure modes that
 actually cost money in accounts payable and that this project didn't have a
 detector for before this pass.
 
+A fourteenth type, quantity_variance_no_grn (seed_quantity_variance_no_grn
+below), is neither: it's a two-way-match case on purpose -- a PO and an
+invoice with no goods receipt at all, price and tax matching, only quantity
+disagreeing. Closes a gap this generator used to leave entirely untested: a
+PO-without-GRN invoice used to be able to bill any quantity and still
+auto-clear, because nothing produced this shape of case to exercise the
+check against.
+
 Usage:
     python data/generator.py [--count 60] [--anomaly-rate 0.2] [--seed 42] [--out-dir data]
 """
@@ -128,6 +136,10 @@ ANOMALY_WEIGHTS = [
     ("vendor_employee_collision", 1),
     ("approval_threshold_exceeded", 1),
     ("threshold_splitting", 1),
+    # The two-way-match gap: PO on file, no goods receipt, invoice bills a
+    # different quantity than the PO ordered. Weighted 1, same as the other
+    # rarer types above -- see seed_quantity_variance_no_grn.
+    ("quantity_variance_no_grn", 1),
 ]
 
 # Types whose plan count is a count of INVOICES generated via the dedicated
@@ -139,6 +151,7 @@ ANOMALY_WEIGHTS = [
 DEDICATED_SINGLE_TYPES = (
     "vendor_bank_detail_change", "new_vendor_first_invoice",
     "vendor_employee_collision", "approval_threshold_exceeded",
+    "quantity_variance_no_grn",
 )
 DEDICATED_TYPES = DEDICATED_SINGLE_TYPES + ("duplicate", "missing_po", "threshold_splitting")
 
@@ -553,6 +566,56 @@ def seed_threshold_splitting(rng, ids, employees_by_id, base_date, day_spread, g
     return members, labels
 
 
+def seed_quantity_variance_no_grn(rng, ids, base_date, day_spread):
+    """PO + invoice only -- deliberately no goods receipt at all, the two-way-
+    match gap the README used to call out by name: 'PO + no GRN auto-clears
+    if price/tax match, without quantity verification.' Price and GST rate
+    match the PO exactly; only the billed quantity disagrees, and there is no
+    GRN on file to check it against. core/matcher.py's quantity_variance_no_grn
+    fallback (comparing against the PO's own ordered qty) is what's supposed
+    to catch this now -- before it existed, this exact case auto-cleared."""
+    canonical, _ = rng.choice(VENDORS)
+    po_date = base_date + timedelta(days=rng.randint(0, day_spread))
+    lines = make_lines(rng)
+    po_id = ids.next_po()
+    inv_id = ids.next_inv()
+
+    po = {
+        "id": po_id,
+        "vendor": canonical,
+        "date": po_date.isoformat(),
+        "requester_id": DEFAULT_REQUESTER_ID,
+        "lines": [dict(l) for l in lines],
+    }
+
+    inv_date = po_date + timedelta(days=rng.randint(3, 10))
+    inv_lines = [dict(l) for l in lines]
+    line = inv_lines[0]
+    over = rng.randint(2, 10)  # outside the matcher's +-1 unit tolerance
+    line["qty"] += over
+    total = money(sum(line_total(l["qty"], l["unit_price"], l["gst_rate"]) for l in inv_lines))
+    invoice = {
+        "id": inv_id,
+        "po_id": po_id,
+        "vendor": canonical,
+        "requester_id": DEFAULT_REQUESTER_ID,
+        "invoice_date": inv_date.isoformat(),
+        "lines": inv_lines,
+        "total_amount": total,
+    }
+
+    label = {
+        "invoice_id": inv_id,
+        "anomaly_type": "quantity_variance_no_grn",
+        "expected_outcome": "escalate",
+        "notes": f"No goods receipt on file for {po_id}; invoice bills {over} more unit(s) of "
+                 f"{line['sku']} than the PO ordered ({po['lines'][0]['qty']} -> {line['qty']}). "
+                 f"Price and GST rate otherwise match the PO exactly -- the two-way-match gap.",
+    }
+    # No GRN is returned deliberately -- this anomaly IS the absence of one.
+    return po, invoice, label
+
+
 def generate(count, anomaly_rate, seed, out_dir):
     rng = random.Random(seed)
     ids = IdGen()
@@ -578,10 +641,12 @@ def generate(count, anomaly_rate, seed, out_dir):
     n_collision = plan_by_type.get("vendor_employee_collision", 0)
     n_approval_exceeded = plan_by_type.get("approval_threshold_exceeded", 0)
     n_splitting_groups = plan_by_type.get("threshold_splitting", 0)
+    n_qty_no_grn = plan_by_type.get("quantity_variance_no_grn", 0)
 
     dedicated_invoice_budget = (
         n_duplicates + n_missing_po + n_bank_change + n_new_vendor
         + n_collision + n_approval_exceeded + (n_splitting_groups * SPLIT_GROUP_SIZE)
+        + n_qty_no_grn
     )
     n_own_triple = max(0, count - dedicated_invoice_budget)
 
@@ -708,6 +773,10 @@ def generate(count, anomaly_rate, seed, out_dir):
         for po, grn, invoice in members:
             pos.append(po); grns.append(grn); invoices.append(invoice)
         labels.extend(group_labels)
+
+    for _ in range(n_qty_no_grn):
+        po, invoice, label = seed_quantity_variance_no_grn(rng, ids, base_date, day_spread)
+        pos.append(po); invoices.append(invoice); labels.append(label)  # deliberately no GRN appended
 
     invoices.sort(key=lambda i: i["invoice_date"])
     labels_by_id = {l["invoice_id"]: l for l in labels}

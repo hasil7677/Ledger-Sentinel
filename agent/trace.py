@@ -69,6 +69,13 @@ def describe_variance(v):
             f"{v['grn_value']}, invoice billed {v['invoice_value']} (billed {v['delta']:+d} vs received)"
         )
 
+    if kind == "quantity_variance_no_grn":
+        return (
+            f"Quantity variance on {sku} (no goods receipt to check against): PO ordered "
+            f"{v['po_value']}, invoice billed {v['invoice_value']} (billed {v['delta']:+d} vs PO -- "
+            f"unverified by receiving)"
+        )
+
     if kind == "tax_mismatch":
         return (
             f"Tax mismatch on {sku}: PO rate {v['po_value']}% vs invoice rate "

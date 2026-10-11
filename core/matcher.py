@@ -3,6 +3,15 @@
 No LLM calls here. This module only does arithmetic and structural
 comparison. Judgement calls (is this vendor name the same entity, is this
 really a duplicate, how to phrase the exception) belong in agent/.
+
+When a line has no goods receipt to check against (no GRN on file for the PO
+at all, or a GRN that doesn't cover that line), quantity falls back to a
+two-way check against the PO's own ordered quantity instead of being skipped
+-- see the "quantity_variance_no_grn" branch below. That is a weaker check
+than the three-way one (it cannot distinguish an overbill from a legitimate
+partial shipment the way a real GRN would), which is why it is its own
+finding type rather than being reported as "quantity_variance", which would
+falsely claim receiving confirmed it.
 """
 
 DEFAULT_TOLERANCES = {
@@ -79,16 +88,41 @@ def match_invoice(invoice, po, grn, tolerances=None):
                 "within_tolerance": price_within,
             })
 
-        # quantity variance: invoice qty vs GRN received qty
+        # quantity variance: invoice qty vs GRN received qty. If there is no
+        # goods receipt line for this SKU at all -- no GRN on file for the PO,
+        # or a GRN that exists but doesn't cover this line -- received qty is
+        # genuinely unknown, not zero, so it cannot be compared to what was
+        # invoiced. That used to mean skipping quantity verification entirely,
+        # which is a real two-way-match gap: an invoice could bill any
+        # quantity it liked and still auto-clear as long as price and tax
+        # matched. Falling back to the PO's own ordered quantity closes that
+        # gap with the next best evidence available -- it is a strictly
+        # weaker check than the three-way one (a legitimate partial shipment
+        # would look identical to an overbill here), which is why it is a
+        # distinct finding type (quantity_variance_no_grn) rather than being
+        # folded into quantity_variance and reported as if receiving had
+        # actually confirmed it.
         grn_line = grn_lines.get(sku)
-        received = grn_line["qty_received"] if grn_line else None
-        if received is not None and received != line["qty"]:
-            qty_delta = line["qty"] - received
+        if grn_line is not None:
+            received = grn_line["qty_received"]
+            if received != line["qty"]:
+                qty_delta = line["qty"] - received
+                variances.append({
+                    "type": "quantity_variance",
+                    "sku": sku,
+                    "po_value": po_line["qty"],
+                    "grn_value": received,
+                    "invoice_value": line["qty"],
+                    "delta": qty_delta,
+                    "within_tolerance": abs(qty_delta) <= tol["qty_units"],
+                })
+        elif line["qty"] != po_line["qty"]:
+            qty_delta = line["qty"] - po_line["qty"]
             variances.append({
-                "type": "quantity_variance",
+                "type": "quantity_variance_no_grn",
                 "sku": sku,
                 "po_value": po_line["qty"],
-                "grn_value": received,
+                "grn_value": None,
                 "invoice_value": line["qty"],
                 "delta": qty_delta,
                 "within_tolerance": abs(qty_delta) <= tol["qty_units"],

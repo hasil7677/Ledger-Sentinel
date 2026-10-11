@@ -161,7 +161,12 @@ def test_missing_po_short_circuits_before_line_comparison():
     assert result["clean"] is False
 
 
-def test_po_with_no_grn_does_not_check_quantity_but_still_checks_price_and_tax():
+def test_po_with_no_grn_never_reports_a_three_way_quantity_variance():
+    """No GRN means there's no receiving evidence, so quantity can never be
+    reported as the three-way `quantity_variance` type -- that type claims a
+    goods receipt was checked, and none exists. This holds whether or not the
+    invoice and PO quantities actually agree; see the two tests below for
+    what happens on the two-way fallback in each case."""
     po = make_po(lines=[make_line(unit_price=100.0, qty=10, gst_rate=18)])
     invoice = make_invoice(po, lines=[make_line(unit_price=200.0, qty=10, gst_rate=18)])  # 100% price bump
     result = match_invoice(invoice, po, None)
@@ -169,6 +174,56 @@ def test_po_with_no_grn_does_not_check_quantity_but_still_checks_price_and_tax()
     assert not any(v["type"] == "quantity_variance" for v in result["variances"])
     v = _variance(result, "price_variance")
     assert v["within_tolerance"] is False
+
+
+# --- quantity, no GRN: two-way fallback against the PO's own ordered qty ----
+# This is the two-way-match gap the README used to call out by name: "PO + no
+# GRN auto-clears if price/tax match, without quantity verification." An
+# invoice with no goods receipt on file could bill any quantity it liked and
+# still clear, as long as price and tax matched. core/matcher.py now falls
+# back to comparing the invoice's billed qty against what the PO itself
+# ordered whenever there's no GRN line to check against -- weaker evidence
+# than a real goods receipt, but not nothing.
+
+def test_po_with_no_grn_and_matching_quantity_raises_no_variance():
+    po = make_po(lines=[make_line(unit_price=100.0, qty=10, gst_rate=18)])
+    invoice = make_invoice(po, lines=[make_line(unit_price=100.0, qty=10, gst_rate=18)])
+    result = match_invoice(invoice, po, None)
+    assert result["variances"] == []
+    assert result["clean"] is True
+
+
+def test_po_with_no_grn_and_mismatched_quantity_is_flagged_and_not_clean():
+    po = make_po(lines=[make_line(unit_price=100.0, qty=10, gst_rate=18)])
+    invoice = make_invoice(po, lines=[make_line(unit_price=100.0, qty=15, gst_rate=18)])  # +5 vs PO
+    result = match_invoice(invoice, po, None)
+    v = _variance(result, "quantity_variance_no_grn")
+    assert v["po_value"] == 10
+    assert v["grn_value"] is None  # no receiving evidence -- explicitly not claimed
+    assert v["invoice_value"] == 15
+    assert v["delta"] == 5
+    assert v["within_tolerance"] is False
+    assert result["clean"] is False
+
+
+@pytest.mark.parametrize("delta", [-1, 1])
+def test_po_with_no_grn_quantity_within_one_unit_clears(delta):
+    po = make_po(lines=[make_line(qty=50)])
+    invoice = make_invoice(po, lines=[make_line(qty=50 + delta)])
+    result = match_invoice(invoice, po, None)
+    v = _variance(result, "quantity_variance_no_grn")
+    assert v["within_tolerance"] is True
+    assert result["clean"] is True
+
+
+@pytest.mark.parametrize("delta", [-2, 2])
+def test_po_with_no_grn_quantity_beyond_one_unit_escalates(delta):
+    po = make_po(lines=[make_line(qty=50)])
+    invoice = make_invoice(po, lines=[make_line(qty=50 + delta)])
+    result = match_invoice(invoice, po, None)
+    v = _variance(result, "quantity_variance_no_grn")
+    assert v["within_tolerance"] is False
+    assert result["clean"] is False
 
 
 def test_line_on_invoice_not_on_po_is_line_item_mismatch():

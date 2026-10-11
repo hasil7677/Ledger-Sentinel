@@ -102,6 +102,14 @@ def _scn_quantity_variance(tmp_path):
     return invoice, po, grn, ledger, VendorMaster.empty(), _employees(), "quantity_variance"
 
 
+def _scn_quantity_variance_no_grn(tmp_path):
+    po, _, invoice = make_clean_triple(qty=10, inv_id="INV-QVNG1")
+    invoice["lines"][0]["qty"] = 15  # billed over the PO's ordered qty, no GRN to check against
+    invoice["total_amount"] = round(15 * 100.0 * 1.18, 2)
+    ledger = Ledger(str(tmp_path / "l.json"))
+    return invoice, po, None, ledger, VendorMaster.empty(), _employees(), "quantity_variance_no_grn"
+
+
 def _scn_price_variance_out_tolerance(tmp_path):
     po, grn, invoice = make_clean_triple(unit_price=1000.0, qty=50, inv_id="INV-PV1")
     invoice["lines"][0]["unit_price"] = 1200.0  # 20% over, well past 2%/Rs500 floor
@@ -185,6 +193,7 @@ SCENARIOS = {
     "suspected_duplicate": _scn_suspected_duplicate,
     "missing_po": _scn_missing_po,
     "quantity_variance": _scn_quantity_variance,
+    "quantity_variance_no_grn": _scn_quantity_variance_no_grn,
     "price_variance_out_tolerance": _scn_price_variance_out_tolerance,
     "tax_mismatch": _scn_tax_mismatch,
     "line_item_mismatch": _scn_line_item_mismatch,
